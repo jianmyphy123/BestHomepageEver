@@ -1,0 +1,10 @@
+body 
+{
+	background-image: url('../backgrounds/y1920/submit.png');
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+.padding-bottom {
+	padding-bottom:45px;
+}

@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /usage/index.php
+Disallow: /photo&20album/
+Disallow: /pages/bio/
+
+
+

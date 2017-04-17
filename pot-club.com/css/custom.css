@@ -1,0 +1,27 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 20px;
+  background: #fff;
+  color: #000;
+  /*color: #5a5a5a;*/
+}
+
+.navbar-brand {
+  float: right;  
+  padding-bottom: 0px;
+  padding-top: 4px;
+  
+}
+
+.jumbotron {
+  padding-top: 150px;
+}
+
+.bottom {
+	margin-top: 200px;
+	background: #fff;
+  
+}

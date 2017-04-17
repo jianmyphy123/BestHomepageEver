@@ -1,0 +1,28 @@
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	margin-left: 45px;
+	margin-top: 45px;
+}
+.txt-sm {
+	font-size: 10px;
+}
+
+.users {
+	font-size: 16px;
+	color:#369;
+	text-decoration: underline;
+}
+
+.return {
+	font-size: 12px;
+	color:#033;
+}
+
+.return a {
+	color:#033;
+}
+.twosteps {
+	font-size: 16px;
+	color:#360;
+}

@@ -1,0 +1,197 @@
+/* Full Page Links */
+
+body {
+	background-image: url();
+}
+
+a {
+	color: #33FF66;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #33CCFF;
+}
+a:active {
+	text-decoration: none;
+	color: #66FF66;
+}
+body,td,th {
+	font-family: Book Antiqua, Franklin Gothic Book;
+	color: #FFFFFF;
+	
+}
+
+/* Search Engines */
+
+.engines {font-size: 12pt; color: #00CCFF; }
+
+
+
+/* Specials Area */
+
+#specials {
+	text-align: left;
+	padding-left: 5px;
+	font-size: 14px;
+	color: #C6E2FF;
+}
+
+#specials a {
+	font-size: 14px;
+	color: #9CF;
+}
+
+#specials a:link {
+	font-size: 14px;
+	color: #9CF;
+}
+
+.follow {
+	font-size: 12pt;
+	color: #C6E2FF;
+	float: left;
+}
+
+.addthis {
+	float: right;
+}
+
+/* News Section */
+
+#news {
+	text-align: center;
+}
+#news1 a:link {font-size: 11pt; }
+#news2 a:link {font-size: 10pt; }
+.small-white-news {font-size: 10pt; }
+
+
+/* Best of the Web Table */
+
+.bestofweb {
+	font-size: 16px;
+	text-align: center;
+}
+
+.LinksHeader {
+	color: #FF9933;
+	font-size: 14pt;
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+a.links-xlarge {font-size: 14pt; }
+a.links-small {font-size: 12pt; }
+a.newlink {font-size: 10px; color: #FF0000; }
+.newlink {font-size: 10px; color: #C33; }
+.pc-mac {color: #FF66CC}
+.secondarylinks {color: #7DFF9E; font-size: 11pt; } 
+
+
+/* Footer */
+#signature .footer a {
+	font-family: "Book Antiqua", "Franklin Gothic Book";
+	color: #999933;
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+
+/* Radio and Banking Area */
+
+.Radio {
+	color: #9CF;
+	font-size: 12pt;
+}
+
+.Radio a {
+	color: #9CF;
+}
+
+.Radio a:active {
+	color: #9CF;
+}
+
+
+/* Google +1 Area */
+
+.little-blue {
+	font-size: 8pt;
+	color: #39C;
+}
+
+
+/* Balloon CSS */
+
+.balloon-title {
+	color: #000;
+	font-size: 14pt;
+	border-bottom: thin;
+}
+.balloon-link {
+	color: #036;
+	font-size: 12pt;
+}
+
+.ballsmall {
+	color: #036;
+	font-size: 12px;
+}
+
+.balloon-link a:hover {
+	color: #066;
+}
+
+.balloon-category {
+	color: #366;
+	font-size: 14pt;
+}
+
+
+/* Justins Network */
+#jcntwk {
+	color: #999933;
+	font-size: 8pt;
+}
+#jcntwk a {
+	color: #999933;
+	font-size: 8pt;
+}
+#jcntwk {
+	text-align: center;
+}
+
+
+
+/* News Box */
+
+#box {
+	width: 640px;
+	align: center;
+	border-top: 1px solid #FFF;
+	border-bottom: 2px solid #333;
+	border-right: 2px solid #666;
+	border-left: 1px solid #FFF;
+	text-align: center;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border-radius: 18px 18px 18px 18px;
+	overflow: hidden;
+}
+
+#boxtitle {
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #CCC;
+	padding-bottom: 5px;
+	
+}

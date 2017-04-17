@@ -1,0 +1,28 @@
+
+@media screen and (max-width:480px){
+   #links-mobile {
+	   font-size: 10pt;	   
+	   
+   }
+   
+   #links-mobile th {
+     font-size:16pt; 
+	 
+}
+   #links-mobile a {
+	  font-size:12pt;
+	  
+}
+
+
+@media (min-width: 481px) and (max-width: 1093px) {
+	
+		#links-mobile th {
+		font-size: 12pt;
+	}
+	
+	#links-mobile a {
+		font-size:10pt;
+	}	
+	
+}

@@ -1,0 +1,4 @@
+#Force non-www:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.besthomepage\.co.uk [NC]
+RewriteRule ^(.*)$ http://besthomepage.co.uk/$1 [L,R=301]
