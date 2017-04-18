@@ -1,9 +1,9 @@
  <?php
  
  $server = 'localhost';
- $db_user_name = 'alexdbmanage';
- $db_password = 'f;^73wwWEEQ@';
- $database = 'BestHomepageEver';
+ $db_user_name = '';
+ $db_password = '';
+ $database = '';
  
  $errors = array(
 			1 => 'email or password is invalid',
