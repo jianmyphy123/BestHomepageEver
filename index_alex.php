@@ -476,7 +476,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     		<span class="glyphicon glyphicon-user"></span>
 
-			<span><?php echo $_SESSION['login_user']; ?></span>
+			<span><?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></span>
 
            </button>
 

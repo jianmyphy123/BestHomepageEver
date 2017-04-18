@@ -39,6 +39,8 @@ require_once('settings.php');
 if(isset($_POST['register'])) {
 	session_start(); // Starting Session
 	
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
 	$username = $_POST['username'];
 	$password = md5($_POST['password']);
 
@@ -66,11 +68,13 @@ if(isset($_POST['register'])) {
 		$bg_letter = $NUMBERS[0];
 
 		//MySqli Insert Query
-		$insert_row = $mysqli->query("INSERT INTO users (username, password, bg, bg_letter) VALUES ('$username', '$password', '$bg', '$bg_letter')");
+		$insert_row = $mysqli->query("INSERT INTO users (fname, lname, username, password, bg, bg_letter) VALUES ('$fname','$lname','$username', '$password', '$bg', '$bg_letter')");
 		
 
 		if($insert_row){
 			
+			$_SESSION['fname'] = $fname;
+			$_SESSION['lname'] = $lname;
 			$_SESSION['login_user']=$username; // Initializing Session
 			$_SESSION['user_id'] = $mysqli->insert_id;
 			$_SESSION['BG'] = $bg;
@@ -130,6 +134,8 @@ else if(isset($_POST['login'])) {
 		
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username; // Initializing Session
+			$_SESSION['fname'] = $row->fname;
+			$_SESSION['lname'] = $row->lname;
 			$_SESSION['user_id'] = $row->id;
 			$_SESSION['fontStyle'] = $row->fontstyle;
 			$_SESSION['tab'] = $row->tab;
@@ -163,6 +169,8 @@ else { ?>
 			<span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
 					echo $errors[$error_id];
 				} ?></span>
+		  <input type="text" placeholder="first name" name="fname" required id="fname"/>
+		  <input type="text" placeholder="last name" name="lname" required id="lname"/>
 	      <input type="email" placeholder="email address" name="username" required id="username"/>
 	      <input type="password" placeholder="password" name="password" required id="input_password"/>
 		  <input type="password" placeholder="confirm password" required id="input_password2"/>
