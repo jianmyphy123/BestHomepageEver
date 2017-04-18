@@ -139,18 +139,20 @@ else {
 				';
 				$headers[] = 'MIME-Version: 1.0';
 				$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+				$headers[] = 'From: <support@besthomepageever.com>';
+				$headers[] = 'Reply-To: support@besthomepageever.com';
 				
 				$success = mail("$username","[BestHompageEver] Forgotten Password", $msg, implode("\r\n", $headers));
 				
 				if($success) {
 					echo '<div class="login-page">
 						
-						  <div class="form">
+						  <div class="form" action="changepass.php" method="post">
 							<span style="color: blue">email was sent successfully</span>
 							<form class="login-form" action="changepass.php" method="post" id="changepass_form">
 							  <input type="email" placeholder="your email address" name="username" required/>
 							  
-							  <button type="submit" name="changepass">Send Email</button>
+							  <button type="submit" name="sendemail">Send Email</button>
 							</form>
 						  </div>
 						</div>';
