@@ -165,6 +165,7 @@ else { ?>
 	<div class="login-page">
 		
 	  <div class="form">
+      	<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
 	    <form class="register-form" action="login.php" method="post" id="register_form">
 			<span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
 					echo $errors[$error_id];
@@ -181,14 +182,17 @@ else { ?>
 			<span id='login_error_message'><?php if ($state==1 && $error_id != 0) {
 					echo $errors[$error_id];
 				} ?></span>
+          
 	      <input type="email" placeholder="email address" name="username" required/>
 	      <input type="password" placeholder="password" name="password" required/>
 		  
 	      <button type="submit" name="login">login</button>
 	      <p class="message">Not registered? <a class="toggle_link" href="#">Create an account</a></p>
 		  <p class="message"><a href="changepass.php">Forgot Password?</a></p>
-	    </form>
+	    </form>         
 	  </div>
+     <p style="color: grey; text-align:center;"><a href="../"><small>Return to homepage</small></a></p>
+     
 	</div>
 	<?php
 	if($state == 2 && $error_id==2) {

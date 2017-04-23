@@ -431,11 +431,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="row">
-
  	<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs text-left">
     	<div class="btn-group" role="group">
             <a type="button" class="btn btn-sm btn-success sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Make this my homepage</a> 
           	<div class="btn-group" role="group">
+              <div class="dropdown">
+               <button class="btn btn-sm btn-success dropdown-toggle" type="button" id="tab_select" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+                <span class="glyphicon glyphicon-folder-close"></span> <span class="caret"></span>
+               </button>
+                  <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="tab_select">
+    				<li class="dropdown-header">'New Tab' Extensions</li>
+                    <li role="separator" class="divider"></li>    
+                    <li><a href="https://chrome.google.com/webstore/detail/best-homepage-ever-new-ta/omdkehkdnojcndhhilglklegbakenkgb" target="_blank"><img src="pictures/sethomepage/chrome_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="17" height="17"> Chrome Extension</a></li>
+                    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/best-homepage-ever/" target="_self"><img src="pictures/sethomepage/firefox_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="20" height="20"> Firefox Add-On</a></li>
+                  </ul>
+               </div><!-- /dropdown -->
+             </div><!-- /btn-group -->
+            
+            <div class="btn-group" role="group">
               <div class="dropdown">
                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="bhe_world" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
                 <span class="glyphicon glyphicon-globe"></span> <span class="caret"></span>
@@ -445,7 +458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <li><a href="http://besthomepage.co.uk"><img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12"> United Kingdom</a></li>
                   </ul>
                </div><!-- /dropdown -->
-             </div><!-- /btn-group -->
+             </div><!-- /btn-group -->             
 		</div><!-- /btn-group --> 
     </div>
 
@@ -461,57 +474,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 text-right"> 
         <div class="btn-group" role="group">
-
-		<?php
-
-		if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
-
-		?>
-
-		<div class="btn-group">
-
-          <div class="dropdown">
-
-           <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
-
-    		<span class="glyphicon glyphicon-user"></span>
-
-			<span><?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></span>
-
-           </button>
-
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
-
-               
-
-                <li><a href="#" data-toggle="modal" data-target="#bgselect" title="Settings & Preferences"><span class="glyphicon glyphicon-cog text-info"></span> Settings and Preferences</a></li>
-
-				<li role="separator" class="divider"></li>
-
-				<li><a href="logout.php"><span class="glyphicon glyphicon-off text-info"></span> Logout</a></li>
-
-              </ul>
-
-           </div><!-- /dropdown -->
-
-         </div><!-- /btn-group -->
-
-		<?php } else {?>
-
-		<span class="text-info">
-
-          <a class="btn btn-sm btn-primary" role="button" href="login.php">Login</a>
-
-        </span>  
-
-		<?php } ?>
-
-    	<span class="text-info">
-
-          <a tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-content="<p class='text-center'><small>Vote 1x per month!</small><br><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote BestHomepageEver</span></a></p><hr><p class='small text-center'>Please take 2 seconds to vote for BHE, as 'Best Homepage'.</p>"><span class="glyphicon glyphicon-check"></span></a></span></a>
-
-        </span> 
-
+        
         <div class="btn-group">
 
           <div class="dropdown">
@@ -539,6 +502,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            </div><!-- /dropdown -->
 
          </div><!-- /btn-group -->
+
+		<?php
+
+		if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
+
+		?>
+
+		<div class="btn-group">
+
+          <div class="dropdown">
+
+           <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+
+    		<span class="glyphicon glyphicon-user"></span> <span><?php echo $_SESSION['fname']; ?></span>
+
+           </button>
+
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
+<!--    			<li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></a></li> -->
+<!--                <li role="separator" class="divider"></li> -->
+                <li><a href="#" data-toggle="modal" data-target="#myaccount" title="My Account"><span class="glyphicon glyphicon-user text-info"></span> My Account</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#bgselect" title="Homepage Settings"><span class="glyphicon glyphicon-cog text-info"></span> Homepage Settings</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="logout.php"><span class="glyphicon glyphicon-off text-info"></span> Logout</a></li>
+              </ul>
+
+           </div><!-- /dropdown -->
+
+         </div><!-- /btn-group -->
+
+		<?php } else {?>
+
+		<span class="text-info">
+
+          <a class="btn btn-sm btn-primary" role="button" href="login.php">Login</a>
+
+        </span>  
+
+		<?php } ?>
+<!--
+    	<span class="text-info">
+
+          <a tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-content="<p class='text-center'><small>Vote 1x per month!</small><br><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote BestHomepageEver</span></a></p><hr><p class='small text-center'>Please take 2 seconds to vote for BHE, as 'Best Homepage'.</p>"><span class="glyphicon glyphicon-check"></span></a></span></a>
+
+        </span> 
+-->
        
        </div><!-- /btn-group -->
 
@@ -1402,8 +1411,8 @@ foreach($CATEGORIES as $cat){
 
 <!-- Background Selection -->
 
-								
-
+	<?php require("modals/myaccount.php"); ?>
+    
 <div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="bgselect" aria-hidden="true" id="bgselect">
 
 			<div class="modal-dialog">
@@ -1426,6 +1435,7 @@ foreach($CATEGORIES as $cat){
 
                             <li role="presentation"><a href="#links" aria-controls="links" role="tab" data-toggle="tab" class="text-success">Links</a></li>							
 
+                            <li role="presentation"><a href="#custom_links" aria-controls="custom_links" role="tab" data-toggle="tab" class="text-success">Custom Links <span class="newlink">(coming soon)</span></a></li>							
 						</ul>
 
    						<div class="tab-content text-info">
@@ -1942,7 +1952,7 @@ foreach($CATEGORIES as $cat){
 
                                 </div> 
 
-                                <p class="text-center text-muted small margin-top">*Cookies must be enabled/allowed to save correctly.</p> 
+                                
 
                  
 
@@ -2016,7 +2026,7 @@ foreach($CATEGORIES as $cat){
 
                                 </div> 
 
-                                <p class="text-center text-muted small margin-top">*Cookies must be enabled/allowed to save correctly.</p>
+                                
 
                             </div>					
 
@@ -2065,14 +2075,56 @@ foreach($CATEGORIES as $cat){
                                         </label>										
 
                                     </div>
+                            </div>	
+                            
+                            
+                            <!-- tabpanel 4 -->
+                            <div role="tabpanel" class="tab-pane" id="custom_links">
+                     <!--       
+                             <ul>
 
-                                    
-
-                                    <p class="text-center text-muted small padding-top-20px">*Cookies must be enabled/allowed to save correctly.</p>                                                      
-
-                                	
-
-                            </div>					
+                             	<h3>Custom Links:</h3>
+                                    <div class="row margin-top">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                       		<ol>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       		</ol>
+                                        </div>
+                                        
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                       		<ol>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       		</ol>
+                                        </div>
+                                    </div>                                    
+                                    <div class="row margin-top">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                       		<ol>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       		</ol>
+                                        </div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                       		<ol>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       			<li></li>
+                                       		</ol>
+                                        </div>>
+                                    </div>                                 
+                                
+                              </ul> 
+               -->
+                            </div>
 
 
 
@@ -2086,7 +2138,7 @@ foreach($CATEGORIES as $cat){
 
 						 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-       					 <button type="button" class="btn btn-primary" onClick="javascript:saveBg();">*Save changes</button>     	
+       					 <button type="button" class="btn btn-primary" onClick="javascript:saveBg();">Save changes</button>     	
 
 					</div><!-- /modal-footer -->
 
