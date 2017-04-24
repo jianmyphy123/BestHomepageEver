@@ -228,6 +228,8 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
     <link href="bootstrap/3.3.6/css/bootstrap-toggle.min.css" rel="stylesheet">
 
+    
+
     <link href="css/custom-v5.0.css" rel="stylesheet"> 
 
     <!-- Search Bar -->
@@ -361,6 +363,8 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 $NUMBERS=array('a','b');
 
 shuffle($NUMBERS);
+
+
 
 ?>
 
@@ -502,8 +506,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            </div><!-- /dropdown -->
 
          </div><!-- /btn-group -->
-
 		<?php
+        
 
 		if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
 
@@ -515,7 +519,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
 
-    		<span class="glyphicon glyphicon-user"></span> <span><?php echo $_SESSION['fname']; ?></span>
+    		<span class="glyphicon glyphicon-user"></span> <span id="span_logged_user_name"><?php echo $_SESSION['fname']; ?></span>
 
            </button>
 
@@ -2152,7 +2156,7 @@ foreach($CATEGORIES as $cat){
 
     
 
-
+    
 
     
 
@@ -2509,27 +2513,27 @@ foreach($CATEGORIES as $cat){
 
 			<?php 
 
-			if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image') {
+            if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image') {
 
-			?>
+            ?>
 
-				$('#toggle-button').prop('checked',false).change();
+                $('#toggle-button').prop('checked',false).change();
 
-			<?php 
+            <?php 
 
-			}
+            }
 
-			else {
+            else {
 
-			?>
+            ?>
 
-				$('#toggle-button').prop('checked',true).change();
+                $('#toggle-button').prop('checked',true).change();
 
-			<?php	
+            <?php   
 
-			}	 
+            }    
 
-			?>
+            ?>
 
 			
 
