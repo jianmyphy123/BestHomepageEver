@@ -56,7 +56,11 @@ if(isset($_POST['register'])) {
 	
 	
 	$results = $mysqli->query("select * from users where username='$username'");
-
+	
+	//		$results = $mysqli->query("SELECT COUNT(*) FROM users");
+	//		$get_total_rows = $results->fetch_row(); //hold total records in variable
+	//		die(var_dump($get_total_rows));
+	
 	$rows = $results->num_rows;
 	$row = $results->fetch_object();
 	
@@ -66,12 +70,17 @@ if(isset($_POST['register'])) {
 
 		$bg = str_pad(rand(1,16), 2, '0', STR_PAD_LEFT);
 		$bg_letter = $NUMBERS[0];
+		
+		
+		$mysqli->autocommit(FALSE);
 
 		//MySqli Insert Query
-		$insert_row = $mysqli->query("INSERT INTO users (fname, lname, username, password, bg, bg_letter) VALUES ('$fname','$lname','$username', '$password', '$bg', '$bg_letter')");
+		$insert_row = $mysqli->query("INSERT INTO `users` (`fname`, `lname`, `username`, `password`, `bg`, `bg_letter`) VALUES ('$fname','$lname','$username', '$password', '$bg', '$bg_letter')");
 		
+		$mysqli->commit();
 
 		if($insert_row){
+			
 			
 			$_SESSION['fname'] = $fname;
 			$_SESSION['lname'] = $lname;
@@ -80,9 +89,8 @@ if(isset($_POST['register'])) {
 			$_SESSION['BG'] = $bg;
 			$_SESSION['BG_LETTER'] = $bg_letter;
 			
-			
 			echo "<script>window.location='index_alex.php'</script>";
-			exit;
+			die();
 
 		} else{
 			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
