@@ -1,3 +1,6 @@
+<!-- reCAPTCHA secret key -->
+<!-- 6LdFXR4UAAAAAAjkD3VTJVQ5_qH5oO5fJYiNEblS -->
+
 <!doctype html>
 <html>
 <head>
@@ -32,6 +35,10 @@
 		});
 	})
 </script>
+
+<!-- reCAPTCHA -->    
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <?php
 require_once('settings.php');
@@ -57,10 +64,6 @@ if(isset($_POST['register'])) {
 	
 	$results = $mysqli->query("select * from users where username='$username'");
 	
-	//		$results = $mysqli->query("SELECT COUNT(*) FROM users");
-	//		$get_total_rows = $results->fetch_row(); //hold total records in variable
-	//		die(var_dump($get_total_rows));
-	
 	$rows = $results->num_rows;
 	$row = $results->fetch_object();
 	
@@ -71,13 +74,9 @@ if(isset($_POST['register'])) {
 		$bg = str_pad(rand(1,16), 2, '0', STR_PAD_LEFT);
 		$bg_letter = $NUMBERS[0];
 		
-		
-		$mysqli->autocommit(FALSE);
-
+	
 		//MySqli Insert Query
-		$insert_row = $mysqli->query("INSERT INTO `users` (`fname`, `lname`, `username`, `password`, `bg`, `bg_letter`) VALUES ('$fname','$lname','$username', '$password', '$bg', '$bg_letter')");
-		
-		$mysqli->commit();
+		$insert_row = $mysqli->query("INSERT INTO users (fname, lname, username, password, bg, bg_letter) VALUES ('$fname','$lname','$username', '$password', '$bg', '$bg_letter')");
 
 		if($insert_row){
 			
@@ -104,12 +103,6 @@ if(isset($_POST['register'])) {
 	}
 	$results->free();
 	$mysqli->close(); // Closing Connection
-	
-	
-	
-	
-	
-	
 
 }
 else if(isset($_POST['login'])) {
@@ -175,16 +168,25 @@ else { ?>
 	  <div class="form">
       	<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
 	    <form class="register-form" action="login.php" method="post" id="register_form">
-			<span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
+            
+            <span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
 					echo $errors[$error_id];
 				} ?></span>
+            
 		  <input type="text" placeholder="first name" name="fname" required id="fname"/>
 		  <input type="text" placeholder="last name" name="lname" required id="lname"/>
 	      <input type="email" placeholder="email address" name="username" required id="username"/>
 	      <input type="password" placeholder="password" name="password" required id="input_password"/>
 		  <input type="password" placeholder="confirm password" required id="input_password2"/>
-	      <button type="submit" name="register" id="btn_create">create</button>
-	      <p class="message">Already registered? <a class="toggle_link" href="#" id="gotoSign">Sign In</a></p>
+          
+          <!-- reCAPTCHA -->
+          <p><div class="g-recaptcha" data-sitekey="6LdFXR4UAAAAAHAb9bmweemZt5HBdKTYtwd9bcj_"></div></p>
+          <!-- /reCAPTCHA -->
+	      
+          <button type="submit" name="register" id="btn_create">create</button>
+	      <p class="message padding-bottom-10px">Already registered? <a class="toggle_link" href="#" id="gotoSign">Sign In</a></p>
+          <hr>
+          <p style="color: grey; text-align:center;"><small><strong>Note:</strong> Information is never shared.</small></p>
 	    </form>
 	    <form class="login-form" action="login.php" method="post" id="login_form">
 			<span id='login_error_message'><?php if ($state==1 && $error_id != 0) {
@@ -211,6 +213,10 @@ else { ?>
 	<?php
 	}
 	?>
+    
+
+
+    
 </body>
 <?php } ?>
 
