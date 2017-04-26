@@ -64,6 +64,10 @@ if(isset($_POST['register'])) {
 	
 	$results = $mysqli->query("select * from users where username='$username'");
 	
+	//		$results = $mysqli->query("SELECT COUNT(*) FROM users");
+	//		$get_total_rows = $results->fetch_row(); //hold total records in variable
+	//		die(var_dump($get_total_rows));
+	
 	$rows = $results->num_rows;
 	$row = $results->fetch_object();
 	
@@ -180,9 +184,8 @@ else { ?>
 		  <input type="password" placeholder="confirm password" required id="input_password2"/>
           
           <!-- reCAPTCHA -->
-          <p><div class="g-recaptcha" data-sitekey="6LdFXR4UAAAAAHAb9bmweemZt5HBdKTYtwd9bcj_"></div></p>
-          <!-- /reCAPTCHA -->
-	      
+          <p><div class="g-recaptcha" data-sitekey="6LdFXR4UAAAAAHAb9bmweemZt5HBdKTYtwd9bcj_" style="transform:scale(1.058);transform-origin:0 0"></div></p>
+          <!-- /reCAPTCHA --> 
           <button type="submit" name="register" id="btn_create">create</button>
 	      <p class="message padding-bottom-10px">Already registered? <a class="toggle_link" href="#" id="gotoSign">Sign In</a></p>
           <hr>
@@ -219,6 +222,17 @@ else { ?>
     
 </body>
 <?php } ?>
+<script>
+	$('#register_form').submit(function() {
+		if (grecaptcha.getResponse() == ""){
+		    $('#register_error_message').html('Please verify that you are not a robot.');
+		    return false;
+		} else {
+		    
+		    return true;
+		}
+	}); 
+</script>
 
 
 </html>
