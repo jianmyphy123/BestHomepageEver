@@ -130,23 +130,23 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
 <html><head>
 
-	<META NAME="AUTHOR" CONTENT="Justin Carver">
+    <META NAME="AUTHOR" CONTENT="Justin Carver">
 
     <meta name="copyright" content="BestHomepageEver. 2017" />
 
-	<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
     <title>BestHomepageEver | All the Best Websites in a Single Click!</title>
 
-	<!-- <title>Best Homepage Ever | All of Your Favorite Sites in 1-Click!</title> -->
+    <!-- <title>Best Homepage Ever | All of Your Favorite Sites in 1-Click!</title> -->
 
-	<meta name="description" content="The Internet's Best Homepage. With just 1-Click, you can access everything you use daily: Email, Search, News, Sports, Social Media, etc - 100% Free & No Ads!"/>
+    <meta name="description" content="The Internet's Best Homepage. With just 1-Click, you can access everything you use daily: Email, Search, News, Sports, Social Media, etc - 100% Free & No Ads!"/>
 
-	<meta name="keywords" content="best homepage, best home page, best homepage ever, what is the best homepage, best startpage, top homepage">
+    <meta name="keywords" content="best homepage, best home page, best homepage ever, what is the best homepage, best startpage, top homepage">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <meta http-equiv="content-language" content="en">
 
@@ -198,9 +198,9 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
         <meta property="og:title" content="BestHomepageEver - All of your favorite sites in a single click" /> 
 
-		<meta property="og:description" content="The Internet's Best Homepage! Quick Access to everything you use daily: E-mail, Maps, Google, News, Sports, Facebook, etc. All in just 1-click. No Advertising!" />
+        <meta property="og:description" content="The Internet's Best Homepage! Quick Access to everything you use daily: E-mail, Maps, Google, News, Sports, Facebook, etc. All in just 1-click. No Advertising!" />
 
-		<meta property="og:image" content="http://besthomepageever.com/pictures/besthomepageever_logo.png" />
+        <meta property="og:image" content="http://besthomepageever.com/pictures/besthomepageever_logo.png" />
 
         <meta property="og:url" content="http://besthomepageever.com" />
 
@@ -230,7 +230,7 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
     
 
-    <link href="css/custom-v5.0.css" rel="stylesheet"> 
+    <link href="css/custom-v5.1.css" rel="stylesheet"> 
 
     <!-- Search Bar -->
 
@@ -242,51 +242,51 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
     <!-- Backgrounds -->
 
-	<style type="text/css">.selBox {background-color:#EEEEEE;border-radius:12px;}</style>
+    <style type="text/css">.selBox {background-color:#EEEEEE;border-radius:12px;}</style>
 
-	<style type="text/css">
+    <style type="text/css">
 
-		*,body{
+        *,body{
 
-		<?php
+        <?php
 
-			if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
+            if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
 
-			echo 'font-family:'.$_SESSION['fontStyle'].'';
+            echo 'font-family:'.$_SESSION['fontStyle'].'';
 
-				}
+                }
 
-			?> }
+            ?> }
 
-		.none {display:none !important;}
+        .none {display:none !important;}
 
-		.linkEle {width:16% !important;}
+        .linkEle {width:16% !important;}
 
-		.linkContainer{display:block !important; margin-left:40px;}
-
-
-
-		@media (min-width: 768px) and (max-width: 1091px) {
-
-		.linkEle {width:25% !important;}
-
-		}
-
-		@media (max-width: 768px) {
-
-		.linkContainer{display:none !important;}
-
-		.imageaslink {display:none !important;}
-
-		}
+        .linkContainer{display:block !important; margin-left:40px;}
 
 
 
-	</style>
+        @media (min-width: 768px) and (max-width: 1091px) {
+
+        .linkEle {width:25% !important;}
+
+        }
+
+        @media (max-width: 768px) {
+
+        .linkContainer{display:none !important;}
+
+        .imageaslink {display:none !important;}
+
+        }
+
+
+
+    </style>
 
     <!-- Links -->
 
-	<style type="text/css">
+    <style type="text/css">
 
     div.title{    color: #FF9933;
 
@@ -294,7 +294,7 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
         text-decoration: underline;
 
-        font-weight: normal;	
+        font-weight: normal;    
 
         }
 
@@ -321,10 +321,42 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
     }
 
     </style>
+    <!-- myAccount options in Myaccount Modal -->
+    <style>
+        /* Hiding the checkbox, but allowing it to be focused */
+        .badgebox
+        {
+            opacity: 0;
+        }
+        
+        .badgebox + .badge
+        {
+            /* Move the check mark away when unchecked */
+            text-indent: -999999px;
+            /* Makes the badge's width stay the same checked and unchecked */
+            width: 27px;
+        }
+        
+        .badgebox:focus + .badge
+        {
+            /* Set something to make the badge looks focused */
+            /* This really depends on the application, in my case it was: */
+            
+            /* Adding a light border */
+            box-shadow: inset 0px 0px 5px;
+            /* Taking the difference out of the padding */
+        }
+        
+        .badgebox:checked + .badge
+        {
+            /* Move the check mark back when checked */
+            text-indent: 0;
+        }
+    </style>
 
 
 
-	<!-- Javascript -->
+    <!-- Javascript -->
 
     <!-- Google Analytics Begin -->
 
@@ -335,10 +367,13 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
     <script src="bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script src="bootstrap/3.3.6/js/bootstrap-toggle.min.js"></script>
+    
+    <!-- reCAPTCHA -->
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
     <!-- Heatmap.me 
 
-	<script>
+    <script>
 
     (function(h,e,a,t,m,p) {
 
@@ -416,7 +451,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <nav class="hidden-xs hidden-sm hidden-md hidden-lg">
 
-	<ul>
+    <ul>
 
         <li><a href="news/" title="News & Updates">News and Updates</a></li>
 
@@ -435,16 +470,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="row">
- 	<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs text-left">
-    	<div class="btn-group" role="group">
+    <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs text-left">
+        <div class="btn-group" role="group">
             <a type="button" class="btn btn-sm btn-success sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Make this my homepage</a> 
-          	<div class="btn-group" role="group">
+            <div class="btn-group hidden-sm hidden-md" role="group">
               <div class="dropdown">
                <button class="btn btn-sm btn-success dropdown-toggle" type="button" id="tab_select" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
                 <span class="glyphicon glyphicon-folder-close"></span> <span class="caret"></span>
                </button>
                   <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="tab_select">
-    				<li class="dropdown-header">'New Tab' Extensions</li>
+                    <li class="dropdown-header">'New Tab' Extensions</li>
                     <li role="separator" class="divider"></li>    
                     <li><a href="https://chrome.google.com/webstore/detail/best-homepage-ever-new-ta/omdkehkdnojcndhhilglklegbakenkgb" target="_blank"><img src="pictures/sethomepage/chrome_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="17" height="17"> Chrome Extension</a></li>
                     <li><a href="https://addons.mozilla.org/en-US/firefox/addon/best-homepage-ever/" target="_self"><img src="pictures/sethomepage/firefox_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="20" height="20"> Firefox Add-On</a></li>
@@ -463,14 +498,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </ul>
                </div><!-- /dropdown -->
              </div><!-- /btn-group -->             
-		</div><!-- /btn-group --> 
+        </div><!-- /btn-group --> 
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-4 col-xs-9 text-center padding-bottom-10px">
 
-    		<img src="Logo/best-homepage-ever-logo-2016.png" title="Best Homepage Ever Logo" class="visible-xs img-responsive" width="400" height="65">
+            <img src="Logo/best-homepage-ever-logo-2016.png" title="Best Homepage Ever Logo" class="visible-xs img-responsive" width="400" height="65">
 
-            <img src="Logo/best-homepage-ever-logo-tablet.png" title="Best Homepage Ever Logo" class="visible-sm" width="300" height="45">   	 
+            <img src="Logo/best-homepage-ever-logo-tablet.png" title="Best Homepage Ever Logo" class="visible-sm" width="300" height="45">       
 
             <img src="Logo/best-homepage-ever-logo-2016.png" title="Best Homepage Ever Logo" class="hidden-xs hidden-sm" width="400" height="65"><br>            
 
@@ -485,7 +520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
 
-    		<span class="glyphicon glyphicon-menu-hamburger"></span> <span class="caret"></span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span> <span class="caret"></span>
 
            </button>
 
@@ -506,47 +541,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            </div><!-- /dropdown -->
 
          </div><!-- /btn-group -->
-		<?php
+        <?php
         
 
-		if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
+        if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
 
-		?>
+        ?>
 
-		<div class="btn-group">
+        <div class="btn-group">
 
           <div class="dropdown">
 
            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
 
-    		<span class="glyphicon glyphicon-user"></span> <span id="span_logged_user_name"><?php echo $_SESSION['fname']; ?></span>
+            <span class="glyphicon glyphicon-user"></span> <span id="span_logged_user_name"><?php echo $_SESSION['fname']; ?></span>
 
            </button>
 
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
-<!--    			<li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></a></li> -->
+<!--                <li class="disabled"><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></a></li> -->
 <!--                <li role="separator" class="divider"></li> -->
                 <li><a href="#" data-toggle="modal" data-target="#myaccount" title="My Account"><span class="glyphicon glyphicon-user text-info"></span> My Account</a></li>
                 <li><a href="#" data-toggle="modal" data-target="#bgselect" title="Homepage Settings"><span class="glyphicon glyphicon-cog text-info"></span> Homepage Settings</a></li>
-				<li role="separator" class="divider"></li>
-				<li><a href="logout.php"><span class="glyphicon glyphicon-off text-info"></span> Logout</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="logout.php"><span class="glyphicon glyphicon-off text-info"></span> Logout</a></li>
               </ul>
 
            </div><!-- /dropdown -->
 
          </div><!-- /btn-group -->
 
-		<?php } else {?>
+        <?php } else {?>
 
-		<span class="text-info">
+        <span class="text-info">
 
           <a class="btn btn-sm btn-primary" role="button" href="login.php">Login</a>
 
         </span>  
 
-		<?php } ?>
+        <?php } ?>
 <!--
-    	<span class="text-info">
+        <span class="text-info">
 
           <a tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-content="<p class='text-center'><small>Vote 1x per month!</small><br><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote BestHomepageEver</span></a></p><hr><p class='small text-center'>Please take 2 seconds to vote for BHE, as 'Best Homepage'.</p>"><span class="glyphicon glyphicon-check"></span></a></span></a>
 
@@ -563,9 +598,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="row">   
 
-	<!-- Panoramic -->
+    <!-- Panoramic -->
 
-    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs margin-bottom text-center"><!-- Panoramic -->            	
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs margin-bottom text-center"><!-- Panoramic -->               
 
             <script src="js/images-wide.min.js"></script>                               
 
@@ -585,13 +620,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-	<!-- // EMAIL // -->
+    <!-- // EMAIL // -->
 
 
 
        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2 text-left hidden-xs">
 
-       		<!-- <a href="https://www.facebook.com" title="Facebook"><img src="pictures/facebook.png" alt="Facebook"></a> -->
+            <!-- <a href="https://www.facebook.com" title="Facebook"><img src="pictures/facebook.png" alt="Facebook"></a> -->
 
             <span id="email"><a href="#" data-title="e-mail" data-content="<a href='https://outlook.live.com'>Outlook</a> | <a href='http://mail.google.com/mail'>G-Mail</a> | <a href='http://mail.yahoo.com/?.intl=us'>Yahoo</a> | <a href='http://www.aol.com'>AOL</a> | <a href='http://www.hotmail.com'>Hotmail</a>" data-placement="right" data-delay-show="1"><img src="pictures/email2.png" title="Check E-Mail" width="50" height="50"></a>
 
@@ -651,7 +686,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-	<div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-left">
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-left">
 
       <div id="specials">
 
@@ -661,45 +696,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-top-10px text-center">
 
-		<div class="input-group" id="adv-search">
+        <div class="input-group" id="adv-search">
 
-			<input type="text" class="form-control" placeholder="Search" id="search_query" />
+            <input type="text" class="form-control" placeholder="Search" id="search_query" />
 
-			<div class="input-group-btn">
+            <div class="input-group-btn">
 
-				<div class="btn-group" role="group">
+                <div class="btn-group" role="group">
 
-					<div class="dropdown dropdown-sm">
+                    <div class="dropdown dropdown-sm">
 
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="search_dropdown">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="search_dropdown">
 
-							<span class="caret"></span>
+                            <span class="caret"></span>
 
-						</button>
+                        </button>
 
-						<div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
 
-							<form class="form-horizontal form col-lg-12" role="form">
+                            <form class="form-horizontal form col-lg-12" role="form">
 
-							  <img src="pictures/link-logos/search/google-tr.png" id="search_google"> | <img src="pictures/link-logos/search/bing-tr.png" id="search_bing"> | <img src="pictures/link-logos/search/duck-tr.png" id="search_duck"> | <img src="pictures/link-logos/search/yahoo-tr.png" id="search_yahoo"> 
+                              <img src="pictures/link-logos/search/google-tr.png" id="search_google"> | <img src="pictures/link-logos/search/bing-tr.png" id="search_bing"> | <img src="pictures/link-logos/search/duck-tr.png" id="search_duck"> | <img src="pictures/link-logos/search/yahoo-tr.png" id="search_yahoo"> 
 
-							</form>
+                            </form>
 
-						</div>
+                        </div>
 
-					</div>             
+                    </div>             
 
-					<button type="button" class="btn btn-success" id="search_go">
+                    <button type="button" class="btn btn-success" id="search_go">
 
-						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
-					</button>
+                    </button>
 
-				</div>
+                </div>
 
-			</div>
+            </div>
 
-		</div>
+        </div>
 
     </div>    
 
@@ -707,15 +742,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
 
-    	   
+           
 
-		
+        
 
        <!--
 
-	   <input type="radio" onclick="javascript:showImages();" name="textOrImage" data-toggle="toggle" <?php echo $checkedon; ?>> <span class="small">Images</span>
+       <input type="radio" onclick="javascript:showImages();" name="textOrImage" data-toggle="toggle" <?php echo $checkedon; ?>> <spasn class="small">Images</span>
 
-	   <input type="radio" onclick="javascript:showLinks();" name="textOrImage" data-toggle="toggle" style="margin-left:5px;" <?php echo $checkedoff; ?>> <span class="small">Classic</span>
+       <input type="radio" onclick="javascript:showLinks();" name="textOrImage" data-toggle="toggle" style="margin-left:5px;" <?php echo $checkedoff; ?>> <span class="small">Classic</span>
 
 
 
@@ -726,13 +761,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <span id="savelinkhelp" class="padding-left-3px">
 
-           <a href="#" data-title="Logos vs Classic" data-content="You can save your preference using the <button class='btn btn-sm btn-primary dropdown-toggle'>		<span class='glyphicon glyphicon-menu-hamburger'></span></button> button<br> at top right of homepage, under <strong>Settings & Preferences</strong>." data-placement="left"><span class="glyphicon glyphicon-question-sign"></span></a>
+           <a href="#" data-title="Logos vs Classic" data-content="You can save your preference using the <button class='btn btn-sm btn-primary dropdown-toggle'>       <span class='glyphicon glyphicon-menu-hamburger'></span></button> button<br> at top right of homepage, under <strong>Settings & Preferences</strong>." data-placement="left"><span class="glyphicon glyphicon-question-sign"></span></a>
 
         </span>
 
 
 
-    	
+        
 
         <!-- Images/Text Toggle 
 
@@ -752,9 +787,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="row padding-top-10px margin-bottom-minus-15px ">   
 
-  	<div class="text-center"> 
+    <div class="text-center"> 
 
-	   <h4 style="color:#fff;">The Best of the Internet:</h4> 
+       <h4 style="color:#fff;">The Best of the Internet:</h4> 
 
     </div>
 
@@ -774,9 +809,9 @@ $counts=array();
 
 foreach($LINKS as $num=>$var){
 
-	if(!isset($counts[$var['category']]))$counts[$var['category']]=0;
+    if(!isset($counts[$var['category']]))$counts[$var['category']]=0;
 
-	$counts[$var['category']]++;
+    $counts[$var['category']]++;
 
 }
 
@@ -786,61 +821,61 @@ $x=0;
 
 foreach($CATEGORIES as $cat){
 
-	$marg='';
+    $marg='';
 
-	echo '<div style="width:225px;float:left;text-align:left;margin-top:20px;" class="linkEle"><div class="title floatL">'.$cat.'</div>';
+    echo '<div style="width:225px;float:left;text-align:left;margin-top:20px;" class="linkEle"><div class="title floatL">'.$cat.'</div>';
 
-	echo '<div class="clear"></div>';
+    echo '<div class="clear"></div>';
 
-	$ccat=0;
+    $ccat=0;
 
-	foreach($LINKS as $num=>$var){
+    foreach($LINKS as $num=>$var){
 
-		if($var['category']!=$cat)continue;
+        if($var['category']!=$cat)continue;
 
-		if($var['category']==$cat)$ccat++;
+        if($var['category']==$cat)$ccat++;
 
-		if($ccat % 3==0)echo '<div class="clear"></div>';
+        if($ccat % 3==0)echo '<div class="clear"></div>';
 
-		echo '<div class="floatL" style="">';
+        echo '<div class="floatL" style="">';
 
-		
+        
 
-		$image=0;
+        $image=0;
 
-		if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image')$image=1;
+        if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image')$image=1;
 
-		if($image==0){
+        if($image==0){
 
-			$bheClass='';
+            $bheClass='';
 
-			$bheClassImg='none';
+            $bheClassImg='none';
 
-		} else {
+        } else {
 
-			$bheClass='none';
+            $bheClass='none';
 
-			$bheClassImg='';
+            $bheClassImg='';
 
-		}
+        }
 
-		echo '<a class="linkss bheClass '.$bheClass.'" href="'.$var['link'].'"> '.$var['name'].'</a>';
+        echo '<a class="linkss bheClass '.$bheClass.'" href="'.$var['link'].'"> '.$var['name'].'</a>';
 
-		if($ccat!=$counts[$var['category']] && $ccat!=2)echo '<font class="bheClass '.$bheClass.'" style="color:#FFF;margin-left:2px;margin-right:4px;"> | </font>';
+        if($ccat!=$counts[$var['category']] && $ccat!=2)echo '<font class="bheClass '.$bheClass.'" style="color:#FFF;margin-left:2px;margin-right:4px;"> | </font>';
 
-		echo '<a class="bheClassImg linkss '.$bheClassImg.'" href="'.$var['link'].'" style="margin:2px;"><img title="'.$var['name'].'" alt="'.$var['name'].'" src="pictures/link-logos/'.$var['icon'].'" width="50px" height="50px"></a>';		
+        echo '<a class="bheClassImg linkss '.$bheClassImg.'" href="'.$var['link'].'" style="margin:2px;"><img title="'.$var['name'].'" alt="'.$var['name'].'" src="pictures/link-logos/'.$var['icon'].'" width="50px" height="50px"></a>';      
 
-	
+    
 
-		echo '</div>';
+        echo '</div>';
 
-	}
+    }
 
-		
+        
 
-	echo '</div>';
+    echo '</div>';
 
-	$x++;
+    $x++;
 
 }
 
@@ -858,13 +893,13 @@ foreach($CATEGORIES as $cat){
 
 <div class="row visible-xs padding-right-10px text-center padding-top-20px">
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-user"></span> Social Media</h5>
+        <h5><span class="glyphicon glyphicon-user"></span> Social Media</h5>
 
-    	<div class="col-xs-6">
+        <div class="col-xs-6">
 
-        	<a href="https://www.facebook.com"><img src="pictures/link-logos/facebook.png" width="50px" height="50px"></a>
+            <a href="https://www.facebook.com"><img src="pictures/link-logos/facebook.png" width="50px" height="50px"></a>
 
             <a href="https://www.instagram.com"><img src="pictures/link-logos/instagram.png" width="50px" height="50px"></a>
 
@@ -872,7 +907,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6 padding-bottom-5px">
 
-        	<a href="https://www.twitter.com"><img src="pictures/link-logos/twitter.png" width="50px" height="50px"></a>
+            <a href="https://www.twitter.com"><img src="pictures/link-logos/twitter.png" width="50px" height="50px"></a>
 
             <a href="https://www.linkedin.com"><img src="pictures/link-logos/linked_in.png" width="50px" height="50px"></a>
 
@@ -882,13 +917,13 @@ foreach($CATEGORIES as $cat){
 
     
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-plane"></span> Travel</h5>
+        <h5><span class="glyphicon glyphicon-plane"></span> Travel</h5>
 
-    	<div class="col-xs-6">
+        <div class="col-xs-6">
 
-        	<a href="http://www.jdoqocy.com/click-5253923-10772148"><img src="pictures/link-logos/hotels.png" width="50px" height="50px"></a>
+            <a href="http://www.jdoqocy.com/click-5253923-10772148"><img src="pictures/link-logos/hotels.png" width="50px" height="50px"></a>
 
             <a href="https://www.expedia.com"><img src="pictures/link-logos/expedia.png" width="50px" height="50px"></a>
 
@@ -896,7 +931,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6 padding-bottom-5px">
 
-        	<a href="https://www.tripadvisor.com"><img src="pictures/link-logos/tripadvisor.png" width="50px" height="50px"></a>
+            <a href="https://www.tripadvisor.com"><img src="pictures/link-logos/tripadvisor.png" width="50px" height="50px"></a>
 
             <a href="https://www.priceline.com"><img src="pictures/link-logos/priceline.png" width="50px" height="50px"></a>
 
@@ -906,13 +941,13 @@ foreach($CATEGORIES as $cat){
 
 
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-heart"></span> Popular</h5>
+        <h5><span class="glyphicon glyphicon-heart"></span> Popular</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://www.amazon.com/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=besth0f-20"><img src="pictures/link-logos/amazon.png" width="50px" height="50px"></a>
+            <a href="http://www.amazon.com/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=besth0f-20"><img src="pictures/link-logos/amazon.png" width="50px" height="50px"></a>
 
             <a href="https://www.pinterest.com"><img src="pictures/link-logos/pinterest.png" width="50px" height="50px"></a>
 
@@ -920,7 +955,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6 padding-bottom-5px">
 
-        	<a href="https://www.youtube.com"><img src="pictures/link-logos/youtube.png" width="50px" height="50px"></a>
+            <a href="https://www.youtube.com"><img src="pictures/link-logos/youtube.png" width="50px" height="50px"></a>
 
             <a href="https://www.yelp.com"><img src="pictures/link-logos/yelp.png" width="50px" height="50px"></a>
 
@@ -936,13 +971,13 @@ foreach($CATEGORIES as $cat){
 
 <div class="row visible-xs padding-right-10px text-center padding-top-20px">
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-usd"></span> Trade / Retail</h5>
+        <h5><span class="glyphicon glyphicon-usd"></span> Trade / Retail</h5>
 
         <div class="col-xs-6">
 
-        	<a href="https://www.craigslist.org"><img src="pictures/link-logos/craigslist.png" width="50px" height="50px"></a>
+            <a href="https://www.craigslist.org"><img src="pictures/link-logos/craigslist.png" width="50px" height="50px"></a>
 
             <a href="https://www.walmart.com"><img src="pictures/link-logos/walmart.png" width="50px" height="50px"></a>
 
@@ -950,7 +985,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6">
 
-        	<a href="https://www.etsy.com"><img src="pictures/link-logos/etsy.png" width="50px" height="50px"></a>
+            <a href="https://www.etsy.com"><img src="pictures/link-logos/etsy.png" width="50px" height="50px"></a>
 
             <a href="https://www.macys.com"><img src="pictures/link-logos/macys.png" width="50px" height="50px"></a>
 
@@ -958,13 +993,13 @@ foreach($CATEGORIES as $cat){
 
     </div>
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-film"></span> Movies & TV</h5>
+        <h5><span class="glyphicon glyphicon-film"></span> Movies & TV</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://www.yahoo.com/movies/showtimes"><img src="pictures/link-logos/yahoo_movies.png" width="50px" height="50px"></a>
+            <a href="http://www.yahoo.com/movies/showtimes"><img src="pictures/link-logos/yahoo_movies.png" width="50px" height="50px"></a>
 
             <a href="http://www.flixster.com"><img src="pictures/link-logos/flixster.png" width="50px" height="50px"></a>
 
@@ -972,7 +1007,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6">
 
-        	<a href="http://www.tvguide.com"><img src="pictures/link-logos/tvguide.png" width="50px" height="50px"></a>
+            <a href="http://www.tvguide.com"><img src="pictures/link-logos/tvguide.png" width="50px" height="50px"></a>
 
             <a href="http://www.imdb.com"><img src="pictures/link-logos/imdb.png" width="50px" height="50px"></a>
 
@@ -980,13 +1015,13 @@ foreach($CATEGORIES as $cat){
 
     </div>
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-phone"></span> Technology</h5>
+        <h5><span class="glyphicon glyphicon-phone"></span> Technology</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://www.cnet.com"><img src="pictures/link-logos/cnet.png" width="50px" height="50px"></a>
+            <a href="http://www.cnet.com"><img src="pictures/link-logos/cnet.png" width="50px" height="50px"></a>
 
             <a href="http://www.pcmag.com"><img src="pictures/link-logos/pcmag.png" width="50px" height="50px"></a>
 
@@ -994,7 +1029,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6">
 
-        	<a href="http://www.ign.com"><img src="pictures/link-logos/ign.png" width="50px" height="50px"></a>
+            <a href="http://www.ign.com"><img src="pictures/link-logos/ign.png" width="50px" height="50px"></a>
 
             <a href="http://www.macworld.com"><img src="pictures/link-logos/macworld.png" width="50px" height="50px"></a>
 
@@ -1010,13 +1045,13 @@ foreach($CATEGORIES as $cat){
 
 <div class="row visible-xs padding-right-10px text-center padding-top-20px">
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-sunglasses"></span> Entertainment</h5>
+        <h5><span class="glyphicon glyphicon-sunglasses"></span> Entertainment</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://www.elitedaily.com"><img src="pictures/link-logos/elitedaily.png" width="50px" height="50px"></a>
+            <a href="http://www.elitedaily.com"><img src="pictures/link-logos/elitedaily.png" width="50px" height="50px"></a>
 
             <a href="http://www.thechive.com"><img src="pictures/link-logos/thechive.png" width="50px" height="50px"></a>
 
@@ -1024,7 +1059,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6">
 
-        	<a href="http://www.buzzfeed.com"><img src="pictures/link-logos/buzzfeed.png" width="50px" height="50px"></a>
+            <a href="http://www.buzzfeed.com"><img src="pictures/link-logos/buzzfeed.png" width="50px" height="50px"></a>
 
             <a href="http://www.askmen.com"><img src="pictures/link-logos/askmen.png" width="50px" height="50px"></a>
 
@@ -1032,13 +1067,13 @@ foreach($CATEGORIES as $cat){
 
     </div>
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-cutlery"></span> <span class=" glyphicon glyphicon-cd"></span> Food / Music</h5>
+        <h5><span class="glyphicon glyphicon-cutlery"></span> <span class=" glyphicon glyphicon-cd"></span> Food / Music</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://allrecipes.com"><img src="pictures/link-logos/all_recipes.png" width="50px" height="50px"></a>
+            <a href="http://allrecipes.com"><img src="pictures/link-logos/all_recipes.png" width="50px" height="50px"></a>
 
             <a href="http://allmusic.com"><img src="pictures/link-logos/allmusic.png" width="50px" height="50px"></a>
 
@@ -1046,7 +1081,7 @@ foreach($CATEGORIES as $cat){
 
         <div class="col-xs-6">
 
-        	<a href="http://www.foodnetwork.com"><img src="pictures/link-logos/foodnetwork.png" width="50px" height="50px"></a>
+            <a href="http://www.foodnetwork.com"><img src="pictures/link-logos/foodnetwork.png" width="50px" height="50px"></a>
 
             <a href="https://www.stubhub.com"><img src="pictures/link-logos/stubhub.png" width="50px" height="50px"></a>
 
@@ -1054,15 +1089,15 @@ foreach($CATEGORIES as $cat){
 
     </div>
 
-	<div class="col-xs-4 frame-with-padding">
+    <div class="col-xs-4 frame-with-padding">
 
-    	<h5><span class="glyphicon glyphicon-signal"></span> Finance</h5>
+        <h5><span class="glyphicon glyphicon-signal"></span> Finance</h5>
 
         <div class="col-xs-6">
 
-        	<a href="http://www.msn.com/en-us/money"><img src="pictures/link-logos/msn-money.png" width="50px" height="50px"></a>
+            <a href="http://www.msn.com/en-us/money"><img src="pictures/link-logos/msn-money.png" width="50px" height="50px"></a>
 
-        	<a href="http://www.finviz.com"><img src="pictures/link-logos/finviz.png" width="50px" height="50px"></a>
+            <a href="http://www.finviz.com"><img src="pictures/link-logos/finviz.png" width="50px" height="50px"></a>
 
         </div>
 
@@ -1086,7 +1121,7 @@ foreach($CATEGORIES as $cat){
 
 <div class="row">    
 
-	 <div class="col-xs-12 visible-xs padding-top-20px">
+     <div class="col-xs-12 visible-xs padding-top-20px">
 
       <div class="dropup">      
 
@@ -1096,65 +1131,65 @@ foreach($CATEGORIES as $cat){
 
        </button>
 
-				<ul class="dropdown-menu dropdown-menu-large row navbar-inverse">
+                <ul class="dropdown-menu dropdown-menu-large row navbar-inverse">
 
-					<li class="col-xs-6">
+                    <li class="col-xs-6">
 
-						<ul>
+                        <ul>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">National News</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">National News</span></li>
 
-							<li><a href="http://www.cnn.com">CNN</a></li>
+                            <li><a href="http://www.cnn.com">CNN</a></li>
 
-							<li><a href="http://www.nbcnews.com/">NBC</a></li>
+                            <li><a href="http://www.nbcnews.com/">NBC</a></li>
 
-							<li><a href="http://www.foxnews.com">FOX</a></li>
+                            <li><a href="http://www.foxnews.com">FOX</a></li>
 
                             <li><a href="http://www.usatoday.com">USA Today</a></li>
 
                             <li><a href="http://www.npr.org">NPR</a></li>                            
 
-							<li class="divider"></li>
+                            <li class="divider"></li>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">Global News</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">Global News</span></li>
 
-							<li><a href="http://www.bbc.com/news/world">BBC World</a></li>
+                            <li><a href="http://www.bbc.com/news/world">BBC World</a></li>
 
-							<li><a href="http://www.cnn.com/world">CNN World</a></li>
+                            <li><a href="http://www.cnn.com/world">CNN World</a></li>
 
                             <li class="divider"></li>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">Financial News</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">Financial News</span></li>
 
-							<li><a href="http://reuters.com/news">Reuters</a></li>
+                            <li><a href="http://reuters.com/news">Reuters</a></li>
 
-							<li><a href="http://www.marketwatch.com">MarketWatch</a></li>
+                            <li><a href="http://www.marketwatch.com">MarketWatch</a></li>
 
                             <li><a href="http://www.thestreet.com">The Street</a></li>
 
-						</ul>
+                        </ul>
 
-					</li>
+                    </li>
 
-					<li class="col-xs-6">
+                    <li class="col-xs-6">
 
-						<ul>
+                        <ul>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">Newspapers</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">Newspapers</span></li>
 
-							<li><a href="http://www.nytimes.com">New York Times</a></li>
+                            <li><a href="http://www.nytimes.com">New York Times</a></li>
 
-							<li><a href="http://www.latimes.com">L.A. Times</a></li>
+                            <li><a href="http://www.latimes.com">L.A. Times</a></li>
 
-							<li><a href="https://www.washingtonpost.com">Washington Post</a></li>
+                            <li><a href="https://www.washingtonpost.com">Washington Post</a></li>
 
-							<li><a href="http://www.wsj.com">Wall Street Journal</a></li>							
+                            <li><a href="http://www.wsj.com">Wall Street Journal</a></li>                           
 
-							<li class="divider"></li>
+                            <li class="divider"></li>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">Political</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">Political</span></li>
 
-							<li><a href="http://www.huffingtonpost.com">HuffPost</a></li>
+                            <li><a href="http://www.huffingtonpost.com">HuffPost</a></li>
 
                             <li><a href="http://www.drudgereport.com">Drudge Report</a></li>
 
@@ -1166,15 +1201,15 @@ foreach($CATEGORIES as $cat){
 
                             <li class="divider"></li>
 
-							<li class="dropdown-header"><span class="h4 text-warning strong">Miscellaneous</span></li>
+                            <li class="dropdown-header"><span class="h4 text-warning strong">Miscellaneous</span></li>
 
-							<li><a href="http://www.reddit.com">Reddit</a></li>
+                            <li><a href="http://www.reddit.com">Reddit</a></li>
 
-						</ul>
+                        </ul>
 
-					</li>
+                    </li>
 
-				</ul>
+                </ul>
 
             
 
@@ -1184,7 +1219,7 @@ foreach($CATEGORIES as $cat){
 
  
 
-	 <div class="col-xs-12 visible-xs padding-top-20px">
+     <div class="col-xs-12 visible-xs padding-top-20px">
 
       <div class="dropup">      
 
@@ -1194,7 +1229,7 @@ foreach($CATEGORIES as $cat){
 
        </button>
 
-				<div class="dropdown-menu dropdown-menu-right dropdown-menu-large row navbar-inverse">
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-large row navbar-inverse">
 
                     <div class="col-xs-12 frame-with-padding text-center">
 
@@ -1226,11 +1261,11 @@ foreach($CATEGORIES as $cat){
 
                     </div>
 
-				</div>
+                </div>
 
        
 
-	  </div>
+      </div>
 
      </div>
 
@@ -1248,49 +1283,49 @@ foreach($CATEGORIES as $cat){
 
   <div class="row hidden-xs padding-top-30px">
 
-	<div class="col-lg-3 col-md-3 col-sm-3 text-left">
-    	<div id="streaming">
-    	<span style="font-size:1.5em;" class='glyphicon glyphicon-facetime-video'></span> <a href="#" data-content="
+    <div class="col-lg-3 col-md-3 col-sm-3 text-left">
+        <div id="streaming">
+        <span style="font-size:1.5em;" class='glyphicon glyphicon-facetime-video'></span> <a href="#" data-content="
             <div class='col-lg-12 col-md-12 col-sm-12'>
-            	<ul class='list-group'>
-  					<li class='list-group-item'><a href='https://www.netflix.com'><img src='pictures/streaming/netflix.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.hulu.com'><img src='pictures/streaming/hulu.png'></a></li>
-  					<li class='list-group-item'><a href=http://www.assoc-amazon.com/e/ir?t=besth0f-20&l=ur2&o=1'><img src='pictures/streaming/amazon_video.png'></a></li>
-				</ul>
+                <ul class='list-group'>
+                    <li class='list-group-item'><a href='https://www.netflix.com'><img src='pictures/streaming/netflix.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.hulu.com'><img src='pictures/streaming/hulu.png'></a></li>
+                    <li class='list-group-item'><a href=http://www.assoc-amazon.com/e/ir?t=besth0f-20&l=ur2&o=1'><img src='pictures/streaming/amazon_video.png'></a></li>
+                </ul>
             </div>
         " data-placement="right" data-delay-show="1"> Stream Music/Video..</a>
         </div>                
-    	<div id="paypeople">
-    	<span style="font-size:1.5em;" class="glyphicon glyphicon-user"></span><a href="#" data-content="
+        <div id="paypeople">
+        <span style="font-size:1.5em;" class="glyphicon glyphicon-user"></span><a href="#" data-content="
             <div class='col-lg-12 col-md-12 col-sm-12'>
-            	<ul class='list-group'>
-  					<li class='list-group-item'><a href='https://www.paypal.com'><img src='pictures/banks/paypal.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.venmo.com'><img src='pictures/banks/venmo.png'></a></li>
-				</ul>
+                <ul class='list-group'>
+                    <li class='list-group-item'><a href='https://www.paypal.com'><img src='pictures/banks/paypal.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.venmo.com'><img src='pictures/banks/venmo.png'></a></li>
+                </ul>
             </div>
         " data-placement="right" data-delay-show="1"> Pay/Transfer..</a>
         </div>                
         <div id="banking">
             <span style="font-size:1.5em;" class="glyphicon glyphicon-usd"></span> <a href="#" data-content="
             <div class='col-lg-6 col-md-6 col-sm-6'>
-            	<ul class='list-group'>
-  					<li class='list-group-item'><a href='https://www.bankofamerica.com'><img src='pictures/banks/bofa2.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.chase.com'><img src='pictures/banks/chase.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.wellsfargo.com'><img src='pictures/banks/wells_fargo.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.usbank.com'><img src='pictures/banks/usbank.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.citibank.com'><img src='pictures/banks/citibank.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.usaa.com'><img src='pictures/banks/usaa.png'></a></li>
-				</ul>
+                <ul class='list-group'>
+                    <li class='list-group-item'><a href='https://www.bankofamerica.com'><img src='pictures/banks/bofa2.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.chase.com'><img src='pictures/banks/chase.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.wellsfargo.com'><img src='pictures/banks/wells_fargo.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.usbank.com'><img src='pictures/banks/usbank.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.citibank.com'><img src='pictures/banks/citibank.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.usaa.com'><img src='pictures/banks/usaa.png'></a></li>
+                </ul>
             </div>
             <div class='col-lg-6 col-md-6 col-sm-6'>
-            	<ul class='list-group'>
-  					<li class='list-group-item'><a href='https://www.schwab.com'><img src='pictures/banks/schwab.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.fidelity.com'><img src='pictures/banks/fidelity.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.scottrade.com'><img src='pictures/banks/scottrade.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.tdameritrade.com'><img src='pictures/banks/tdameritrade.png'></a></li>
-  					<li class='list-group-item'><a href='https://investor.vanguard.com/home/'><img src='pictures/banks/vanguard2.png'></a></li>
-  					<li class='list-group-item'><a href='https://us.etrade.com/home'><img src='pictures/banks/etrade.png'></a></li>
-				</ul>
+                <ul class='list-group'>
+                    <li class='list-group-item'><a href='https://www.schwab.com'><img src='pictures/banks/schwab.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.fidelity.com'><img src='pictures/banks/fidelity.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.scottrade.com'><img src='pictures/banks/scottrade.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.tdameritrade.com'><img src='pictures/banks/tdameritrade.png'></a></li>
+                    <li class='list-group-item'><a href='https://investor.vanguard.com/home/'><img src='pictures/banks/vanguard2.png'></a></li>
+                    <li class='list-group-item'><a href='https://us.etrade.com/home'><img src='pictures/banks/etrade.png'></a></li>
+                </ul>
             </div>" data-placement="right" data-delay-show="1">Banking/Brokers..</a>
         </div>
     </div>
@@ -1301,13 +1336,13 @@ foreach($CATEGORIES as $cat){
 
 
 
-    	<div class="box-with-shadow">
+        <div class="box-with-shadow">
 
               <span class="label label-primary"><span class="glyphicon glyphicon-list-alt"></span> - NEWS -</span><br>
 
-        			<div class="padding-top-10px">
+                    <div class="padding-top-10px">
 
-                    	<a href="http://www.cnn.com/">CNN</a> | <a href="http://www.nbcnews.com">NBC</a> | <a href="http://abcnews.go.com/">ABC</a> | <a href="http://foxnews.com">FOX</a> | <a href="http://www.usatoday.com">USA Today</a> | <a href="http://www.npr.org">NPR</a> | <a href="http://reuters.com/news">Reuters</a>
+                        <a href="http://www.cnn.com/">CNN</a> | <a href="http://www.nbcnews.com">NBC</a> | <a href="http://abcnews.go.com/">ABC</a> | <a href="http://foxnews.com">FOX</a> | <a href="http://www.usatoday.com">USA Today</a> | <a href="http://www.npr.org">NPR</a> | <a href="http://reuters.com/news">Reuters</a>
 
                     </div>                    
 
@@ -1315,15 +1350,15 @@ foreach($CATEGORIES as $cat){
 
                     <div>
 
-                    	<a href="http://www.latimes.com/">LA</a>/<a href="http://www.nytimes.com/">NY Times</a> | <a href="https://www.washingtonpost.com/">Washington Post</a> | <a href="http://www.wsj.com/">WSJ</a> | <a href="http://huffingtonpost.com">HuffPost</a>
+                        <a href="http://www.latimes.com/">LA</a>/<a href="http://www.nytimes.com/">NY Times</a> | <a href="https://www.washingtonpost.com/">Washington Post</a> | <a href="http://www.wsj.com/">WSJ</a> | <a href="http://huffingtonpost.com">HuffPost</a>
 
                     </div>
 
                     
 
-              		<div>
+                    <div>
 
-                    	<a href="http://reddit.com">Reddit</a> | <a href="http://www.drudgereport.com/">DrudgeReport</a> | <a href="http://www.breitbart.com/">Breitbart</a> | <a href="http://www.theblaze.com/">Blaze</a>
+                        <a href="http://reddit.com">Reddit</a> | <a href="http://www.drudgereport.com/">DrudgeReport</a> | <a href="http://www.breitbart.com/">Breitbart</a> | <a href="http://www.theblaze.com/">Blaze</a>
 
                     </div>
 
@@ -1341,7 +1376,7 @@ foreach($CATEGORIES as $cat){
 
     
 
-	<div class="col-lg-3 col-md-3 col-sm-3 text-right">
+    <div class="col-lg-3 col-md-3 col-sm-3 text-right">
 
     
 
@@ -1351,11 +1386,11 @@ foreach($CATEGORIES as $cat){
 
         </div>   
 
-        <a href="https://bitly.com/">BitLy</a> <span style="font-size:1.2em;" class="glyphicon glyphicon-link padding-left-3px"></span>		
+        <a href="https://bitly.com/">BitLy</a> <span style="font-size:1.2em;" class="glyphicon glyphicon-link padding-left-3px"></span>     
 
  <!--   <div id="makeadifference">
 
-        	<a href="#" data-title="Make a Difference:" data-content="<span class='glyphicon glyphicon-tree-deciduous text-success'></span> Help the Environment: <a href='https://www.catalogchoice.org'>Cut down on paper junk mail!</a><br><span class='glyphicon glyphicon-globe text-success'></span> Give back: <a href='http://www.charitynavigator.org/'>Find a charity</a>" data-placement="left" data-delay-show="1"><span style="font-size:1.5em;" class='glyphicon glyphicon-leaf text-success'></span></a>      
+            <a href="#" data-title="Make a Difference:" data-content="<span class='glyphicon glyphicon-tree-deciduous text-success'></span> Help the Environment: <a href='https://www.catalogchoice.org'>Cut down on paper junk mail!</a><br><span class='glyphicon glyphicon-globe text-success'></span> Give back: <a href='http://www.charitynavigator.org/'>Find a charity</a>" data-placement="left" data-delay-show="1"><span style="font-size:1.5em;" class='glyphicon glyphicon-leaf text-success'></span></a>      
 
         </div>   -->
 
@@ -1367,7 +1402,7 @@ foreach($CATEGORIES as $cat){
 
    <div class="row padding-top-10px"></div>
 
-	<!-- NEWS (non-mobile)-->    
+    <!-- NEWS (non-mobile)-->    
 
    
 
@@ -1379,15 +1414,15 @@ foreach($CATEGORIES as $cat){
 
 <div class="row text-center">
 
-	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
 
-		<h5><small>:: BestHomepageEver ::<br><a href="news/" title="News and Updates">News and Updates</a> | <a href="faq/" title="Questions and Answers">Questions and Help</a> | <a href="tips/" title="Tips and Tricks">Tips/Tricks</a><br><a href="about/" title="About the Homepage">About BHE</a> | <a href="privacy.php">Your Privacy</a> | <a href="http://justincarver.com">Justin Carver</a></small></h5>
+        <h5><small>:: BestHomepageEver ::<br><a href="news/" title="News and Updates">News and Updates</a> | <a href="faq/" title="Questions and Answers">Questions and Help</a> | <a href="tips/" title="Tips and Tricks">Tips/Tricks</a><br><a href="about/" title="About the Homepage">About BHE</a> | <a href="privacy.php">Your Privacy</a> | <a href="http://justincarver.com">Justin Carver</a></small></h5>
 
     </div>
 
 </div>
 
-	
+    
 
     <!-- Footer Row -->
 
@@ -1395,11 +1430,11 @@ foreach($CATEGORIES as $cat){
 
     <div class="col-lg-6 col-md-6 col-sm-6 text-left">
 
-	<!--	<a href="http://www.thetoptens.com/best-homepages/" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-edit"></span> Vote for BHE</a><br>
+    <!--    <a href="http://www.thetoptens.com/best-homepages/" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-edit"></span> Vote for BHE</a><br>
 
         <small>Vote up to once per week!</small>           -->
 
-	</div>
+    </div>
 
     <div class="col-lg-6 col-md-6 col-sm-6 text-right">
 
@@ -1407,42 +1442,42 @@ foreach($CATEGORIES as $cat){
 
     </div>
 
-</div>        	
+</div>          
 
     
 
-     <?php require("modals/sethomepage.php"); ?>      	
+     <?php require("modals/sethomepage.php"); ?>        
 
 <!-- Background Selection -->
 
-	<?php require("modals/myaccount.php"); ?>
+    <?php require("modals/myaccount.php"); ?>
     
 <div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="bgselect" aria-hidden="true" id="bgselect">
 
-			<div class="modal-dialog">
+            <div class="modal-dialog">
 
-				<div class="modal-content">
+                <div class="modal-content">
 
-					<div class="modal-header">
+                    <div class="modal-header">
 
-						<h3><span class="glyphicon glyphicon-cog"></span> Settings / Preferences</h3>
+                        <h3><span class="glyphicon glyphicon-cog"></span> Settings / Preferences</h3>
 
                     </div><!-- /modal-header -->
 
                     <div class="modal-body">
 
-						<ul class="nav nav-tabs" role="tablist">						
+                        <ul class="nav nav-tabs" role="tablist">                        
 
                             <li role="presentation" class="active"><a href="#bgtab" aria-controls="home" role="tab" data-toggle="tab" class="text-success">Backgrounds</a></li>
 
-                            <li role="presentation"><a href="#fonts" aria-controls="fonts" role="tab" data-toggle="tab" class="text-success">Fonts</a></li>	
+                            <li role="presentation"><a href="#fonts" aria-controls="fonts" role="tab" data-toggle="tab" class="text-success">Fonts</a></li> 
 
-                            <li role="presentation"><a href="#links" aria-controls="links" role="tab" data-toggle="tab" class="text-success">Links</a></li>							
+                            <li role="presentation"><a href="#links" aria-controls="links" role="tab" data-toggle="tab" class="text-success">Links</a></li>                         
 
-                            <li role="presentation"><a href="#custom_links" aria-controls="custom_links" role="tab" data-toggle="tab" class="text-success">Custom Links <span class="newlink">(coming soon)</span></a></li>							
-						</ul>
+                            <li role="presentation"><a href="#custom_links" aria-controls="custom_links" role="tab" data-toggle="tab" class="text-success">Custom Links <span class="newlink">(coming soon)</span></a></li>                         
+                        </ul>
 
-   						<div class="tab-content text-info">
+                        <div class="tab-content text-info">
 
                             <div role="tabpanel" class="tab-pane active" id="bgtab">
 
@@ -1450,13 +1485,13 @@ foreach($CATEGORIES as $cat){
 
                              <ol>
 
-                             	<li><h3>Automatic:</h3>
+                                <li><h3>Automatic:</h3>
 
                                     <div class="row margin-top">
 
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left" style="width:100%;">
 
-                                            <button type="button" class="btn btn-info" onclick="javascript:randomBg();"><span class="glyphicon glyphicon-repeat"></span> Cycle Automatically</button>											
+                                            <button type="button" class="btn btn-info" onclick="javascript:randomBg();"><span class="glyphicon glyphicon-repeat"></span> Cycle Automatically</button>                                           
 
                                         </div>
 
@@ -1466,35 +1501,35 @@ foreach($CATEGORIES as $cat){
 
                                 <li class="margin-top"><h3>Custom:</h3>
 
-									<div id="selA" class="selBox" style="display:inline-block;padding-right:12px;">
+                                    <div id="selA" class="selBox" style="display:inline-block;padding-right:12px;">
 
-										<label for="bg_solid" class="radio-inline">Solid</label>
+                                        <label for="bg_solid" class="radio-inline">Solid</label>
 
-										<input checked type="radio" name="bg_texture" value="bg_solid" id="bg_solid" onclick="javascript:showA();" />
+                                        <input checked type="radio" name="bg_texture" value="bg_solid" id="bg_solid" onclick="javascript:showA();" />
 
-									</div>
+                                    </div>
 
-									<div id="selB" class="" style="display:inline-block;padding-right:12px;">
+                                    <div id="selB" class="" style="display:inline-block;padding-right:12px;">
 
-										<label for="bg_textured" class="radio-inline">Grain</label>
+                                        <label for="bg_textured" class="radio-inline">Grain</label>
 
-										<input type="radio" name="bg_texture" value="bg_textured" id="bg_textured" onclick="javascript:showB();" />
+                                        <input type="radio" name="bg_texture" value="bg_textured" id="bg_textured" onclick="javascript:showB();" />
 
-									</div>
+                                    </div>
 
-									<div id="selC" class="" style="display:inline-block;padding-right:12px;">
+                                    <div id="selC" class="" style="display:inline-block;padding-right:12px;">
 
-										<label for="bg_hatch" class="radio-inline">Hatch</label>
+                                        <label for="bg_hatch" class="radio-inline">Hatch</label>
 
-										<input type="radio" name="bg_texture" value="bg_hatch" id="bg_hatch" onclick="javascript:showC();" />
+                                        <input type="radio" name="bg_texture" value="bg_hatch" id="bg_hatch" onclick="javascript:showC();" />
 
-									</div>
+                                    </div>
 
-								<div id="pics_a">
+                                <div id="pics_a">
 
-                            	<div class="row bottomspace margin-top text-center">
+                                <div class="row bottomspace margin-top text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_01" onclick="javascript:bgChange('01','a');"><img src="pictures/background_selection/01a.png" width="50" height="50"></a><br>
 
@@ -1502,7 +1537,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_02" onclick="javascript:bgChange('02','a');"><img src="pictures/background_selection/02a.png" width="50" height="50"></a><br>
 
@@ -1510,7 +1545,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_03" onclick="javascript:bgChange('03','a');"><img src="pictures/background_selection/03a.png" width="50" height="50"></a><br>
 
@@ -1518,7 +1553,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>                                    
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_04" onclick="javascript:bgChange('04','a');"><img src="pictures/background_selection/04a.png" width="50" height="50"></a><br>
 
@@ -1528,9 +1563,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_05" onclick="javascript:bgChange('05','a');"><img src="pictures/background_selection/05a.png" width="50" height="50"></a><br>
 
@@ -1538,7 +1573,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_06" onclick="javascript:bgChange('06','a');"><img src="pictures/background_selection/06a.png" width="50" height="50"></a><br>
 
@@ -1546,7 +1581,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_07" onclick="javascript:bgChange('07','a');"><img src="pictures/background_selection/07a.png" width="50" height="50"></a><br>
 
@@ -1554,7 +1589,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_08" onclick="javascript:bgChange('08','a');"><img src="pictures/background_selection/08a.png" width="50" height="50"></a><br>
 
@@ -1564,9 +1599,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div> 
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_09" onclick="javascript:bgChange('09','a');"><img src="pictures/background_selection/09a.png" width="50" height="50"></a><br>
 
@@ -1574,7 +1609,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_10" onclick="javascript:bgChange('10','a');"><img src="pictures/background_selection/10a.png" width="50" height="50"></a><br>
 
@@ -1582,7 +1617,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_11" onclick="javascript:bgChange('11','a');"><img src="pictures/background_selection/11a.png" width="50" height="50"></a><br>
 
@@ -1590,7 +1625,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_12" onclick="javascript:bgChange('12','a');"><img src="pictures/background_selection/12a.png" width="50" height="50"></a><br>
 
@@ -1600,9 +1635,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_13" onclick="javascript:bgChange('13','a');"><img src="pictures/background_selection/13a.png" width="50" height="50"></a><br>
 
@@ -1610,7 +1645,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_14" onclick="javascript:bgChange('14','a');"><img src="pictures/background_selection/14a.png" width="50" height="50"></a><br>
 
@@ -1618,7 +1653,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_15" onclick="javascript:bgChange('15','a');"><img src="pictures/background_selection/15a.png" width="50" height="50"></a><br>
 
@@ -1626,7 +1661,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_16" onclick="javascript:bgChange('16','a');"><img src="pictures/background_selection/16a.png" width="50" height="50"></a><br>
 
@@ -1636,15 +1671,15 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-								</div>
+                                </div>
 
-								
+                                
 
-								<div id="pics_b" style="display:none;">
+                                <div id="pics_b" style="display:none;">
 
-                            	<div class="row bottomspace margin-top text-center">
+                                <div class="row bottomspace margin-top text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_01" onclick="javascript:bgChange('01','b');"><img src="pictures/background_selection/01b.png" width="50" height="50"></a><br>
 
@@ -1652,7 +1687,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_02" onclick="javascript:bgChange('02','b');"><img src="pictures/background_selection/02b.png" width="50" height="50"></a><br>
 
@@ -1660,7 +1695,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_03" onclick="javascript:bgChange('03','b');"><img src="pictures/background_selection/03b.png" width="50" height="50"></a><br>
 
@@ -1668,7 +1703,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>                                    
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_04" onclick="javascript:bgChange('04','b');"><img src="pictures/background_selection/04b.png" width="50" height="50"></a><br>
 
@@ -1678,9 +1713,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_05" onclick="javascript:bgChange('05','b');"><img src="pictures/background_selection/05b.png" width="50" height="50"></a><br>
 
@@ -1690,7 +1725,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_06" onclick="javascript:bgChange('06','b');"><img src="pictures/background_selection/06b.png" width="50" height="50"></a><br>
 
@@ -1698,7 +1733,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_07" onclick="javascript:bgChange('07','b');"><img src="pictures/background_selection/07b.png" width="50" height="50"></a><br>
 
@@ -1706,7 +1741,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_08" onclick="javascript:bgChange('08','b');"><img src="pictures/background_selection/08b.png" width="50" height="50"></a><br>
 
@@ -1716,9 +1751,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div> 
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_09" onclick="javascript:bgChange('09','b');"><img src="pictures/background_selection/09b.png" width="50" height="50"></a><br>
 
@@ -1726,7 +1761,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_10" onclick="javascript:bgChange('10','b');"><img src="pictures/background_selection/10b.png" width="50" height="50"></a><br>
 
@@ -1734,7 +1769,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_11" onclick="javascript:bgChange('11','b');"><img src="pictures/background_selection/11b.png" width="50" height="50"></a><br>
 
@@ -1742,7 +1777,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_12" onclick="javascript:bgChange('12','b');"><img src="pictures/background_selection/12b.png" width="50" height="50"></a><br>
 
@@ -1752,9 +1787,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_13" onclick="javascript:bgChange('13','b');"><img src="pictures/background_selection/13b.png" width="50" height="50"></a><br>
 
@@ -1762,7 +1797,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_14" onclick="javascript:bgChange('14','b');"><img src="pictures/background_selection/14b.png" width="50" height="50"></a><br>
 
@@ -1770,7 +1805,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_15" onclick="javascript:bgChange('15','b');"><img src="pictures/background_selection/15b.png" width="50" height="50"></a><br>
 
@@ -1778,7 +1813,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="b_16" onclick="javascript:bgChange('16','b');"><img src="pictures/background_selection/16b.png" width="50" height="50"></a><br>
 
@@ -1788,13 +1823,13 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-								</div>
+                                </div>
 
-								<div id="pics_c" style="display:none;">
+                                <div id="pics_c" style="display:none;">
 
-                            	<div class="row bottomspace margin-top text-center">
+                                <div class="row bottomspace margin-top text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_01" onclick="javascript:bgChange('01','c');"><img src="pictures/background_selection/01c.png" width="50" height="50"></a><br>
 
@@ -1802,7 +1837,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_02" onclick="javascript:bgChange('02','c');"><img src="pictures/background_selection/02c.png" width="50" height="50"></a><br>
 
@@ -1810,7 +1845,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_03" onclick="javascript:bgChange('03','c');"><img src="pictures/background_selection/03c.png" width="50" height="50"></a><br>
 
@@ -1818,7 +1853,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>                                    
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_04" onclick="javascript:bgChange('04','c');"><img src="pictures/background_selection/04c.png" width="50" height="50"></a><br>
 
@@ -1828,9 +1863,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_05" onclick="javascript:bgChange('05','c');"><img src="pictures/background_selection/05c.png" width="50" height="50"></a><br>
 
@@ -1838,7 +1873,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_06" onclick="javascript:bgChange('06','c');"><img src="pictures/background_selection/06c.png" width="50" height="50"></a><br>
 
@@ -1846,7 +1881,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_07" onclick="javascript:bgChange('07','c');"><img src="pictures/background_selection/07c.png" width="50" height="50"></a><br>
 
@@ -1854,7 +1889,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_08" onclick="javascript:bgChange('08','c');"><img src="pictures/background_selection/08c.png" width="50" height="50"></a><br>
 
@@ -1864,9 +1899,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div> 
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_09" onclick="javascript:bgChange('09','c');"><img src="pictures/background_selection/09c.png" width="50" height="50"></a><br>
 
@@ -1874,7 +1909,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_10" onclick="javascript:bgChange('10','c');"><img src="pictures/background_selection/10c.png" width="50" height="50"></a><br>
 
@@ -1882,7 +1917,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_11" onclick="javascript:bgChange('11','c');"><img src="pictures/background_selection/11c.png" width="50" height="50"></a><br>
 
@@ -1892,7 +1927,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_12" onclick="javascript:bgChange('12','c');"><img src="pictures/background_selection/12c.png" width="50" height="50"></a><br>
 
@@ -1902,9 +1937,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-                            	<div class="row bottomspace text-center">
+                                <div class="row bottomspace text-center">
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_13" onclick="javascript:bgChange('13','c');"><img src="pictures/background_selection/13c.png" width="50" height="50"></a><br>
 
@@ -1912,7 +1947,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_14" onclick="javascript:bgChange('14','c');"><img src="pictures/background_selection/14c.png" width="50" height="50"></a><br>
 
@@ -1920,7 +1955,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_15" onclick="javascript:bgChange('15','c');"><img src="pictures/background_selection/15c.png" width="50" height="50"></a><br>
 
@@ -1928,7 +1963,7 @@ foreach($CATEGORIES as $cat){
 
                                     </div>
 
-                                	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                                      <a href="#" id="c_16" onclick="javascript:bgChange('16','c');"><img src="pictures/background_selection/16c.png" width="50" height="50"></a><br>
 
@@ -1938,9 +1973,9 @@ foreach($CATEGORIES as $cat){
 
                                 </div>
 
-								</div>
+                                </div>
 
-								
+                                
 
                                 </li>                             
 
@@ -1952,7 +1987,7 @@ foreach($CATEGORIES as $cat){
 
                                 <div id="bg_preview" class="frame-with-padding text-center">
 
-                                	<img src="Logo/best-homepage-ever-logo2.png" width="400" height="65">
+                                    <img src="Logo/best-homepage-ever-logo2.png" width="400" height="65">
 
                                 </div> 
 
@@ -1962,29 +1997,29 @@ foreach($CATEGORIES as $cat){
 
                                 
 
-							</div>
+                            </div>
 
                             <div role="tabpanel" class="tab-pane" id="fonts">
 
-                            	<h3>Choose your preferred font:</h3>
+                                <h3>Choose your preferred font:</h3>
 
                                  <ol>
 
-									<?php
+                                    <?php
 
-										$x=0;
+                                        $x=0;
 
-										foreach($FONT as $num=>$var){
+                                        foreach($FONT as $num=>$var){
 
-											$checked='';
+                                            $checked='';
 
-											if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
+                                            if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
 
-												if($_SESSION['fontStyle']==$var['value'])$checked='checked';
+                                                if($_SESSION['fontStyle']==$var['value'])$checked='checked';
 
-											}
+                                            }
 
-											echo '
+                                            echo '
 
                                     <li>
 
@@ -2002,15 +2037,15 @@ foreach($CATEGORIES as $cat){
 
                                     </li>
 
-											';
+                                            ';
 
-											$x++;
+                                            $x++;
 
-										}
+                                        }
 
-									
+                                    
 
-									?>
+                                    ?>
 
                                  </ol>
 
@@ -2022,7 +2057,7 @@ foreach($CATEGORIES as $cat){
 
                                 <div id="" class="frame-with-padding" >
 
-                                	
+                                    
 
                                         <p class="text-primary" id="efont" style="font-size:26px;">Best sample text ever.</p>
 
@@ -2032,54 +2067,37 @@ foreach($CATEGORIES as $cat){
 
                                 
 
-                            </div>					
+                            </div>                  
 
                             <div role="tabpanel" class="tab-pane" id="links">
 
-                            	<h3>When selecting a website, open the webpage in:</h3>
+                                <h3>When selecting a website, open the webpage in:</h3>
 
                                     <div class="text-center padding-top-10px">
 
-                                        <label class="radio-inline">                            	
+                                        <input type="checkbox" id="toggle-button-link-select" checked data-toggle="toggle" data-on="Current Window" data-off="New Window/Tab" data-onstyle="info" data-offstyle="info" data-width="120" data-size="mini">
 
-                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="same" <?php if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){if($_SESSION['tab']=='same'){echo 'checked';}}else{echo 'checked';} ?>> Current Window
 
-                                        </label>
-
-                                        <label class="radio-inline">
-
-                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="blank" <?php if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){if($_SESSION['tab']=='blank'){echo 'checked';}} ?>> New Window/Tab  
-
-                                        </label>
 
                                          <div id="linkchoice" class="padding-top-10px"><a href="#" data-content="<p><strong>Current window</strong>: Best for minimal number of browser windows/tabs.<br>When using this option, it's ideal to have a home button (<span class='glyphicon glyphicon-home'></span>) or link on bookmarks bar for quick return to homepage.</p><p><strong>New Window/Tab</strong>: Keeps homepage always open in one tab.<br>This is better if you prefer having one tab be your portal for launching all your favorite websites.</p>Give both a try, you can always change this setting back!" data-placement="bottom" data-delay-show="1"><small>Help me choose</small></a>
 
-                               			 </div>
+                                         </div>
 
 
 
                                     </div>
+                                   
 
-                                    
-
-                            	<h3 class="imagesaslink">Display links as:</h3>
+                                <h3 class="imagesaslink">Display links as:</h3>
 
                                     <div class="imagesaslink text-center padding-top-10px">
 
-                                        <label class="radio-inline">
-
-                                          <input type="radio" name="tiChoice" id="tiText" value="text" <?php if(array_key_exists('ti',$_SESSION) && isset($_SESSION['ti'])){if($_SESSION['ti']=='text'){echo 'checked';}}else{echo 'checked';} ?>> Classic (text) 
-
-                                        </label>
-
-                                        <label class="radio-inline">
-
-                                          <input type="radio" name="tiChoice" id="tiImages" value="image" <?php if(array_key_exists('ti',$_SESSION) && isset($_SESSION['ti'])){if($_SESSION['ti']=='image'){echo 'checked';}} ?>> Images 
-
-                                        </label>										
+                                        <input type="checkbox" id="toggle-button-imagesaslink" checked data-toggle="toggle" data-on="Classic (text)" data-off="Images" data-onstyle="info" data-offstyle="info" data-width="100" data-size="mini">
+                                      
 
                                     </div>
-                            </div>	
+
+                            </div>  
                             
                             
                             <!-- tabpanel 4 -->
@@ -2087,42 +2105,42 @@ foreach($CATEGORIES as $cat){
                      <!--       
                              <ul>
 
-                             	<h3>Custom Links:</h3>
+                                <h3>Custom Links:</h3>
                                     <div class="row margin-top">
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                       		<ol>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       		</ol>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                            <ol>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ol>
                                         </div>
                                         
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                       		<ol>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       		</ol>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                            <ol>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ol>
                                         </div>
                                     </div>                                    
                                     <div class="row margin-top">
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                       		<ol>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       		</ol>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                            <ol>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ol>
                                         </div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                       		<ol>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       			<li></li>
-                                       		</ol>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
+                                            <ol>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ol>
                                         </div>>
                                     </div>                                 
                                 
@@ -2132,183 +2150,191 @@ foreach($CATEGORIES as $cat){
 
 
 
-  						</div><!-- /tab-content -->
+                        </div><!-- /tab-content -->
 
-					</div><!-- /modal-body -->
+                    </div><!-- /modal-body -->
 
-					
+                    
 
-					<div class="modal-footer">
+                    <div class="modal-footer">
 
-						 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-       					 <button type="button" class="btn btn-primary" onClick="javascript:saveBg();">Save changes</button>     	
+                         <button type="button" class="btn btn-primary" onClick="javascript:saveBg();">Save changes</button>         
 
-					</div><!-- /modal-footer -->
+                    </div><!-- /modal-footer -->
+                     
 
-				</div><!-- /modal-content -->
+                </div><!-- /modal-content -->
 
-			</div><!-- /modal-dialog -->
+            </div><!-- /modal-dialog -->
 
-		</div>
+        </div>
 
-	<!-- /background selection -->
+    <!-- /background selection -->
+
+    
 
     
 
     
 
-    
-
-    <!-- Background Selection -->	
+    <!-- Background Selection -->   
 
     <script>
 
-		var num='01';
+        var num='01';
 
-		var letter='a';
+        var letter='a';
 
-		window.onload = function() {
+        window.onload = function() {
 
-			document.getElementById("search_query").focus();
+            document.getElementById("search_query").focus();
 
-			<?php
+            <?php
 
-		if(array_key_exists('BG',$_SESSION) && isset($_SESSION['BG'])){
+        if(array_key_exists('BG',$_SESSION) && isset($_SESSION['BG'])){
 
-			echo "
+            echo "
 
-			$('body').css('background-image', 'url(pictures/background_selection/".$_SESSION['BG']."".$_SESSION['BG_LETTER'].".png)');
+            $('body').css('background-image', 'url(pictures/background_selection/".$_SESSION['BG']."".$_SESSION['BG_LETTER'].".png)');
 
-			num = '".$_SESSION['BG']."';
+            num = '".$_SESSION['BG']."';
 
-			letter = '".$_SESSION['BG_LETTER']."';
+            letter = '".$_SESSION['BG_LETTER']."';
 
-			";
+            ";
 
-		} 
+        } 
 
-			?>
+            ?>
 
-		};
+        };
 
-		function Shuffle(o) {
+        function Shuffle(o) {
 
-			for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+            for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 
-			return o;
+            return o;
 
-		}
+        }
 
-		function randomBg(){
+        function randomBg(){
 
-			window.location="index_alex.php?clearbg";
+            window.location="index_alex.php?clearbg";
 
-			/*
+            /*
 
-			var test = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16'];
+            var test = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16'];
 
-			Shuffle(test);
+            Shuffle(test);
 
-			$('#b_'+test[0]+''+letter+'').click();
+            $('#b_'+test[0]+''+letter+'').click();
 
-			*/
+            */
 
-		}
+        }
 
-		function showA(){
+        function showA(){
 
-			$('#selA').addClass('selBox');
+            $('#selA').addClass('selBox');
 
-			$('#selB').removeClass('selBox');
+            $('#selB').removeClass('selBox');
 
-			$('#selC').removeClass('selBox');
+            $('#selC').removeClass('selBox');
 
-			$('#pics_a').css('display', 'block');
+            $('#pics_a').css('display', 'block');
 
-			$('#pics_b').css('display', 'none');
+            $('#pics_b').css('display', 'none');
 
-			$('#pics_c').css('display', 'none');
+            $('#pics_c').css('display', 'none');
 
-		}
+        }
 
-		function showB(){
+        function showB(){
 
-			$('#selA').removeClass('selBox');
+            $('#selA').removeClass('selBox');
 
-			$('#selB').addClass('selBox');
+            $('#selB').addClass('selBox');
 
-			$('#selC').removeClass('selBox');
+            $('#selC').removeClass('selBox');
 
-			$('#pics_a').css('display', 'none');
+            $('#pics_a').css('display', 'none');
 
-			$('#pics_b').css('display', 'block');
+            $('#pics_b').css('display', 'block');
 
-			$('#pics_c').css('display', 'none');
+            $('#pics_c').css('display', 'none');
 
-		}
+        }
 
-		function showC(){
+        function showC(){
 
-			$('#selA').removeClass('selBox');
+            $('#selA').removeClass('selBox');
 
-			$('#selB').removeClass('selBox');
+            $('#selB').removeClass('selBox');
 
-			$('#selC').addClass('selBox');
+            $('#selC').addClass('selBox');
 
-			$('#pics_a').css('display', 'none');
+            $('#pics_a').css('display', 'none');
 
-			$('#pics_b').css('display', 'none');
+            $('#pics_b').css('display', 'none');
 
-			$('#pics_c').css('display', 'block');
+            $('#pics_c').css('display', 'block');
 
-		}
+        }
 
-		function bgChange(val,val1){
+        function bgChange(val,val1){
 
-			num = val;
+            num = val;
 
-			letter = val1;
+            letter = val1;
 
-			$('body').css('background-image', 'url(pictures/background_selection/'+num+''+letter+'.png)');
+            $('body').css('background-image', 'url(pictures/background_selection/'+num+''+letter+'.png)');
 
-			$('#bg_preview').css('background-image', 'url(pictures/background_selection/'+num+''+letter+'.png)');	
+            $('#bg_preview').css('background-image', 'url(pictures/background_selection/'+num+''+letter+'.png)');   
 
-		}
+        }
 
-		function saveBg(){ 
+        function saveBg(){ 
 
-			var fontStyle = $('input[name=optionsRadios]:checked').val();
+            var fontStyle = $('input[name=optionsRadios]:checked').val();
 
-			var tab = $('input[name=inlineRadioOptions]:checked').val();
+            var tab = $('input[name=inlineRadioOptions]:checked').val();
 
-			var ti = $('input[name=tiChoice]:checked').val();
+            var tab = $('#toggle-button-link-select').prop('checked') == false ? 'blank' : 'same';
+            console.log(tab);
 
-			window.location='index_alex.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
+        //    var ti = $('input[name=tiChoice]:checked').val();
+        //    alert(ti);
 
-			
+            var ti = $('#toggle-button-imagesaslink').prop('checked') == false ? 'image' : 'text';
+        //    alert(ti);
 
-			
+            window.location='index_alex.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
 
-		}
+            
 
-		function showImages(){
+            
 
-			 $( ".bheClass" ).addClass( "none" );
+        }
 
-			 $( ".bheClassImg" ).removeClass( "none" );
+        function showImages(){
 
-		}
+             $( ".bheClass" ).addClass( "none" );
 
-		function showLinks(){
+             $( ".bheClassImg" ).removeClass( "none" );
 
-			 $( ".bheClass" ).removeClass( "none" );
+        }
 
-			 $( ".bheClassImg" ).addClass( "none" );
+        function showLinks(){
 
-		}
+             $( ".bheClass" ).removeClass( "none" );
 
-	</script>
+             $( ".bheClassImg" ).addClass( "none" );
+
+        }
+
+    </script>
 
     <!-- /Background Selection -->
 
@@ -2320,176 +2346,190 @@ foreach($CATEGORIES as $cat){
 
     <!-- Popovers -->
 
- 	<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-
-	<script>
-
-		$('#email a').webuiPopover({	
-
-		trigger:'hover',
-
-		style:'inverse',
-
-		animation:'pop',
-
-		});
-
-	</script>
-
-	<script>
-
-		$('#timer a').webuiPopover({	
-
-		trigger:'hover',
-
-		style:'inverse',
-
-		animation:'pop',
-
-		});
-
-	</script>
-
-   	<script>
-
-		$('#banking a').webuiPopover({	
-
-		trigger:'hover',
-
-
-
-		style:'inverse',
-
-		animation:'pop',
-
-		});
-
-	</script>
+    <script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
 
     <script>
 
-		$('#streaming a').webuiPopover({	
+        $('#email a').webuiPopover({    
 
-		trigger:'hover',		
+        trigger:'hover',
 
-		style:'inverse',
+        style:'inverse',
 
-		animation:'pop',
+        animation:'pop',
 
-		});
+        });
 
-	</script>
-
-    <script>
-
-		$('#linkchoice a').webuiPopover({	
-
-		trigger:'hover',		
-
-		style:'inverse',
-
-		animation:'pop',
-
-		});
-
-	</script>
+    </script>
 
     <script>
 
-		$('#ticketwindow a').webuiPopover({	
+        $('#timer a').webuiPopover({    
 
-		trigger:'hover',		
+        trigger:'hover',
 
-		style:'inverse',
+        style:'inverse',
 
-		animation:'pop',
+        animation:'pop',
 
-		});
+        });
 
-	</script>
-
-    <script>
-
-		$('#expand_finance a').webuiPopover({	
-
-		trigger:'hover',		
-
-		style:'inverse',
-
-		animation:'pop',
-
-		});
-
-	</script>
-    <script>
-		$('#paypeople a').webuiPopover({	
-		trigger:'hover',		
-		style:'inverse',
-		animation:'pop',
-		});
-	</script>
+    </script>
 
     <script>
 
-		$('#savelinkhelp a').webuiPopover({	
+        $('#banking a').webuiPopover({  
 
-		trigger:'hover',		
+        trigger:'hover',
 
-		style:'inverse',
 
-		animation:'pop',
 
-		});
+        style:'inverse',
 
-	</script>
+        animation:'pop',
+
+        });
+
+    </script>
+
+    <script>
+
+        $('#streaming a').webuiPopover({    
+
+        trigger:'hover',        
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+
+    <script>
+
+        $('#linkchoice a').webuiPopover({   
+
+        trigger:'hover',        
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+
+    <script>
+
+        $('#ticketwindow a').webuiPopover({ 
+
+        trigger:'hover',        
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+
+    <script>
+
+        $('#expand_finance a').webuiPopover({   
+
+        trigger:'hover',        
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+    <script>
+        $('#paypeople a').webuiPopover({    
+        trigger:'hover',        
+        style:'inverse',
+        animation:'pop',
+        });
+    </script>
+
+    <script>
+
+        $('#savelinkhelp a').webuiPopover({ 
+
+        trigger:'hover',        
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+    
+    <script>
+
+        $('#account_type a').webuiPopover({ 
+
+        trigger:'hover',
+
+//      style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
 
 <!--<script>
 
-		$('#newtab a').webuiPopover({	
+        $('#newtab a').webuiPopover({   
 
-		trigger:'hover',		
+        trigger:'hover',        
 
-		style:'inverse',
+        style:'inverse',
 
-		animation:'pop',
+        animation:'pop',
 
-		});
+        });
 
-	</script> -->
+    </script> -->
 
 <!--<script>
 
-		$('#makeadifference a').webuiPopover({	
+        $('#makeadifference a').webuiPopover({  
 
-		trigger:'hover',		
+        trigger:'hover',        
 
-		style:'inverse',
+        style:'inverse',
 
-		animation:'pop',
+        animation:'pop',
 
-		color:'#E74C3C',
+        color:'#E74C3C',
 
-		});
+        });
 
-	</script> -->
+    </script> -->
 
     
 
-	<!-- dropdowns -->
+    <!-- dropdowns -->
 
     <script>
 
-		$(document).ready(function(){
+        $(document).ready(function(){
 
-			$('[data-toggle="popover"]').popover({
+            $('[data-toggle="popover"]').popover({
 
-			placement : 'bottom',
+            placement : 'bottom',
 
-			html: 'true',
+            html: 'true',
 
-			trigger: 'focus',		
+            trigger: 'focus',       
 
-			});
+            });
 
 
 
@@ -2509,9 +2549,9 @@ foreach($CATEGORIES as $cat){
 
             });
 
-			
+            
 
-			<?php 
+            <?php 
 
             if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image') {
 
@@ -2535,11 +2575,58 @@ foreach($CATEGORIES as $cat){
 
             ?>
 
-			
+            <?php 
 
-		});
+            if(array_key_exists('tab',$_SESSION) && $_SESSION['tab']=='blank') {
 
-	</script>
+            ?>
+
+                $('#toggle-button-link-select').prop('checked',false).change();
+
+            <?php 
+
+            }
+
+            else {
+
+            ?>
+
+                $('#toggle-button-link-select').prop('checked',true).change();
+
+            <?php   
+
+            }    
+
+            ?>
+
+            <?php 
+
+            if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image') {
+
+            ?>
+
+                $('#toggle-button-imagesaslink').prop('checked',false).change();
+
+            <?php 
+
+            }
+
+            else {
+
+            ?>
+
+                $('#toggle-button-imagesaslink').prop('checked',true).change();
+
+            <?php   
+
+            }    
+
+            ?>
+            
+
+        });
+
+    </script>
 
 
 
@@ -2553,49 +2640,49 @@ foreach($CATEGORIES as $cat){
 
     
 
-    <!-- Addthis Script -->   	
+    <!-- Addthis Script -->     
 
-<!--	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5746023de419d5f9"></script> -->
+<!--    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5746023de419d5f9"></script> -->
 
     <script>
 
-//		var addthis_share = { email_template: "default_template" }
+//      var addthis_share = { email_template: "default_template" }
 
-		
+        
 
-		<?php
+        <?php
 
-			if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
+            if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
 
-				if($_SESSION['tab']=='blank'){
+                if($_SESSION['tab']=='blank'){
 
-					echo "$('a[href^=\"http://\"]').attr('target','_blank');";
+                    echo "$('a[href^=\"http://\"]').attr('target','_blank');";
 
-				} else {
+                } else {
 
-					echo "$('a[href^=\"http://\"]').attr('target','_self');";
+                    echo "$('a[href^=\"http://\"]').attr('target','_self');";
 
-				}
+                }
 
-			}
+            }
 
-			if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
+            if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
 
-				if($_SESSION['tab']=='blank'){
+                if($_SESSION['tab']=='blank'){
 
-					echo "$('a[href^=\"https://\"]').attr('target','_blank');";
+                    echo "$('a[href^=\"https://\"]').attr('target','_blank');";
 
-				} else {
+                } else {
 
-					echo "$('a[href^=\"https://\"]').attr('target','_self');";
+                    echo "$('a[href^=\"https://\"]').attr('target','_self');";
 
-				}
+                }
 
-			}
+            }
 
-		?>
+        ?>
 
-	</script>
+    </script>
 
 </body>    
 
