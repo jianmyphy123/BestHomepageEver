@@ -1,8 +1,8 @@
  <?php
  
  $server = 'localhost';
- $db_user_name = 'besthome_admin';
- $db_password = 'wIDo_whH1u3a';
+ $db_user_name = 'root';
+ $db_password = '';
  $database = 'BestHomepageEver';
  
  $errors = array(
