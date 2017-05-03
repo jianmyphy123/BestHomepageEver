@@ -1,55 +1,37 @@
-<!-- reCAPTCHA secret key -->
-<!-- 6LdFXR4UAAAAAAjkD3VTJVQ5_qH5oO5fJYiNEblS -->
 
 <!doctype html>
 <html>
 <head>
-<script src="js/jquery-1.12.0.min.js"></script>
-<link rel="stylesheet" href="css/login.css" type='text/css'></link>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var is_valid_username = false;
-		$('.message a.toggle_link').click(function(){
-		   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-		   $('#login_error_message').text('');
-		});
-		
-		$('#btn_create').click(function(){
-			var pass1 = $('#input_password').val();
-			var pass2 = $('#input_password2').val();
-			
-			if(pass1 != pass2) {
-				$('#register_error_message').text('invalid password');
-				return false;
-			}
-			
-			
-		});
-		
-		$('#username').change(function() {
-			is_valid_username = false;
-		});
-		
-		$('#gotoSign').click(function() {
-			$('#register_error_message').text('');
-		});
-	})
-</script>
+    <link rel="stylesheet" href="css/jquery.validation.css">
+      
 
-<!-- reCAPTCHA -->    
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validation-1.5.3.js"></script>
+    <script type="text/javascript" src="bootstrap/twitter/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/twitter/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="bootstrap/twitter/js/bootstrap-tooltip.js"></script>
+    
+    
+    
+	<!-- reCAPTCHA -->    
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<!-- reCAPTCHA --> 
+	
+	
+	
+    <link rel="stylesheet" href="css/login-v2.0.css" type='text/css'></link>
 </head>
 <?php
 require_once('settings.php');
 
 if(isset($_POST['register'])) {
+
 	session_start(); // Starting Session
 	
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$username = $_POST['username'];
-	$password = md5($_POST['password']);
+	$fname = $_POST['register']['firstname'];
+	$lname = $_POST['register']['lastname'];
+	$username = $_POST['register']['email'];
+	$password = md5($_POST['register']['password']);
 
 	$mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
 
@@ -63,10 +45,6 @@ if(isset($_POST['register'])) {
 	
 	
 	$results = $mysqli->query("select * from users where username='$username'");
-	
-	//		$results = $mysqli->query("SELECT COUNT(*) FROM users");
-	//		$get_total_rows = $results->fetch_row(); //hold total records in variable
-	//		die(var_dump($get_total_rows));
 	
 	$rows = $results->num_rows;
 	$row = $results->fetch_object();
@@ -92,7 +70,7 @@ if(isset($_POST['register'])) {
 			$_SESSION['BG'] = $bg;
 			$_SESSION['BG_LETTER'] = $bg_letter;
 			
-			echo "<script>window.location='index_alex.php'</script>";
+			echo "<script>window.location='index.php'</script>";
 			die();
 
 		} else{
@@ -110,15 +88,19 @@ if(isset($_POST['register'])) {
 
 }
 else if(isset($_POST['login'])) {
+
 	session_start(); // Starting Session
-	if (empty($_POST['username']) || empty($_POST['password'])) {
+	
+	$username=$_POST['login']['email'];
+	$password=md5($_POST['login']['password']);
+	
+	if (empty($username) || empty($password)) {
 		header("location: login.php?err=1");
 	}
 	else
 	{
 		// Define $username and $password
-		$username=$_POST['username'];
-		$password=md5($_POST['password']);
+		
 		// Establishing Connection with Server by passing server_name, user_id and password as a parameter
 		$mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
 		// To protect MySQL injection for Security purpose
@@ -148,7 +130,7 @@ else if(isset($_POST['login'])) {
 			$_SESSION['BG'] = $row->bg;
 			$_SESSION['BG_LETTER'] = $row->bg_letter;
 			
-			echo "<script type='text/javascript'>window.location='index_alex.php'</script>";
+			echo "<script type='text/javascript'>window.location='index.php'</script>";
 			die();
 			
 		} else {
@@ -162,52 +144,171 @@ else if(isset($_POST['login'])) {
 }
 else { ?>
 <body>
-	<?php 
+<?php 
 	$error_id = isset($_GET['err']) ? (int)$_GET['err'] : 0; 
 	$state = isset($_GET['state']) ? (int)$_GET['state'] : 0; 
 	
 	?>
-	<div class="login-page">
+<div class="login-page2">
+	<div class="form2">
+	 
+		<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
 		
-	  <div class="form">
-      	<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
-	    <form class="register-form" action="login.php" method="post" id="register_form">
-            
-            <span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
+		
+		
+		<form id="form-register"
+		      name="form-register"
+		      method="POST"
+		      class="validation-form-container register-form" action="login.php">
+		      <div class="field">
+		    	<span id='register_error_message'><?php if ($state==2 && $error_id != 0) {
 					echo $errors[$error_id];
 				} ?></span>
-            
-		  <input type="text" placeholder="first name" name="fname" required id="fname"/>
-		  <input type="text" placeholder="last name" name="lname" required id="lname"/>
-	      <input type="email" placeholder="email address" name="username" required id="username"/>
-	      <input type="password" placeholder="password" name="password" required id="input_password"/>
-		  <input type="password" placeholder="confirm password" required id="input_password2"/>
-          
-          <!-- reCAPTCHA -->
-          <p><div class="g-recaptcha" data-sitekey="6LdFXR4UAAAAAHAb9bmweemZt5HBdKTYtwd9bcj_" style="transform:scale(1.058);transform-origin:0 0"></div></p>
-          <!-- /reCAPTCHA --> 
-          <button type="submit" name="register" id="btn_create">create</button>
-	      <p class="message padding-bottom-10px">Already registered? <a class="toggle_link" href="#" id="gotoSign">Sign In</a></p>
-          <hr>
-          <p style="color: grey; text-align:center;"><small><strong>Note:</strong> Information is never shared.</small></p>
-	    </form>
-	    <form class="login-form" action="login.php" method="post" id="login_form">
-			<span id='login_error_message'><?php if ($state==1 && $error_id != 0) {
+			</div>	
+		
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <input id="register-firstname"
+		                   name="register[firstname]"
+		                   type="text"
+		                   data-validation="[NOTEMPTY]"
+		                   placeholder="First Name">
+		
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <input id="register-lastname"
+		                   name="register[lastname]"
+		                   type="text"
+		                   data-validation="[NOTEMPTY]"
+		                   placeholder="Last Name">
+		
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <input id="register-email"
+		                   name="register[email]"
+		                   type="text"
+		                   data-validation="[EMAIL]" placeholder="Email">
+		
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <input id="register-password"
+		                   name="register[password]"
+		                   type="password" data-validation="[L>=5]"
+		                   data-validation-message="$ must be at least 5 characters" placeholder="Password">
+		
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <input id="register-password-confirm"
+		                   name="register[password-confirm]"
+		                   type="password"
+		                   data-validation="[V==register[password]]"
+		                   data-validation-message="$ does not match the password" placeholder="Confirm Password">
+		
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    <div class="field">
+		        <div class="ui left labeled input">
+		
+		            <!-- reCAPTCHA -->
+		          <div class="g-recaptcha" data-sitekey="6LdFXR4UAAAAAHAb9bmweemZt5HBdKTYtwd9bcj_" style="transform:scale(1.058);transform-origin:0 0" data-callback="recaptchaCallback"></div>
+		          <!-- /reCAPTCHA --> 
+			  <input id="register-recaptcha"
+		                   name="register[recaptcha]"
+		                   type="hidden"
+		                   data-validation="[L>=0]"
+		                   data-validation-message="Please verify that you are not a robot." placeholder="First Name">
+	    <!--        <div class="ui corner label">
+		                <i class="asterisk icon">*</i>
+		            </div> 
+         -->
+		        </div>
+		    </div>
+		    
+			
+		
+		    <input type="submit" class="ui blue submit button" value="Create" name="register">
+		
+		    <div style="text-align: center">
+		    	<p class="message padding-bottom-10px">Already registered? <a class="toggle_link" href="#" id="gotoSign">Sign In</a></p>
+		        <hr>
+                <p class="message center">Information is private, and never shared.</p>
+		    </div>
+		</form>
+		<form class="validation-form-container login-form" method="POST" id="form-login" name="form-login" action="login.php">
+			<div class="field">
+				<span id='login_error_message'><?php if ($state==1 && $error_id != 0) {
 					echo $errors[$error_id];
 				} ?></span>
-          
-	      <input type="email" placeholder="email address" name="username" required/>
-	      <input type="password" placeholder="password" name="password" required/>
-		  
-	      <button type="submit" name="login">login</button>
-	      <p class="message">Not registered? <a class="toggle_link" href="#">Create an account</a></p>
-		  <p class="message"><a href="changepass.php">Forgot Password?</a></p>
-	    </form>         
-	  </div>
-     <p style="color: grey; text-align:center;"><a href="../"><small>Return to homepage</small></a></p>
-     
+		
+			</div>
+			<div class="field">
+			        <div class="ui left labeled input">
+			
+			            <input id="login-email"
+			                   name="login[email]"
+			                   type="text"
+			                   data-validation="[EMAIL]"
+			                   placeholder="Email">
+			            
+			        </div>
+			    </div>
+			    
+			<div class="field">
+			        <div class="ui left labeled input">
+			
+			            <input id="login-password"
+			                   name="login[password]"
+			                   type="password" data-validation="[L>=5]"
+			                   data-validation-message="$ must be at least 5 characters" placeholder="Password">
+			            
+			        </div>
+			    </div>
+				
+		      <input type="submit" class="ui blue submit button" value="login" name="login">
+		      <div style="text-align: center">
+		      	   <p class="message">Not registered? <a class="toggle_link" href="#">Create an account</a></p>
+			   <p class="message"><a href="changepass.php">Forgot Password?</a></p>
+		      </div>
+		</form>  
+		
+		
 	</div>
-	<?php
+	<p style="color: grey; text-align:center;"><a href="../"><small>Return to homepage</small></a></p>
+</div>
+<?php
 	if($state == 2 && $error_id==2) {
 	?>
 	<script>
@@ -216,23 +317,68 @@ else { ?>
 	<?php
 	}
 	?>
-    
 
 
-    
 </body>
 <?php } ?>
+
+
+
 <script>
-	$('#register_form').submit(function() {
-		if (grecaptcha.getResponse() == ""){
-		    $('#register_error_message').html('Please verify that you are not a robot.');
-		    return false;
-		} else {
-		    
-		    return true;
-		}
-	}); 
+    $(document).ready(function(){
+	    
+		$('.message a.toggle_link').click(function(){
+		   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+		   $('#login_error_message').text('');
+		});
+		
+		$('#gotoSign').click(function() {
+			$('#register_error_message').text('');
+		});
+	    
+    });
+    
+    $('#form-register').validate({
+	        submit: {
+	            settings: {
+	                inputContainer: '.field'
+	            },
+	            callback: {
+	                onBeforeSubmit: function (node) {
+	                    if(grecaptcha.getResponse() != '')
+	                    	$('#register-recaptcha').val('true');
+	                },
+	                onSubmit: function (node) {
+	                    console.log('#' + node.id + ' has a submit override.');
+	                    node[0].submit();
+	                }
+	            }
+	        }
+	        
+	    });
+    $('#form-login').validate({
+        submit: {
+            settings: {
+                inputContainer: '.field'
+            },
+            callback: {
+                onBeforeSubmit: function (node) {
+                    
+                },
+	        onSubmit: function (node) {
+	                console.log(node);
+	                node[0].submit();
+	        }    
+	    }
+        },
+        ignore:""
+    });
+    
+    function recaptchaCallback() {
+	  if(grecaptcha.getResponse() == '')
+    		$('#register-recaptcha').val('');
+    	  else
+    	  	$('#register-recaptcha').val('true');
+    };
 </script>
-
-
 </html>

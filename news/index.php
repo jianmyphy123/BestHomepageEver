@@ -59,6 +59,69 @@ var _gaq = _gaq || [];
         <div class="col-sm-8 blog-main">
         
           <div class="blog-post">
+          	<a name="useraccounts1"></a>                      
+            <h2 class="blog-post-title">Major Update / User Accounts Live</h2>                        
+            <p class="blog-post-meta">May 2, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+			<p>Several updates:</p>
+            	<ol>
+                	<li>User Accounts are now live.<br /></li>
+                    
+                    	<ul>
+                        	<li>You can now save your <strong>homepage settings</strong> in the account area after creating one. Only basic info is required, and it is not shared.</li>
+                            <li>You can create an account <a href="../login.php">here</a>.</li>
+                            <li><span class="text-danger">*UPDATE* Those who need to continuously login after browser restart, a fix is coming.</span></li>
+                        </ul>
+                    <li>BestHomepageEver is now SSL 256-bit secure. <span class="glyphicon glyphicon-lock"></span></li>
+                    	<ul>
+                        	<li>Although not necessary, you may want to update your browser settings to reflect<br /><strong>https</strong>://besthomepageever.com instead of http://besthomepageever.com.</li>
+                            <li>If any of you link to BestHomepageEver from your own personal websites, please update the link to 'https'.</li>
+                        </ul>
+                    <li>I've began improving fonts. More are on the way.</li>
+                    <li><strong>My Account</strong> added, which will allow more customization in the future.</li>
+                    <li>Privacy Policy Updated</li>
+                    <li>Info/Help added for IE users receiving '<small>Only secure content displayed</small>' message. See <a href="../faq/"> Homepage FAQ</a> for more info.</li>                   
+                </ol> 
+            <p>More improvements on the way in the coming weeks.</p>
+            <p>Lastly, thanks to those who voted for BHE on <a href="https://www.thetoptens.com/best-homepages/" target="new">top ten homepages</a> list. If you still haven't voted, please take 2 seconds to do so. You can vote once per week!</p>
+            <p>It's 3:30am here in San Diego. I'm off to bed:)</p>
+			
+            
+          </div><!-- /.blog-post -->       
+        
+          <div class="blog-post">          	                      
+            <h2 class="blog-post-title">User Accounts</h2>                        
+            <p class="blog-post-meta">April 29, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+            <p>I'm excited to announce the imminent launch of user accounts and the ability to save your own custom settings.</p>
+            <p>I will be activating this the <strong>first week of May</strong>.</p>
+            <p>With this advancement, we can eliminate the need for cookies, which for most people, only stores settings temporariliy. And, for some of you, does not work at all.</p><p>Going forward, you will have the ability to create an account (quickly and easily of course), and be able to store your favorite background, font, how you like links to open, and how you want the links to appear (logos vs classic).</p>
+            <p>Many of these settings have been available through cookies recently, however this will allow you to save your settings for as long as you want.</p><p>Further, and more importantly, we will have the ability to release more advanced customization settings in the near future.</p>
+			<p>More info to follow soon..</p>
+            
+          </div><!-- /.blog-post -->       
+        
+          <div class="blog-post">
+          	<a name="panoramics1"></a>                      
+            <h2 class="blog-post-title">Panoramic Pictures Added</h2>                        
+            <p class="blog-post-meta">April 25, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+            <p>Just added 25% more panoramic pictures today, for your viewing enjoyment.</p>
+            <p>As always, they will cycle through automatically on each page load.</p>
+            <p>And, as a reminder, if you want to know where the picture was taken, most are clickable, which will take you to their respective Wikipedia pages.</p>
+            <p>Enjoy!</p>
+          </div><!-- /.blog-post -->       
+        
+          <div class="blog-post">
+          	<a name="firefox_addon"></a>                      
+            <h2 class="blog-post-title">Firefox Add-On Available</h2>                        
+            <p class="blog-post-meta">April 18, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+            <p>Firefox Users: Try out my new add-on, now available!</p>
+            <p><a href="https://addons.mozilla.org/en-US/firefox/addon/best-homepage-ever/" target="new"><button type="button" class="btn btn-success btn-lg"><img src="../pictures/sethomepage/firefox-30x30.png" width="30" height="30"> Firefox Add-On</button></a></p>            
+            <p>And, don't forget, if you're a Google Chrome user, you can still add my New Tab Quicklaunch extension:</p>            
+            <p><a href="https://chrome.google.com/webstore/detail/best-homepage-ever-new-ta/omdkehkdnojcndhhilglklegbakenkgb" target="new"><button type="button" class="btn btn-default btn-lg"><img src="../pictures/sethomepage/chrome_small-min.png" width="30" height="30" /> Chrome Extension</button></a></p>
+            <hr />
+            <p>Both of these will help speed up your browsing experience, as mentioned in my <a href="../tips/">Tips and Tricks</a> section.</p>
+          </div><!-- /.blog-post -->       
+        
+          <div class="blog-post">
           	<a name="spring_enhancements"></a>                      
             <h2 class="blog-post-title">More Improvements</h2>                        
             <p class="blog-post-meta">April 5, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
@@ -132,7 +195,7 @@ var _gaq = _gaq || [];
           	<a name="2017"></a>                      
             <h2 class="blog-post-title">2017</h2>                        
             <p class="blog-post-meta">December 9, 2016 by <a href="http://justincarver.com">Justin Carver</a></p>
-			<p>Looking forward to 2017, I am excited to bring us all more improvements; including an improved tablet version of BHE, re-sizeable link categories, the ability to add custom links, and a generally a more in-depth customization experience for <a href="http://besthomepageever.com">Best Homepage Ever</a>. I hope you all enjoy your upcoming holidays, and look forward to an excellent 2017.</p>
+			<p>Looking forward to 2017, I am excited to bring us all more improvements; including an improved tablet version of BHE, re-sizeable link categories, the ability to add custom links, and a generally a more in-depth customization experience for <a href="https://besthomepageever.com">Best Homepage Ever</a>. I hope you all enjoy your upcoming holidays, and look forward to an excellent 2017.</p>
           </div><!-- /.blog-post -->       
         
           <div class="blog-post">
@@ -207,7 +270,7 @@ var _gaq = _gaq || [];
            <div class="blog-post">
             <h2 class="blog-post-title">Happy Summer</h2>            
             <p class="blog-post-meta">July 11, 2016 by <a href="http://justincarver.com">Justin Carver</a></p>            			
-            <p>So far, as always, it's been a very busy summer. Hope you all are enjoying yourselves, and I just wanted to say thanks for using <a href="http://besthomepageever.com">BestHomepageEver</a> user!</p>
+            <p>So far, as always, it's been a very busy summer. Hope you all are enjoying yourselves, and I just wanted to say thanks for using <a href="https://besthomepageever.com">BestHomepageEver</a> user!</p>
             <p>I have received e-mails from many of you over the last 3-4 weeks, and I appreciate the feedback. I have a couple of things that I am currently working on for the homepage that I can't wait to share in the near future.</p>
            </div><!-- /.blog-post -->       
 
@@ -464,7 +527,7 @@ Essentially, all smartphones will have BestHomepageEver (Lite), with fewer links
                 <h4>Archives</h4>
                 <ol class="list-unstyled">
                   <li><a href="news-old.html">News Archive</a> <span class="small">2000-2014</span></li> 
-                  <li><a href="http://web.archive.org/web/20040515000000*/http://besthomepageever.com">Legacy Homepage</a></li>             
+                  <li><a href="http://web.archive.org/web/20040515000000*/https://besthomepageever.com">Legacy Homepage</a></li>             
                 </ol>
               </div>              
               <div class="sidebar-module sidebar-module-inset">
@@ -477,7 +540,10 @@ Essentially, all smartphones will have BestHomepageEver (Lite), with fewer links
               <div class="sidebar-module sidebar-module-inset">
             	<h4>Updates</h4>
                 <ol class="list-unstyled">
-                	  <li><strong>2017</strong></li>                      
+                	  <li><strong>2017</strong></li>
+                      <li><a href="#useraccounts1">User Accounts</a></li>
+                      <li><a href="#panoramics1">Panoramics Added</a></li> 
+                      <li><a href="#firefox_addon">Firefox Add-On</a></li>                     
                 	  <li><a href="#spring_enhancements">Site Enhancements</a>
                 	  <li><a href="#search_button">Search Button</a>
                       <li><a href="#chrome_extension">Chrome Extension</a>

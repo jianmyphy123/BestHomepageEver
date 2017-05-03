@@ -218,11 +218,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  	<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs text-left">
  			 <div class="hidden-sm">
              	<a type="button" class="btn btn-xs btn-primary sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Make this my homepage</a> 
-               <a href="http://besthomepageever.com"><img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"></a> | <img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12">
+               <a href="https://besthomepageever.com"><img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"></a> | <img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12">
              </div>
              <div class="visible-sm">
              	<a type="button" class="btn btn-xs btn-primary sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Set as homepage</a> 
-             	<a href="http://besthomepageever.com"><img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"></a> | <img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12">
+             	<a href="https://besthomepageever.com"><img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"></a> | <img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12">
              </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-4 col-xs-9 text-center padding-10px">
@@ -237,10 +237,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     		<span class="glyphicon glyphicon-menu-hamburger"></span>
            </button>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
-                <li><a href="http://besthomepageever.com/news/" title="News and Updates" target="_blank"><span class="glyphicon glyphicon-comment text-info"></span> News and Updates</a></li>
-                <li><a href="http://besthomepageever.com/about/" title="About the Homepage" target="_blank"><span class="glyphicon glyphicon-info-sign text-info"></span> About the Homepage</a></li>
-                <li><a href="http://besthomepageever.com/tips/" title="Tips and Tricks" target="_blank"><span class="glyphicon glyphicon-thumbs-up text-info"></span> Tips and Tricks</a></li>
-                <li><a href="http://besthomepageever.com/faq/" title="Questions and Answers" target="_blank"><span class="glyphicon glyphicon-question-sign text-info"></span> Questions and Answers</a></li>
+                <li><a href="https://besthomepageever.com/news/" title="News and Updates" target="_blank"><span class="glyphicon glyphicon-comment text-info"></span> News and Updates</a></li>
+                <li><a href="https://besthomepageever.com/about/" title="About the Homepage" target="_blank"><span class="glyphicon glyphicon-info-sign text-info"></span> About the Homepage</a></li>
+                <li><a href="https://besthomepageever.com/tips/" title="Tips and Tricks" target="_blank"><span class="glyphicon glyphicon-thumbs-up text-info"></span> Tips and Tricks</a></li>
+                <li><a href="https://besthomepageever.com/faq/" title="Questions and Answers" target="_blank"><span class="glyphicon glyphicon-question-sign text-info"></span> Questions and Answers</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#" data-toggle="modal" data-target="#bgselect" title="Settings & Preferences"><span class="glyphicon glyphicon-cog text-info"></span> Settings and Preferences</a></li>
               </ul>
@@ -641,7 +641,7 @@ foreach($CATEGORIES as $cat){
 
 <div class="row text-center">
 	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-		<h5><small>:: BestHomepage ::<br><a href="http://besthomepageever.com/news/" title="News and Updates">News and Updates</a> | <a href="http://besthomepageever.com/faq/" title="Questions and Answers">Questions and Help</a> | <a href="http://besthomepageever.com/tips/" title="Tips and Tricks">Tips and Tricks</a><br><a href="http://besthomepageever.com/about/" title="About the Homepage">About the Homepage</a> | <a href="http://justincarver.com">Justin Carver</a></small></h5>
+		<h5><small>:: BestHomepage ::<br><a href="https://besthomepageever.com/news/" title="News and Updates">News and Updates</a> | <a href="https://besthomepageever.com/faq/" title="Questions and Answers">Questions and Help</a> | <a href="https://besthomepageever.com/tips/" title="Tips and Tricks">Tips and Tricks</a><br><a href="https://besthomepageever.com/about/" title="About the Homepage">About the Homepage</a> | <a href="http://justincarver.com">Justin Carver</a></small></h5>
     </div>
 </div>
 

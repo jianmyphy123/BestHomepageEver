@@ -61,6 +61,33 @@ var _gaq = _gaq || [];
             <a class="expand">
                 <div class="right-arrow">+</div>
                 <div>
+                    <h2>Remove "Only Secure Content" message (IE)</h2>
+                    <span>I keep getting a pop-up at the bottom of my page saying "only secure content is displayed" how do I turn that off? </span>
+                </div>
+            </a>
+
+            <div class="detail">
+                <div id="left" style="width:15%;float:left;height:100%;">
+                </div>
+                <div id="right" style="width:85%;float:right;height:100%;padding-left:20px;">
+                        <div id="sup">
+                        	<p>If you are using Internet Explorer, and receiving this message:</p>
+                 		    	<img src="../pictures/faq/ie_error_security2.png" />
+                        	<p>You can remove it, simply:</p>
+                                <ol>
+                                    <li>Go to Tools, then Internet options</li>
+                                    <li>Click Security Tab, Custom Level</li>
+                                    <li>Scroll to: Display Mixed Content --> Enable >> OK</li>
+                                    <li>Restart Internet Explorer</li>
+                                </ol>
+                        </div>  
+                </div>
+            </div>
+        </li>
+        <li>
+            <a class="expand">
+                <div class="right-arrow">+</div>
+                <div>
                     <h2>Localization Options</h2>
                     <span>Why is my 'location' not accurate?</span>
                 </div>
@@ -152,7 +179,7 @@ var _gaq = _gaq || [];
                             	<ol>
                                 	<li>Be sure you are saving your selection before closing the background selection window.</li>
                                 	<li>Make sure that <strong>cookies</strong> are <strong>enabled</strong> or allowed in your browser settings.</li>
-                                    <li>If you wish to keep your security or privacy settings strict, you can always manually enter <strong>http://besthomepageever.com</strong> as a safe site (see images below).
+                                    <li>If you wish to keep your security or privacy settings strict, you can always manually enter <strong>https://besthomepageever.com</strong> as a safe site (see images below).
                                     </li>                                    
                                 </ol> 
                                 <hr />   
@@ -356,7 +383,7 @@ var _gaq = _gaq || [];
 </div><!-- /.container -->
 
 <footer class="blog-footer">
-  <p>BestHomepageEver, 2016.</p>
+  <p>BestHomepageEver, 2017.</p>
   <p>
     <a href="#">Back to top</a>
   </p>

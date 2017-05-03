@@ -82,8 +82,8 @@
                                                     	<h2>Set your <strong>Homepage</strong></h2>
                                                         <h3>Step 1.</h3><p>Click the <strong>Tools</strong> tab (or, ALT+T). Select <strong>Internet Options</strong>, at or near the bottom of the list.<br />
                                                         <img src="../pictures/sethomepage/toolbar.jpg" width="413" height="28"/></p>
-                                                        <h3>Step 2.</h3><p>Enter or copy/paste <strong>http://besthomepageever.com</strong> into homepage box. Be sure <strong>Start with home page</strong> is selected under 'Startup'.</p>
-                                                        <p><img src="../pictures/sethomepage/ie-internet-options.png" width="424" height="293"/></p>                                                      
+                                                        <h3>Step 2.</h3><p>Enter or copy/paste <strong>https://besthomepageever.com</strong> into homepage box. Be sure <strong>Start with home page</strong> is selected under 'Startup'.</p>
+                                                        <p><img src="../pictures/sethomepage/ie-internet-options-1.png" width="423" height="320"/></p>                                                      
                                                     </div>
                                                 </div>
                                               <div role="tabpanel" class="tab-pane fade in" id="set-ie-tab">
@@ -116,9 +116,10 @@
                                                 <div role="tabpanel" class="tab-pane fade in active" id="set-chrome-home">
                                                     <div class="text-left">
                                                     	<h2>Set your <strong>Homepage</strong></h2>
-                                                        <p><h3>Step 1.</h3> First, click the settings icon <img src="../pictures/sethomepage/chrome-settings.jpg" width="29" height="26"> in upper-right portion of browser. Then, choose &quot;Settings.&quot;</p><p><h3>Step 2.</h3> Next, click to match the below settings <small>(appearances may be slightly different)</small>.</p>
-                                                       <img src="../pictures/sethomepage/chrome/chrome-set-homepage.png" width="520" height="272"><br />
-                                                       <img src="../pictures/sethomepage/chrome/chrome-set-homepage-2.png" width="514" height="178"/>
+                                                        <p><h3>Step 1.</h3> First, click the settings icon <img src="../pictures/sethomepage/chrome/chrome_settings.png"> in upper-right portion of browser. Then, choose <strong>Settings</strong>.</p><p><h3>Step 2.</h3> Next, click to match the below settings <small>(appearances may be slightly different)</small>.</p>
+                                                       <img src="../pictures/sethomepage/chrome/chrome-set-homepage-on-startup.png"><br />
+                                                       <h3>Step 3.</h3><p><strong>https://besthomepageever.com</strong> should be listed in this box.</p>
+                                                       <p><img src="../pictures/sethomepage/chrome/chrome-set-homepage-3.png"/></p>
                                                     </div><!-- /text-left -->
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane" id="set-chrome-tab">
@@ -153,7 +154,7 @@
                                                     	<h2>Set your <strong>Homepage</strong></h2>
                                                         <p><h3>Homepage Settings</h3>Choose Safari > Preferences, then click General.</p>
                                                         <ul>
-                                                          <li><h4>Set homepage</h4>Enter <strong>http://besthomepageever.com</strong> in the Homepage field, or click <strong>Set to Current Page</strong> if you are currently viewing BestHomepageEver.</li> 
+                                                          <li><h4>Set homepage</h4>Enter <strong>https://besthomepageever.com</strong> in the Homepage field, or click <strong>Set to Current Page</strong> if you are currently viewing BestHomepageEver.</li> 
                                                             <!-- Create Home Button -->
                                                           <li><h4>Convenience tip: Add home button</h4></li>
                                                             <p>Click on the View Menu > Customize Toolbar</p>
@@ -194,7 +195,7 @@
                                                 <div role="tabpanel" class="tab-pane fade in active" id="set-firefox-home">                                                	
                                                     <div class="text-left">
                                                     	<h2>Set your <strong>Homepage</strong></h2>
-                                                        <p>Click settings menu in far upper-right. <img src="../pictures/sethomepage/chrome-settings.jpg" width="29" height="26"> Choose <strong>options</strong>. Then, copy/paste <strong>http://besthomepageever.com/</strong> into Home Page box.</p><p>Above that bar, choose <strong>Show my home page</strong> in drop down menu.</p>
+                                                        <p>Click settings menu in far upper-right. <img src="../pictures/sethomepage/chrome-settings.jpg" width="29" height="26"> Choose <strong>options</strong>. Then, copy/paste <strong>https://besthomepageever.com/</strong> into Home Page box.</p><p>Above that bar, choose <strong>Show my home page</strong> in drop down menu.</p>
                                                     </div><!-- /text-left -->
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane" id="set-firefox-tab">
@@ -232,7 +233,7 @@
                                                     <div class="text-left">                                          	
                                                         <h3>Step 1.</h3><p>Click the ellipsis (...) menu in the upper right. Scroll down to the <strong>Settings</strong> button.</p>
                                                         <h3>Step 2.</h3><p>Under the heading "Open with", choose the radio button for "A specific page or pages", then from the pull down menu, choose "Custom".</p>
-                                                        <h3>Step 3.</h3><p>Directly under the Custom pull down menu option, type in <strong>http://besthomepageever.com</strong>, then hit ENTER, +, <strong>or</strong> the save sign to submit.</p>
+                                                        <h3>Step 3.</h3><p>Directly under the Custom pull down menu option, type in <strong>https://besthomepageever.com</strong>, then hit ENTER, +, <strong>or</strong> the save sign to submit.</p>
                                                         <p><img src="../pictures/sethomepage/set-homepage-microsoft-edge.png" width="482" height="420" /></p>
                                                         <h4 class="text-danger">Important: </h4><p>You may need to remove any other pages listed by clicking the "X" to the right (i.e. <i>MSN, about:start</i>, etc.).
                                                     </div><!-- /text-left -->

@@ -86,7 +86,7 @@ if(isset($_GET['token'])) {
 		echo '<div class="login-page">
 			
 				  <div class="form">
-					
+      				<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
 					<form class="login-form" action="changepass.php" method="post" id="changepass_form">
 					  <input type="password" placeholder="new password" name="password" required/>
 					  <input type="hidden" name="token" value="'.$token.'">
@@ -127,14 +127,19 @@ else {
 			
 			if ($results) {
 				// the message
-				$link = "http://besthomepageever.com/changepass.php?token=$token";
+				$link = "https://besthomepageever.com/changepass.php?token=$token";
 				$msg = '
 					<!DOCTYPE html>
 					<html lang="en">
 						<meta charset="utf8">
 					</html>
-					<body>
-						<a href="'.$link.'">'.$link.'</a>
+					<body>						
+						<p>Click here to reset your password.</p>
+						<p><a href="'.$link.'">'.$link.'</a></p>
+						<p>Regards,</p>						
+						<p><img src="https://besthomepageever.com/Logo/flat/darker_flat_md.png"></p>
+						<p><a href="https://besthomepageever.com">BestHomepageEver</a></p>
+						
 					</body>
 				';
 				$headers[] = 'MIME-Version: 1.0';
@@ -142,19 +147,21 @@ else {
 				$headers[] = 'From: <support@besthomepageever.com>';
 				$headers[] = 'Reply-To: support@besthomepageever.com';
 				
-				$success = mail("$username","[BestHompageEver] Forgotten Password", $msg, implode("\r\n", $headers));
+				$success = mail("$username","[BestHompageEver] Password Reset", $msg, implode("\r\n", $headers));
 				
 				if($success) {
 					echo '<div class="login-page">
 						
 						  <div class="form" action="changepass.php" method="post">
-							<span style="color: blue">email was sent successfully</span>
+							
 							<form class="login-form" action="changepass.php" method="post" id="changepass_form">
 							  <input type="email" placeholder="your email address" name="username" required/>
-							  
 							  <button type="submit" name="sendemail">Send Email</button>
 							</form>
+							  <p style="color: green">Success! E-Mail sent.</p>
+							  <p style="color: grey"><small><strong>Note:</strong> Be sure to check your junk box!<br>E-mail may take a few minutes to arrive.</small></p>
 						  </div>
+						  <p><center><small><a href="../">Return to Homepage</a></small></center></p>
 						</div>';
 				}
 				else {
@@ -181,18 +188,21 @@ else {
 		<div class="login-page">
 			
 		  <div class="form">
-			
+      		<img src="Logo/flat/darker_flat_md.png" class="padding-bottom-10px" width="120" height="109">
 			<form class="login-form" action="changepass.php" method="post" id="changepass_form">
 				<?php 
 				if ($error_id != 0) 
 					echo "<span id='login_error_message'>$errors[$error_id]</span>";
 				if(isset($_GET['data']) && $_GET['data'] == 1)
-					echo "<span style='color: blue'>your password was changed successfully</span>";
+					echo "<span style='color: blue'>Password changed successfully.</span>";
 				
 				?>
 			  <input type="email" placeholder="your email address" name="username" required/>
 			  
 			  <button type="submit" name="sendemail">Send Email</button>
+              <p style="color: grey"><small><strong>Note:</strong> Must be same e-mail address used at signup.</small></p>
+
+              
 			</form>
 		  </div>
 		</div>

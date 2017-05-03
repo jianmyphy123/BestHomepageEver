@@ -42,7 +42,7 @@ if(array_key_exists('login_user',$_SESSION) && isset($_SESSION['login_user']) &&
 
                 $ret =  array(
                             "title" => "ok",
-                            "data" => "Your account updated successfully."
+                            "data" => "Update Successful."
                         );
                 echo json_encode($ret);
             return;
@@ -78,7 +78,8 @@ if(array_key_exists('login_user',$_SESSION) && isset($_SESSION['login_user']) &&
 
             $ret =  array(
                         "title" => "ok",
-                        "data" => "Your account updated successfully."
+                        "data" => "Update Successful."
+                        
                     );
             echo json_encode($ret);
             return;

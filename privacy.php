@@ -34,12 +34,12 @@
         <meta name="theme-color" content="#18254b">
         <meta property="og:title" content="BestHomepageEver - Privacy Policy" /> 
 		<meta property="og:description" content="Best Homepage Ever - Official privacy policy. Listed is what information is collected, 3rd-party disclosure, and more" />
-		<meta property="og:image" content="http://besthomepageever.com/pictures/besthomepageever_logo.png" />
-        <meta property="og:url" content="http://besthomepageever.com" />
+		<meta property="og:image" content="https://besthomepageever.com/pictures/besthomepageever_logo.png" />
+        <meta property="og:url" content="https://besthomepageever.com" />
 
     <!--[if IE 8]>
     <script type="text/javascript">
-    window.location = "http://besthomepageever.com/index-ie8.html";
+    window.location = "https://besthomepageever.com/index-ie8.html";
     </script>
     <![endif]-->
     
@@ -87,21 +87,22 @@
                 <hr>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        	<h3>What personal information is collected from myself and other visitors?</h3>
+                    		<h3>Is your site secure?</h3>   
+                            	<p>Yes. This site is 256-bit SSL certified and secure. This can be verified by a 3rd party, by clicking button seen on bottom of page.</p>
                             
-                            	<p>At this time, no personal information is ever collected on BestHomepageEver.</p>
+                            <h3>What personal information is collected from myself and other visitors?</h3>
+                            
+                            	<p>No information is ever collected, except basic name and e-mail address for account creation purposes.</p>
                                 
                             <h3>Do we use 'cookies'?</h3>
-                            	<p>BestHomepageEver uses cookies for tracking purposes and for helping users set and save their custom settings. You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser (i.e. Internet Explorer) settings. Each browser is a little different, so look at your browser's Help menu to learn the correct way to modify your cookies. If you disable cookies, some features will be disabled that make your site experience more efficient and some of our services will not function properly.</p>
+                            	<p>BestHomepageEver uses cookies for tracking purposes and for helping users set and save their custom settings. You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings (i.e. Internet Explorer). Each browser is a little different, so look at your browser's Help menu to learn the correct way to modify your cookies. If you disable cookies, some features may not work properly.</p>
                             <h3>Third-party disclosure</h3>
                             	<p>We do not sell, trade, or otherwise transfer to outside parties any personally identifiable information. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it's release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property, or safety.</p>
                                 <p>However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses. </p>
-                    		<h3>Is your site secure?</h3>   
-                            	<p>BestHomepageEver does not encrypt the website because no information is transmitted to or from the website.</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <h3>Is personal information collected?</h3>
-                                <p>BestHomepageEver does not collect any personal information. We do automatically collect basic computer information such as IP address, server information, browser type, and operating system. </p>
+                                <p>BestHomepageEver collects name and e-mail information upon account creation, however none of this information has ever or will ever be shared with any 3rd parties. The e-mail address is only collected for account restoration (forgotten e-mail). </p>
                                 
                              <h3>Google Display Network Impression Reporting</h3>
                                 
@@ -111,7 +112,9 @@
                                 
                           <h3>Contact Info</h3>
                     			<p>If you have any questions about our privacy policy, write us at <i>support@besthomepageever.com</i><br>                                
- 
+ 						  <h3>Secure 256-bit Encryption</h3>
+                          		<p>Verify updated SSL certificate and security by clicking here:</p>
+                                <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=Gb6wUP2hiposdOpBUAWo0sD5TzGqEoNbIcL8EV0pK95mljfkIqNZJC3vcZYj"></script></span>
                      </div>
                   </div>		             
              

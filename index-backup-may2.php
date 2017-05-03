@@ -2,8 +2,7 @@
 
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Pragma: no-cache');
-require_once('init_alex.php');
-require_once('settings.php');
+require_once('init.php');
 
 $CATEGORIES = array('Social Media','Popular','Sports','Travel','Trade/Retail','Shop & Buy',
 'Movies & TV','Tech/News','Entertainment','Food & Music','Daily Deals','Finance');
@@ -99,12 +98,12 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
         <meta name="theme-color" content="#18254b">
         <meta property="og:title" content="BestHomepageEver - All of your favorite sites in a single click" /> 
 		<meta property="og:description" content="The Internet's Best Homepage! Quick Access to everything you use daily: E-mail, Maps, Google, News, Sports, Facebook, etc. All in just 1-click. No Advertising!" />
-		<meta property="og:image" content="http://besthomepageever.com/pictures/besthomepageever_logo.png" />
-        <meta property="og:url" content="http://besthomepageever.com" />
+		<meta property="og:image" content="https://besthomepageever.com/pictures/besthomepageever_logo.png" />
+        <meta property="og:url" content="https://besthomepageever.com" />
 
     <!--[if IE 8]>
     <script type="text/javascript">
-    window.location = "http://besthomepageever.com/index-ie8.html";
+    window.location = "https://besthomepageever.com/index-ie8.html";
     </script>
     <![endif]-->
     
@@ -123,8 +122,8 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 	<style type="text/css">
 		*,body{
 		<?php
-			if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
-			echo 'font-family:'.$_SESSION['fontStyle'].'';
+			if(isset($_COOKIE['fontStyle'])){
+			echo 'font-family:'.$_COOKIE['fontStyle'].'';
 				}
 			?> }
 		.none {display:none !important;}
@@ -155,7 +154,7 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
         font-size: 12pt;
     }
     .linkss:hover {
-        color: #39F;
+        color: #3CF;;
         text-decoration: underline; 
     }
     </style>
@@ -166,22 +165,14 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
     <script src="js/jquery-1.12.0.min.js"></script>
     <script src="bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="bootstrap/3.3.6/js/bootstrap-toggle.min.js"></script>
-    <!-- Heatmap.me 
-	<script>
-    (function(h,e,a,t,m,p) {
-    m=e.createElement(a);m.async=!0;m.src=t;
-    p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-    })(window,document,'script','https://u.heatmap.it/log.js');
-    </script>
-    -->
-    
+
 </head>
 
 <?php
 $NUMBERS=array('a','b');
 shuffle($NUMBERS);
 ?>
-<body style="<?php if(array_key_exists('BG',$_SESSION) && isset($_SESSION['BG'])){echo "background-image: url(pictures/background_selection/".$_SESSION['BG']."".$_SESSION['BG_LETTER'].".png) !important;";} else {echo "background-image: url(pictures/background_selection/".str_pad(rand(1,16), 2, '0', STR_PAD_LEFT)."".$NUMBERS[0].".png) !important;";} ?>">
+<body style="<?php if(isset($_COOKIE['BG'])){echo "background-image: url(pictures/background_selection/".$_COOKIE['BG']."".$_COOKIE['BG_LETTER'].".png) !important;";} else {echo "background-image: url(pictures/background_selection/".str_pad(rand(1,16), 2, '0', STR_PAD_LEFT)."".$NUMBERS[0].".png) !important;";} ?>">
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W3PGMH"
@@ -216,17 +207,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="row">
  	<div class="col-lg-3 col-md-3 col-sm-4 hidden-xs text-left">
-    	
- 			 <div class="hidden-sm">
-             	<a type="button" class="btn btn-xs btn-primary sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Make this my homepage</a> 
-                <img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"> | <a href="http://besthomepage.co.uk"><img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12"></a>
-             </div>
-             <div class="visible-sm">
-             	<a type="button" class="btn btn-xs btn-primary sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Set as homepage</a> 
-             	<img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"> | <a href="http://besthomepage.co.uk"><img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12"></a>
-             </div>
-              
-        
+    	<div class="btn-group" role="group">
+            <a type="button" class="btn btn-sm btn-success sethomepage" data-toggle="modal" data-target="#sethomepage" title="Make this my homepage">Make this my homepage</a> 
+          	<div class="btn-group hidden-sm hidden-md" role="group">
+              <div class="dropdown">
+               <button class="btn btn-sm btn-success dropdown-toggle" type="button" id="tab_select" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+                <span class="glyphicon glyphicon-folder-close"></span> <span class="caret"></span>
+               </button>
+                  <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="tab_select">
+    				<li class="dropdown-header">Free 'New Tab' Extensions</li>
+                    <li role="separator" class="divider"></li>    
+                    <li><a href="https://chrome.google.com/webstore/detail/best-homepage-ever-new-ta/omdkehkdnojcndhhilglklegbakenkgb" target="_blank"><img src="pictures/sethomepage/chrome_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="17" height="17"> Chrome Extension</a></li>
+                    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/best-homepage-ever/" target="_self"><img src="pictures/sethomepage/firefox_xs-min.png" align="absmiddle" border="0" title="Google Chrome Extension" width="20" height="20"> Firefox Add-On</a></li>
+                  </ul>
+               </div><!-- /dropdown -->
+             </div><!-- /btn-group -->
+            
+            <div class="btn-group" role="group">
+              <div class="dropdown">
+               <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="bhe_world" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+                <span class="glyphicon glyphicon-globe"></span> <span class="caret"></span>
+               </button>
+                  <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="bhe_world">
+                    <li><a href="#"><img src="pictures/flags/usa.png" align="absmiddle" title="BestHomepageEver USA" width="18" height="12"> USA</a></li>
+                    <li><a href="http://besthomepage.co.uk"><img src="pictures/flags/gb.png" align="absmiddle" border="0" title="BestHomepageEver UK" width="18" height="12"> United Kingdom</a></li>
+                  </ul>
+               </div><!-- /dropdown -->
+             </div><!-- /btn-group -->             
+		</div><!-- /btn-group --> 
     </div>
     <div class="col-lg-6 col-md-6 col-sm-4 col-xs-9 text-center padding-bottom-10px">
     		<img src="Logo/best-homepage-ever-logo-2016.png" title="Best Homepage Ever Logo" class="visible-xs img-responsive" width="400" height="65">
@@ -234,47 +242,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <img src="Logo/best-homepage-ever-logo-2016.png" title="Best Homepage Ever Logo" class="hidden-xs hidden-sm" width="400" height="65"><br>            
     </div>
     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 text-right"> 
-		<?php
-		if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {
-		?>
-		<div class="btn-group">
-          <div class="dropdown">
-           <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
-    		<span class="glyphicon glyphicon-user"></span>
-			<span><?php echo $_SESSION['login_user']; ?></span>
-           </button>
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
-               
-                <li><a href="#" data-toggle="modal" data-target="#bgselect" title="Settings & Preferences"><span class="glyphicon glyphicon-cog text-info"></span> Settings and Preferences</a></li>
-				<li role="separator" class="divider"></li>
-				<li><a href="logout.php"><span class="glyphicon glyphicon-off text-info"></span> Logout</a></li>
-              </ul>
-           </div><!-- /dropdown -->
-         </div><!-- /btn-group -->
-		<?php } else {?>
-		<span class="text-info">
-          <a class="btn btn-sm btn-primary" role="button" href="login.php">Login</a>
-        </span>  
-		<?php } ?>
-    	<span class="text-info">
-          <a tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-content="<p class='text-center'><small>Vote 1x per month!</small><br><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote BestHomepageEver</span></a></p><hr><p class='small text-center'>Please take 2 seconds to vote for BHE, as 'Best Homepage'.</p>"><span class="glyphicon glyphicon-check"></span></a></span></a>
-        </span> 
-        <div class="btn-group">
-          <div class="dropdown">
-           <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
-    		<span class="glyphicon glyphicon-menu-hamburger"></span>
-           </button>
-              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
-                <li><a href="news/" title="News and Updates"><span class="glyphicon glyphicon-comment text-info"></span> News and Updates</a></li>
-                <li><a href="about/" title="About the Homepage"><span class="glyphicon glyphicon-info-sign text-info"></span> About the Homepage</a></li>
-                <li><a href="tips/" title="Tips and Tricks"><span class="glyphicon glyphicon-thumbs-up text-info"></span> Tips and Tricks</a></li>
-                <li><a href="faq/" title="Questions and Answers"><span class="glyphicon glyphicon-question-sign text-info"></span> Questions and Answers</a></li>
+        <div class="btn-group" role="group">
+          <div class="btn-group" role="group">
+              <div class="dropdown">
+               <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="news_settings" data-toggle="dropdown" data-trigger="hover" aria-haspopup="true" aria-expanded="true">
+                <span class="glyphicon glyphicon-menu-hamburger"></span> <span class="caret"></span> 
+               </button>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="news_settings">
+                    <li><a href="news/" title="News and Updates"><span class="glyphicon glyphicon-comment text-info"></span> News and Updates</a></li>
+                    <li><a href="about/" title="About the Homepage"><span class="glyphicon glyphicon-info-sign text-info"></span> About the Homepage</a></li>
+                    <li><a href="tips/" title="Tips and Tricks"><span class="glyphicon glyphicon-thumbs-up text-info"></span> Tips and Tricks</a></li>
+                    <li><a href="faq/" title="Questions and Answers"><span class="glyphicon glyphicon-question-sign text-info"></span> Questions and Answers</a></li>
+                  </ul>
+               </div><!-- /dropdown -->
+           </div><!-- /btn-group for dropdown --> 
+         	<a tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-content="<p class='text-center text-info'><small>Vote 1x per week!</small><br><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote BestHomepageEver</span></a></p><hr><p class='small text-center text-info'>Please take 2 seconds to vote for BHE, as 'Best Homepage'.</p>"><span class="glyphicon glyphicon-check"></span></a>
+			<a href="#" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#bgselect"><span class="glyphicon glyphicon-cog"></span></a>          
+        </div><!-- /btn-group -->
+    </div><!-- /col-xx -->
+</div><!-- /row -->
 
-              </ul>
-           </div><!-- /dropdown -->
-         </div><!-- /btn-group -->
-    </div>
-</div>
+
 
 <div class="row">   
 	<!-- Panoramic -->
@@ -313,7 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- // REFERENCE // -->   
        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 text-right hidden-xs">
-           <a href="https://www.google.com/search?q=local+weather&gws_rd=ssl" target="_self"><img src="pictures/weather2.png" width="50" height="50" title="Your local weather"></a>  <a href="http://maps.google.com" title="Maps and Directions"><img src="pictures/maps2.png" alt="Maps and Directions" width="50" height="50"></a> 
+           <a href="https://www.google.com/search?q=local+weather&gws_rd=ssl" target="_self"><img src="pictures/weather2.png" width="50" height="50" title="Your local weather"></a>  <a href="http://maps.google.com" title="Maps and Directions"><img src="pictures/maps_google.png" alt="Maps and Directions" width="55" height="55"></a> 
        </div>       
     </div><!-- /panoramic-footer -->
 </div><!-- /Row -->
@@ -321,8 +309,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <hr>
 <div class="row">
 
-	<div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-left">
+	<div class="col-lg-3 col-md-3 hidden-xs text-left">
       <div id="specials">
+ <!-- <small>User Accounts coming soon!<br><a href="news/index.php">Learn more..</a></small> -->
+     
+      <!-- 
+      	<div id="votetop10">    	
+    	<a href="#" data-content="<p class='text-center text-info'><p class='small text-center text-info'>Please...<br>Vote for BHE, as 'Best Homepage'.</p><p class='text-center'><a href='http://www.thetoptens.com/best-homepages/' target='new'><span class='btn btn-primary'><span class='glyphicon glyphicon-check'></span> Vote Now</span></a></p>" data-placement="right" data-delay-show="1"><span class="glyphicon glyphicon-ok"></span> Vote for BHE!</a>                       
+      	 </div>        	         -->
+      
       </div>  
     </div>    
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-top-10px text-center">
@@ -350,15 +345,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
     	   
-		
+	   <?php 
+		if($_COOKIE['ti']=='image')$image=1;
+		if($image==0){
+			$checkedon='';
+			$checkedoff='checked';
+		} else {
+			$checkedon='checked';
+			$checkedoff='';
+		}
+	   ?>
        <!--
 	   <input type="radio" onclick="javascript:showImages();" name="textOrImage" data-toggle="toggle" <?php echo $checkedon; ?>> <span class="small">Images</span>
 	   <input type="radio" onclick="javascript:showLinks();" name="textOrImage" data-toggle="toggle" style="margin-left:5px;" <?php echo $checkedoff; ?>> <span class="small">Classic</span>
 
        -->
-       <input type="checkbox" id="toggle-button" checked data-toggle="toggle" data-on="Images" data-off="Classic" data-onstyle="success" data-offstyle="default" >
+       <input type="checkbox" id="toggle-button" checked data-toggle="toggle" data-on="Classic" data-off="Images" data-onstyle="info" data-offstyle="info" data-size="mini">
         <span id="savelinkhelp" class="padding-left-3px">
-           <a href="#" data-title="Logos vs Classic" data-content="You can save your preference using the <button class='btn btn-sm btn-primary dropdown-toggle'>		<span class='glyphicon glyphicon-menu-hamburger'></span></button> button<br> at top right of homepage, under <strong>Settings & Preferences</strong>." data-placement="left"><span class="glyphicon glyphicon-question-sign"></span></a>
+           <a href="#" data-title="Images vs Classic" data-content="You can save your preference using the <button class='btn btn-sm btn-primary dropdown-toggle'><span class='glyphicon glyphicon-cog'></span></button> button<br> at top right of homepage." data-placement="left"><span class="glyphicon glyphicon-question-sign"></span></a>
         </span>
 
     	
@@ -399,7 +403,7 @@ foreach($CATEGORIES as $cat){
 		echo '<div class="floatL" style="">';
 		
 		$image=0;
-		if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image')$image=1;
+		if($_COOKIE['ti']=='image')$image=1;
 		if($image==0){
 			$bheClass='';
 			$bheClassImg='none';
@@ -621,13 +625,51 @@ foreach($CATEGORIES as $cat){
   <div class="row hidden-xs padding-top-30px">
 	<div class="col-lg-3 col-md-3 col-sm-3 text-left">
     	<div id="streaming">
-    	<span style="font-size:1.5em;" class="glyphicon glyphicon-music"></span> <span style="font-size:1.5em;" class='glyphicon glyphicon-facetime-video'></span> <a href="#" data-content="<span class='glyphicon glyphicon-facetime-video'></span> Watch: <a href='http://netflix.com'>Netflix</a> | <a href='http://www.hulu.com'>Hulu</a> | <a href='http://www.amazon.com/Prime-Video/b?ie=UTF8&node=2676882011&tag=besth0f-20' target='_blank'>Amazon Video</a><img src='http://www.assoc-amazon.com/e/ir?t=besth0f-20&l=ur2&o=1' width='1' height='1' border='0' alt='' style='border:none !important; margin:0px !important;' /><br><span class='glyphicon glyphicon-music'></span> Listen: <a href='http://www.pandora.com'>Pandora</a> | <a href='http://spotify.com'>Spotify</a>" data-placement="right" data-delay-show="1"> Stream Music/Video</a>
-        </div>        
+    	<span style="font-size:1.5em;" class='glyphicon glyphicon-facetime-video'></span> <a href="#" data-content="
+            <div class='col-lg-12 col-md-12 col-sm-12'>
+            	<ul class='list-group'>
+  					<li class='list-group-item'><a href='https://www.netflix.com'><img src='pictures/streaming/netflix.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.hulu.com'><img src='pictures/streaming/hulu.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.amazon.com/Prime-Video/b?node=2676882011'><img src='pictures/streaming/amazon_video.png'></a></li>
+				</ul>
+            </div>
+        " data-placement="right" data-delay-show="1"> Stream Music/Video..</a>
+        </div>                
+    	<div id="paypeople">
+    	<span style="font-size:1.5em;" class="glyphicon glyphicon-user"></span><a href="#" data-content="
+            <div class='col-lg-12 col-md-12 col-sm-12'>
+            	<ul class='list-group'>
+  					<li class='list-group-item'><a href='https://www.paypal.com'><img src='pictures/banks/paypal.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.venmo.com'><img src='pictures/banks/venmo.png'></a></li>
+				</ul>
+            </div>
+        " data-placement="right" data-delay-show="1"> Pay/Transfer..</a>
+        </div>                
         <div id="banking">
-            <span style="font-size:1.5em;" class="glyphicon glyphicon-usd"></span> <a href="#" data-title="Banks & Financials" data-content="<strong>Banking</strong>: <a href='http://www.chase.com'>Chase</a> | <a href='http://www.wellsfargo.com'>Wells</a> | <a href='http://www.usbank.com'>USBank</a> | <a href='http://www.bankofamerica.com'>BofA</a> | <a href='https://online.citi.com/US/JPS/portal/Index.do'>Citi</a> | <a href='https://www.usaa.com'>USAA</a><br><strong>Pay/Transfer</strong>: <a href='https://www.paypal.com'>Paypal</a> | <a href='https://venmo.com/'>Venmo</a><br><strong>Brokerages</strong>: <a href='https://www.schwab.com/public/schwab/client_home'>Schwab</a> | <a href='https://www.fidelity.com'>Fidelity</a> | <a href='https://www.scottrade.com'>ScotTrade</a> | <a href='https://www.tdameritrade.com'>TD/Ameritrade</a> | <a href='https://investor.vanguard.com/home/'>Vanguard</a>" data-placement="right" data-delay-show="1">Banking/Finance</a>
-        </div>  
+            <span style="font-size:1.5em;" class="glyphicon glyphicon-usd"></span> <a href="#" data-content="
+            <div class='col-lg-6 col-md-6 col-sm-6'>
+            	<ul class='list-group'>
+  					<li class='list-group-item'><a href='https://www.bankofamerica.com'><img src='pictures/banks/bofa2.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.chase.com'><img src='pictures/banks/chase.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.wellsfargo.com'><img src='pictures/banks/wells_fargo.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.usbank.com'><img src='pictures/banks/usbank.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.citibank.com'><img src='pictures/banks/citibank.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.usaa.com'><img src='pictures/banks/usaa.png'></a></li>
+				</ul>
+            </div>
+            <div class='col-lg-6 col-md-6 col-sm-6'>
+            	<ul class='list-group'>
+  					<li class='list-group-item'><a href='https://www.schwab.com'><img src='pictures/banks/schwab.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.fidelity.com'><img src='pictures/banks/fidelity.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.scottrade.com'><img src='pictures/banks/scottrade.png'></a></li>
+  					<li class='list-group-item'><a href='https://www.tdameritrade.com'><img src='pictures/banks/tdameritrade.png'></a></li>
+  					<li class='list-group-item'><a href='https://investor.vanguard.com/home/'><img src='pictures/banks/vanguard2.png'></a></li>
+  					<li class='list-group-item'><a href='https://us.etrade.com/home'><img src='pictures/banks/etrade.png'></a></li>
+				</ul>
+            </div>" data-placement="right" data-delay-show="1">Banking/Brokers..</a>
+        </div>
     </div>
-    
+   
     <div class="col-lg-6 col-md-6 col-sm-6">
 
     	<div class="box-with-shadow">
@@ -641,7 +683,7 @@ foreach($CATEGORIES as $cat){
                     </div>
                     
               		<div>
-                    	<a href="http://reddit.com">Reddit</a> | <a href="http://www.drudgereport.com/">DrudgeReport</a> | <a href="http://www.breitbart.com/">Breitbart</a> | <a href="http://www.theblaze.com/">Blaze</a>
+                    	<a href="http://reddit.com">Reddit</a> | <a href="http://www.drudgereport.com/">DrudgeReport</a> | <a href="http://www.breitbart.com/">Breitbart</a> | <a href="http://www.theblaze.com/">Blaze</a> | <a href="https://www.propublica.org/">ProPublica</a>
                     </div>
                     <hr>
                     <span class="glyphicon glyphicon-globe"></span> Global: <a href="http://www.bbc.com/news/world">BBC World</a> | <a href="http://www.cnn.com/world">CNN World</a>
@@ -653,7 +695,7 @@ foreach($CATEGORIES as $cat){
 	<div class="col-lg-3 col-md-3 col-sm-3 text-right">
     
         <div id="timer">
-            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-content="Minutes: <a href='https://www.google.com/search?q=5+minute+timer&cad=h' target='_blank'>5</a> | <a href='https://www.google.com/search?q=10+minute+timer&cad=h' target='_blank'>10</a> | <a href='https://www.google.com/search?q=15+minute+timer&cad=h' target='_blank'>15</a> | <a href='https://www.google.com/search?q=30+minute+timer&cad=h' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=45+minute+timer&gws_rd=ssl#q=45+minute+timer' target='_blank'>45</a><hr>Hours: <a href='https://www.google.com/search?as_q=1+hour+timer&gws_rd=ssl' target='_blank'>1</a> | <a href='https://www.google.com/search?as_q=2+hour+timer&gws_rd=ssl' target='_blank'>2</a> | <a href='https://www.google.com/search?as_q=3+hour+timer&gws_rd=ssl' target='_blank'>3</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
         </div>   
         <a href="https://bitly.com/">BitLy</a> <span style="font-size:1.2em;" class="glyphicon glyphicon-link padding-left-3px"></span>		
  <!--   <div id="makeadifference">
@@ -767,6 +809,7 @@ foreach($CATEGORIES as $cat){
                                     <small>Peas</small>
                                     </div>
                                 	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
                                      <a href="#" id="b_10" onclick="javascript:bgChange('10','a');"><img src="pictures/background_selection/10a.png" width="50" height="50"></a><br>
                                     <small>Deep Ocean</small>
                                     </div>
@@ -891,6 +934,7 @@ foreach($CATEGORIES as $cat){
                                 	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                      <a href="#" id="c_04" onclick="javascript:bgChange('04','c');"><img src="pictures/background_selection/04c.png" width="50" height="50"></a><br>
                                     <small>Cherry</small>
+
                                     </div>
                                 </div>
                             	<div class="row bottomspace text-center">
@@ -968,8 +1012,8 @@ foreach($CATEGORIES as $cat){
 										$x=0;
 										foreach($FONT as $num=>$var){
 											$checked='';
-											if(array_key_exists('fontStyle',$_SESSION) && isset($_SESSION['fontStyle'])){
-												if($_SESSION['fontStyle']==$var['value'])$checked='checked';
+											if(isset($_COOKIE['fontStyle'])){
+												if($_COOKIE['fontStyle']==$var['value'])$checked='checked';
 											}
 											echo '
                                     <li>
@@ -991,7 +1035,7 @@ foreach($CATEGORIES as $cat){
                                 <h3 class=" text-primary">Preview</h3>                                                                                             
                                 <div id="" class="frame-with-padding" >
                                 	
-                                        <p class="text-primary" id="efont" style="font-size:26px;">Best sample text ever.</p>
+                                        <p class="text-primary" id="efont" style="font-size:26px;">This is my favorite text.</p>
                                     
                                 </div> 
                                 <p class="text-center text-muted small margin-top">*Cookies must be enabled/allowed to save correctly.</p>
@@ -1000,10 +1044,10 @@ foreach($CATEGORIES as $cat){
                             	<h3>When selecting a website, open the webpage in:</h3>
                                     <div class="text-center padding-top-10px">
                                         <label class="radio-inline">                            	
-                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="same" <?php if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){if($_SESSION['tab']=='same'){echo 'checked';}}else{echo 'checked';} ?>> Current Window
+                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="same" <?php if(isset($_COOKIE['tab'])){if($_COOKIE['tab']=='same'){echo 'checked';}}else{echo 'checked';} ?>> Current Window
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="blank" <?php if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){if($_SESSION['tab']=='blank'){echo 'checked';}} ?>> New Window/Tab  
+                                          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="blank" <?php if(isset($_COOKIE['tab'])){if($_COOKIE['tab']=='blank'){echo 'checked';}} ?>> New Window/Tab  
                                         </label>
                                          <div id="linkchoice" class="padding-top-10px"><a href="#" data-content="<p><strong>Current window</strong>: Best for minimal number of browser windows/tabs.<br>When using this option, it's ideal to have a home button (<span class='glyphicon glyphicon-home'></span>) or link on bookmarks bar for quick return to homepage.</p><p><strong>New Window/Tab</strong>: Keeps homepage always open in one tab.<br>This is better if you prefer having one tab be your portal for launching all your favorite websites.</p>Give both a try, you can always change this setting back!" data-placement="bottom" data-delay-show="1"><small>Help me choose</small></a>
                                			 </div>
@@ -1013,10 +1057,10 @@ foreach($CATEGORIES as $cat){
                             	<h3 class="imagesaslink">Display links as:</h3>
                                     <div class="imagesaslink text-center padding-top-10px">
                                         <label class="radio-inline">
-                                          <input type="radio" name="tiChoice" id="tiText" value="text" <?php if(array_key_exists('ti',$_SESSION) && isset($_SESSION['ti'])){if($_SESSION['ti']=='text'){echo 'checked';}}else{echo 'checked';} ?>> Classic (text) 
+                                          <input type="radio" name="tiChoice" id="tiText" value="text" <?php if(isset($_COOKIE['ti'])){if($_COOKIE['ti']=='text'){echo 'checked';}}else{echo 'checked';} ?>> Classic (text) 
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="tiChoice" id="tiImages" value="image" <?php if(array_key_exists('ti',$_SESSION) && isset($_SESSION['ti'])){if($_SESSION['ti']=='image'){echo 'checked';}} ?>> Images 
+                                          <input type="radio" name="tiChoice" id="tiImages" value="image" <?php if(isset($_COOKIE['ti'])){if($_COOKIE['ti']=='image'){echo 'checked';}} ?>> Images 
                                         </label>										
                                     </div>
                                     
@@ -1045,11 +1089,11 @@ foreach($CATEGORIES as $cat){
 		window.onload = function() {
 			document.getElementById("search_query").focus();
 			<?php
-		if(array_key_exists('BG',$_SESSION) && isset($_SESSION['BG'])){
+		if(isset($_COOKIE['BG'])){
 			echo "
-			$('body').css('background-image', 'url(pictures/background_selection/".$_SESSION['BG']."".$_SESSION['BG_LETTER'].".png)');
-			num = '".$_SESSION['BG']."';
-			letter = '".$_SESSION['BG_LETTER']."';
+			$('body').css('background-image', 'url(pictures/background_selection/".$_COOKIE['BG']."".$_COOKIE['BG_LETTER'].".png)');
+			num = '".$_COOKIE['BG']."';
+			letter = '".$_COOKIE['BG_LETTER']."';
 			";
 		} 
 			?>
@@ -1059,7 +1103,7 @@ foreach($CATEGORIES as $cat){
 			return o;
 		}
 		function randomBg(){
-			window.location="index_alex.php?clearbg";
+			window.location="index.php?clearbg";
 			/*
 			var test = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16'];
 			Shuffle(test);
@@ -1100,9 +1144,7 @@ foreach($CATEGORIES as $cat){
 			var fontStyle = $('input[name=optionsRadios]:checked').val();
 			var tab = $('input[name=inlineRadioOptions]:checked').val();
 			var ti = $('input[name=tiChoice]:checked').val();
-			window.location='index_alex.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
-			
-			
+			window.location='index.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
 		}
 		function showImages(){
 			 $( ".bheClass" ).addClass( "none" );
@@ -1136,7 +1178,6 @@ foreach($CATEGORIES as $cat){
    	<script>
 		$('#banking a').webuiPopover({	
 		trigger:'hover',
-
 		style:'inverse',
 		animation:'pop',
 		});
@@ -1170,6 +1211,13 @@ foreach($CATEGORIES as $cat){
 		});
 	</script>
     <script>
+		$('#paypeople a').webuiPopover({	
+		trigger:'hover',		
+		style:'inverse',
+		animation:'pop',
+		});
+	</script>
+    <script>
 		$('#savelinkhelp a').webuiPopover({	
 		trigger:'hover',		
 		style:'inverse',
@@ -1183,23 +1231,22 @@ foreach($CATEGORIES as $cat){
 		animation:'pop',
 		});
 	</script> -->
-<!--<script>
-		$('#makeadifference a').webuiPopover({	
-		trigger:'hover',		
-		style:'inverse',
+    <script>
+		$('#votetop10 a').webuiPopover({	
+		trigger:'hover',				
 		animation:'pop',
 		color:'#E74C3C',
 		});
-	</script> -->
+	</script>
     
 	<!-- dropdowns -->
     <script>
 		$(document).ready(function(){
-			$('[data-toggle="popover"]').popover({
-			placement : 'bottom',
-			html: 'true',
-			trigger: 'focus',		
-			});
+		$('[data-toggle="popover"]').popover({
+		placement : 'bottom',
+		html: 'true',
+		trigger: 'focus',		
+		});
 
             $('#toggle-button').change(function() {
                 if($(this).prop('checked') == false) {
@@ -1208,21 +1255,7 @@ foreach($CATEGORIES as $cat){
                 else {
                     showLinks();
                 }
-            });
-			
-			<?php 
-			if(array_key_exists('ti',$_SESSION) && $_SESSION['ti']=='image') {
-			?>
-				$('#toggle-button').prop('checked',false).change();
-			<?php 
-			}
-			else {
-			?>
-				$('#toggle-button').prop('checked',true).change();
-			<?php	
-			}	 
-			?>
-			
+            })
 		});
 	</script>
 
@@ -1237,15 +1270,15 @@ foreach($CATEGORIES as $cat){
 //		var addthis_share = { email_template: "default_template" }
 		
 		<?php
-			if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
-				if($_SESSION['tab']=='blank'){
+			if(isset($_COOKIE['tab'])){
+				if($_COOKIE['tab']=='blank'){
 					echo "$('a[href^=\"http://\"]').attr('target','_blank');";
 				} else {
 					echo "$('a[href^=\"http://\"]').attr('target','_self');";
 				}
 			}
-			if(array_key_exists('tab',$_SESSION) && isset($_SESSION['tab'])){
-				if($_SESSION['tab']=='blank'){
+			if(isset($_COOKIE['tab'])){
+				if($_COOKIE['tab']=='blank'){
 					echo "$('a[href^=\"https://\"]').attr('target','_blank');";
 				} else {
 					echo "$('a[href^=\"https://\"]').attr('target','_self');";

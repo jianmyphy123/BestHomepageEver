@@ -115,7 +115,8 @@ var _gaq = _gaq || [];
                   	<h3>Did You Know?</h3>
                     	<ul>
                         	<li><p>Ever wanted to know where the panoramic picture was taken? You can easily view the location by simply clicking on the picture itself.</p><p><a href="https://en.wikipedia.org/wiki/Bimini" target="_blank"><img src="../pictures/panoramics/2015/71-bimini-islands.jpg" width="512" height="90"/></a></p></li>
-                            <li>Jump to your favorite search engine (Google, Yahoo, etc) by hitting <strong>ENTER</strong> upon BestHomepageEver load. <br /><small>(currently undergoing maintenance)</small></li>
+                            <li>Jump to your favorite search engine (Google, Yahoo, etc) by hitting <strong>ENTER</strong> upon BestHomepageEver load. You can also click the green search icon.
+                            	<button type="button" class="btn btn-success" id="search_go"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></li>
                             <li>Need quick access to Wikipedia? Click on the picture!</li>
                             <li>Sick of the same background? Change it! Click the <span class="glyphicon glyphicon-cog"></span> (or Customize button) in top-right.</li>
                         </ul>
@@ -133,7 +134,7 @@ var _gaq = _gaq || [];
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-      <p>BestHomepageEver, 2016.</p>
+      <p>BestHomepageEver, 2017.</p>
       <p>
         <a href="#">Back to top</a>
       </p>

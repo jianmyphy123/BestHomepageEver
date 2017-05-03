@@ -62,7 +62,7 @@ if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) 
 			$_SESSION['BG'] = $NUM;
 			$_SESSION['BG_LETTER'] = $LETTER;
 			
-			$url = 'index_alex.php?done-'.$NUM.''.$LETTER.'-'.$fontStyle.'-'.$tab.'-'.$ti.'';
+			$url = 'index.php?done-'.$NUM.''.$LETTER.'-'.$fontStyle.'-'.$tab.'-'.$ti.'';
 			echo "<script>window.location = '$url'</script>";
 			exit;
 		}
@@ -80,7 +80,7 @@ if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) 
 			unset($_SESSION['BG']);
 			unset($_SESSION['BG_LETTER']);
 			
-			echo "<script>window.location = 'index_alex.php'</script>";
+			echo "<script>window.location = 'index.php'</script>";
 			exit;
 		}
 		else{
@@ -102,7 +102,7 @@ if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) 
 			$_SESSION['BG'] = $bg;
 			$_SESSION['BG_LETTER'] = $bg_letter;
 			
-			echo "<script>window.location = 'index_alex.php'</script>";
+			echo "<script>window.location = 'index.php'</script>";
 			exit;
 		}
 		else{

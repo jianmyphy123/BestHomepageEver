@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://besthomepageever.com/</loc>
+		<loc>https://besthomepageever.com/</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/news</loc>
+		<loc>https://besthomepageever.com/news</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/faq</loc>
+		<loc>https://besthomepageever.com/faq</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/about</loc>
+		<loc>https://besthomepageever.com/about</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/tips</loc>
+		<loc>https://besthomepageever.com/tips</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/index-ie8.html</loc>
+		<loc>https://besthomepageever.com/login.php</loc>
+	</url>	
+	<url>
+		<loc>https://besthomepageever.com/index-ie8.html</loc>
 	</url>
 	<url>
-		<loc>http://besthomepageever.com/privacy.php</loc>
+		<loc>https://besthomepageever.com/privacy.php</loc>
 	</url>
 </urlset>
