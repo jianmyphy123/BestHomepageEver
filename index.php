@@ -10,6 +10,8 @@ require_once('init.php');
 
 require_once('settings.php');
 
+require_once('autologin.php');
+
 
 
 $CATEGORIES = array('Social Media','Popular','Sports','Travel','Trade/Retail','Shop & Buy',
@@ -689,7 +691,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-left">
 
       <div id="specials">
-      	Site update. <small><a href="news/index.php">learn more..</a><br><span class="newlink">*Repeat required login being fixed*</span></small>
+        <small>Login fix on its way. <a href="news/index.php">more..</a></small>
 
       </div>  
 
@@ -1295,7 +1297,7 @@ foreach($CATEGORIES as $cat){
                 <ul class='list-group'>
                     <li class='list-group-item'><a href='https://www.netflix.com'><img src='pictures/streaming/netflix.png'></a></li>
                     <li class='list-group-item'><a href='https://www.hulu.com'><img src='pictures/streaming/hulu.png'></a></li>
-  					<li class='list-group-item'><a href='https://www.amazon.com/Prime-Video/b?node=2676882011'><img src='pictures/streaming/amazon_video.png'></a></li>
+                    <li class='list-group-item'><a href='https://www.amazon.com/Prime-Video/b?node=2676882011'><img src='pictures/streaming/amazon_video.png'></a></li>
                 </ul>
             </div>
         " data-placement="right" data-delay-show="1"> Stream Music/Video..</a>
@@ -2077,16 +2079,16 @@ foreach($CATEGORIES as $cat){
                             <div role="tabpanel" class="tab-pane" id="links">
                              
                                     <div class="form-group padding-top-30px"><!-- CC Expiration -->
-                                        <label class="radio-inline h4 col-xs-6 col-sm-6 col-md-6 col-lg-6" for="toggle-button-link-select">Open webpages in:</label>                             	
+                                        <label class="radio-inline h4 col-xs-6 col-sm-6 col-md-6 col-lg-6" for="toggle-button-link-select">Open webpages in:</label>                                
                                                   
-                                                    <input type="checkbox" id="toggle-button-link-select" checked data-toggle="toggle" data-on="Current Window" data-off="New Window/Tab" data-onstyle="success" data-offstyle="success" data-width="150" data-size="normal"> <span id="linkchoice" class="padding-left-10px"><a href="#" data-content="<p><strong>Current window</strong>: Best for minimal number of browser windows/tabs.<br>When using this option, it's ideal to have a home button (<span class='glyphicon glyphicon-home'></span>) or link on bookmarks bar for quick return to homepage.</p><p><strong>New Window/Tab</strong>: Keeps homepage always open in one tab.<br>This is better if you prefer having one tab be your portal for launching all your favorite websites.</p>Give both a try, you can always change this setting back!" data-placement="bottom" data-delay-show="1"><span class="glyphicon glyphicon-question-sign"></span></a></span>       	                          
+                                                    <input type="checkbox" id="toggle-button-link-select" checked data-toggle="toggle" data-on="Current Window" data-off="New Window/Tab" data-onstyle="success" data-offstyle="success" data-width="150" data-size="normal"> <span id="linkchoice" class="padding-left-10px"><a href="#" data-content="<p><strong>Current window</strong>: Best for minimal number of browser windows/tabs.<br>When using this option, it's ideal to have a home button (<span class='glyphicon glyphicon-home'></span>) or link on bookmarks bar for quick return to homepage.</p><p><strong>New Window/Tab</strong>: Keeps homepage always open in one tab.<br>This is better if you prefer having one tab be your portal for launching all your favorite websites.</p>Give both a try, you can always change this setting back!" data-placement="bottom" data-delay-show="1"><span class="glyphicon glyphicon-question-sign"></span></a></span>                                   
                                                   
-                                    	
+                                        
                                      </div><!-- /Form Group -->
                                      
                                      <div class="form-group padding-top-30px">
                                         <label class="radio-inline h4 col-xs-6 col-sm-6 col-md-6 col-lg-6" for="toggle-button-imagesaslink">Display links as:</label>
-                                        		
+                                                
                                         <input type="checkbox" id="toggle-button-imagesaslink" checked data-toggle="toggle" data-on="Classic (text)" data-off="Images" data-onstyle="info" data-offstyle="info" data-width="150" data-size="normal">
                                      </div>
                              

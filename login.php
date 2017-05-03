@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/jquery.validation.css">
+    <link rel="stylesheet" href="css/jquery.validation-v1.0.css">
       
 
     <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
@@ -19,7 +19,14 @@
 	
 	
 	
-    <link rel="stylesheet" href="css/login-v2.0.css" type='text/css'></link>
+    <link rel="stylesheet" href="css/login-v2.1.css" type='text/css'></link>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type='text/css'></link>
+    <link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css" type='text/css'></link>
+    <link rel="stylesheet" href="font-awesome/4.2/css/font-awesome.min.css" type='text/css'></link>
+
+    <style type="text/css">
+    	
+    </style>
 </head>
 <?php
 require_once('settings.php');
@@ -129,6 +136,10 @@ else if(isset($_POST['login'])) {
 			$_SESSION['ti'] = $row->ti;
 			$_SESSION['BG'] = $row->bg;
 			$_SESSION['BG_LETTER'] = $row->bg_letter;
+
+			if(isset($_POST['rememberme-checkbox']) && $_POST['rememberme-checkbox'] == 'on') {
+				setcookie ($cookie_name, 'username='.$username.'&password='.$password, time() + $cookie_time);
+			}
 			
 			echo "<script type='text/javascript'>window.location='index.php'</script>";
 			die();
@@ -295,8 +306,15 @@ else { ?>
 			                   data-validation-message="$ must be at least 5 characters" placeholder="Password">
 			            
 			        </div>
-			    </div>
-				
+			</div>
+
+		    <div class="field checkbox checkbox-info">
+                        <input class="styled styled" id="rememberme-checkbox" name="rememberme-checkbox" type="checkbox">
+                        <label for="rememberme-checkbox">
+                            Remember me
+                        </label>
+                    </div>
+
 		      <input type="submit" class="ui blue submit button" value="login" name="login">
 		      <div style="text-align: center">
 		      	   <p class="message">Not registered? <a class="toggle_link" href="#">Create an account</a></p>

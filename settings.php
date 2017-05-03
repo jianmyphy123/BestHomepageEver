@@ -4,6 +4,9 @@
  $db_user_name = 'root';
  $db_password = '';
  $database = 'BestHomepageEver';
+
+ $cookie_name = 'siteAuth';
+ $cookie_time = (3600 * 24 * 30); // 30 days
  
  $errors = array(
 			1 => 'email or password is invalid',
