@@ -164,3 +164,13 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.box-with-shadow-green {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -moz-box-shadow:    0 0 5px rgba(0,0,0,0.4);
+    box-shadow: 2px 4px 5px rgba(0,153,51,0.4);
+    border: solid 1px #093;
+	border-radius: 6px;
+}
+
+
