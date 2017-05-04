@@ -747,18 +747,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
            
 
-        
-
-       <!--
-
-       <input type="radio" onclick="javascript:showImages();" name="textOrImage" data-toggle="toggle" <?php echo $checkedon; ?>> <spasn class="small">Images</span>
-
-       <input type="radio" onclick="javascript:showLinks();" name="textOrImage" data-toggle="toggle" style="margin-left:5px;" <?php echo $checkedoff; ?>> <span class="small">Classic</span>
-
-
-
-       -->
-
        
        <input type="checkbox" id="toggle-button" checked data-toggle="toggle" data-on="Classic" data-off="Images" data-onstyle="info" data-offstyle="info" data-size="mini">
 
