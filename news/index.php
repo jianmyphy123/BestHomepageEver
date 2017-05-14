@@ -59,6 +59,16 @@ var _gaq = _gaq || [];
         <div class="col-sm-8 blog-main">
         
           <div class="blog-post">
+          	                      
+            <h2 class="blog-post-title">Login Fix</h2>                        
+            <p class="blog-post-meta">May 3, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+			<p>Internet Explorer and Mozilla Firefox users-</p>
+            <p>You won't need to login on each page load, as a "remember me" fix is coming.<br />Thanks for your patience.</p>
+            <h3 class="text-danger">*Update* Login working</h3>
+            
+          </div><!-- /.blog-post -->       
+        
+          <div class="blog-post">
           	<a name="useraccounts1"></a>                      
             <h2 class="blog-post-title">Major Update / User Accounts Live</h2>                        
             <p class="blog-post-meta">May 2, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
@@ -119,6 +129,14 @@ var _gaq = _gaq || [];
             <p><a href="https://chrome.google.com/webstore/detail/best-homepage-ever-new-ta/omdkehkdnojcndhhilglklegbakenkgb" target="new"><button type="button" class="btn btn-default btn-lg"><img src="../pictures/sethomepage/chrome_small-min.png" width="30" height="30" /> Chrome Extension</button></a></p>
             <hr />
             <p>Both of these will help speed up your browsing experience, as mentioned in my <a href="../tips/">Tips and Tricks</a> section.</p>
+          </div><!-- /.blog-post -->   
+          
+          <div class="blog-post">
+          	<a name="dogfriendlyfood"></a>                      
+            <h2 class="blog-post-title">Dog Friendly Food</h2>                        
+            <p class="blog-post-meta">April 13, 2017 by <a href="http://justincarver.com">Justin Carver</a></p>
+			<p>Are you a dog owner? Visit my other NEW site, just launched. DogFriendlyFood.com.</p>            
+            <p><a href="http://dogfriendlyfood.com">Dog Friendly Food</a> helps dog owners find health advice, toys, products, and food information for the well-being of your  dog.</p>            
           </div><!-- /.blog-post -->       
         
           <div class="blog-post">

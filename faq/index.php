@@ -57,7 +57,7 @@ var _gaq = _gaq || [];
 
 <div id="integration-list">
     <ul>
-        <li>
+<!--    <li>
             <a class="expand">
                 <div class="right-arrow">+</div>
                 <div>
@@ -77,13 +77,13 @@ var _gaq = _gaq || [];
                                 <ol>
                                     <li>Go to Tools, then Internet options</li>
                                     <li>Click Security Tab, Custom Level</li>
-                                    <li>Scroll to: Display Mixed Content --> Enable >> OK</li>
+                                    <li>Scroll to: Display Mixed Content >> Enable >> OK</li>
                                     <li>Restart Internet Explorer</li>
                                 </ol>
                         </div>  
                 </div>
             </div>
-        </li>
+        </li> -->
         <li>
             <a class="expand">
                 <div class="right-arrow">+</div>

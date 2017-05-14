@@ -287,34 +287,73 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
     </style>
 
     <!-- Links -->
+
     <style type="text/css">
-    div.title{color: #FF9933;font-size: 14pt;text-decoration: underline;font-weight: normal;}
+
+    div.title{    color: #FF9933;
+
+        font-size: 14pt;
+
+        text-decoration: underline;
+
+        font-weight: normal;    
+
+        }
+
     .fcl{float:left;clear:left;}
+
     .floatL{float:left}
+
     .clear{clear:both}
-    .linkss {color: #3F6;font-size: 12pt;}
-    .linkss:hover {color: #39F;text-decoration: underline;}
+
+    .linkss {
+
+        color: #3F6;
+
+        font-size: 12pt;
+
+    }
+
+    .linkss:hover {
+
+        color: #39F;
+
+        text-decoration: underline; 
+
+    }
+
     </style>
-    
     <!-- myAccount options in Myaccount Modal -->
     <style>
         /* Hiding the checkbox, but allowing it to be focused */
         .badgebox
-        {opacity: 0;}        
-        .badgebox + .badge{
+        {
+            opacity: 0;
+        }
+        
+        .badgebox + .badge
+        {
             /* Move the check mark away when unchecked */
             text-indent: -999999px;
             /* Makes the badge's width stay the same checked and unchecked */
-            width: 27px;}        
-        .badgebox:focus + .badge{
+            width: 27px;
+        }
+        
+        .badgebox:focus + .badge
+        {
             /* Set something to make the badge looks focused */
             /* This really depends on the application, in my case it was: */
+            
             /* Adding a light border */
             box-shadow: inset 0px 0px 5px;
-            /* Taking the difference out of the padding */}        
-        .badgebox:checked + .badge{
+            /* Taking the difference out of the padding */
+        }
+        
+        .badgebox:checked + .badge
+        {
             /* Move the check mark back when checked */
-            text-indent: 0;}
+            text-indent: 0;
+        }
     </style>
 
 
@@ -357,20 +396,57 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
 
 
 <?php
+
 $NUMBERS=array('a','b');
+
 shuffle($NUMBERS);
+
+
+
 ?>
 
 <body style="<?php if(array_key_exists('BG',$_SESSION) && isset($_SESSION['BG'])){echo "background-image: url(pictures/background_selection/".$_SESSION['BG']."".$_SESSION['BG_LETTER'].".png) !important;";} else {echo "background-image: url(pictures/background_selection/".str_pad(rand(1,16), 2, '0', STR_PAD_LEFT)."".$NUMBERS[0].".png) !important;";} ?>">
 
+
+
 <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W3PGMH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>!function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="//www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-W3PGMH");</script>
-<!-- /Google Tag Manager -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W3PGMH"
+
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-W3PGMH');</script>
+
+<!-- End Google Tag Manager -->
+
+
 
 <!-- Facebook Sharing -->
+
 <div id="fb-root"></div>
-<script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk");</script>
+
+<script>(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- /Facebook -->
 
 
@@ -1300,7 +1376,7 @@ foreach($CATEGORIES as $cat){
 
         <div id="timer">
 
-            <a href="#" data-title="Quick Timer" data-content="Minutes: <a href='https://www.google.com/#q=5+minute+timer' target='_blank'>5</a> | <a href='https://www.google.com/#q=10+minute+timer' target='_blank'>10</a> | <a href=https://www.google.com/#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
 
         </div>   
 
@@ -1378,7 +1454,7 @@ foreach($CATEGORIES as $cat){
 
                     <div class="modal-header">
 
-                        <h3><span class="glyphicon glyphicon-cog"></span> Personal Settings</h3>
+                        <h3><span class="glyphicon glyphicon-cog"></span> Settings / Preferences</h3>
 
                     </div><!-- /modal-header -->
 

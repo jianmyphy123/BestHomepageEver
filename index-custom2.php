@@ -1280,13 +1280,21 @@ foreach($CATEGORIES as $cat){
 
                     </div>
 
-                    <hr>
-
                     <span class="glyphicon glyphicon-globe"></span> Global: <a href="http://www.bbc.com/news/world">BBC World</a> | <a href="http://www.cnn.com/world">CNN World</a>
+                    
+                    <hr>
+                    
+       		        <span class="label label-success"><span class="glyphicon glyphicon-link"></span> - MY CUSTOM LINKS -</span><br>
+                    
+                    <div class="padding-top-10px">
+             
+                        <ul class="list-inline">
+                          <a href="#">Custom Link 1</a> | <a href="#">Great Link 2</a> | <a href="#">Favorite Website</a> | <a href="#">My Bank</a> | <a href="#">My Website</a> | <a href="#">HSBC</a> | <a href="#">Longer Link Here</a> | <a href="#">Custom Link 8</a> | <a href="#">Custom Link 9</a> | <a href="#">Custom Link 10</a>
+                        </ul>  
+                        
+                    </div>                 
 
-                   
-
-        </div><!-- /box -->
+        	</div><!-- /box -->
 
        </div><!-- /col-xx-6 --> 
 
@@ -1300,7 +1308,7 @@ foreach($CATEGORIES as $cat){
 
         <div id="timer">
 
-            <a href="#" data-title="Quick Timer" data-content="Minutes: <a href='https://www.google.com/#q=5+minute+timer' target='_blank'>5</a> | <a href='https://www.google.com/#q=10+minute+timer' target='_blank'>10</a> | <a href=https://www.google.com/#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
 
         </div>   
 
@@ -1322,7 +1330,7 @@ foreach($CATEGORIES as $cat){
 
     <!-- NEWS (non-mobile)-->    
 
-   
+
 
 
 
@@ -1340,7 +1348,8 @@ foreach($CATEGORIES as $cat){
 
 </div>
 
-    
+
+
 
     <!-- Footer Row -->
 

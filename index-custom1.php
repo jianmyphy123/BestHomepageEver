@@ -555,8 +555,72 @@ shuffle($NUMBERS);
             <!-- <a href="https://www.facebook.com" title="Facebook"><img src="pictures/facebook.png" alt="Facebook"></a> -->
 
             <span id="email"><a href="#" data-title="e-mail" data-content="<a href='https://outlook.live.com'>Outlook</a> | <a href='http://mail.google.com/mail'>G-Mail</a> | <a href='http://mail.yahoo.com/?.intl=us'>Yahoo</a> | <a href='http://www.aol.com'>AOL</a> | <a href='http://www.hotmail.com'>Hotmail</a>" data-placement="right" data-delay-show="1"><img src="pictures/email2.png" title="Check E-Mail" width="50" height="50"></a>
-
             </span>
+            <span id="customlinks"><a href="#" data-title="My Personal Links" data-content="
+            
+                <ul class='dropdown-menu dropdown-menu-large row navbar-inverse'>
+
+                    <li class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+
+                        <ul>
+
+                            <li class='dropdown-header'><span class='h4 text-warning strong'>Standard</span></li>
+
+                            <li><a href='http://www.nbcnews.com/'>NBC</a></li>
+
+                            <li><a href='http://www.marketwatch.com'>MarketWatch</a></li>
+
+                            <li><a href='http://www.thestreet.com'>The Street</a></li>
+                            
+                            <li><a href='http://www.thestreet.com'>The Street</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+
+                        <ul>
+
+                            <li class='dropdown-header'><span class='h4 text-success strong'>ProLinks+</span></li>
+
+                            <li><a href='http://www.nytimes.com'>New York Times</a></li>
+
+                            <li><a href='http://www.latimes.com'>L.A. Times</a></li>
+
+                            <li><a href='https://www.washingtonpost.com'>Washington Post</a></li>
+
+                            <li><a href='http://www.wsj.com'>Wall Street Journal</a></li>                                                       
+
+						</ul>
+
+                    <li class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                    
+                    	<ul>
+                        
+                            <li class='dropdown-header'><span class='h4 text-success strong'>ProLinks+</span></li>
+
+                            <li><a href='http://www.huffingtonpost.com'>HuffPost</a></li>
+                            
+                            <li><a href='http://www.drudgereport.com'>Drudge Report</a></li>
+
+                            <li><a href='http://www.drudgereport.com'>Drudge Report</a></li>
+
+                            <li><a href='http://www.theblaze.com'>Blaze</a></li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+            
+            
+            
+            
+            
+            " data-placement="right" data-delay-show="1"><img src="pictures/custom_links.png" title="Custom Links" width="50" height="50"></a>
+            </span>
+            
 
        </div>
 
@@ -1300,7 +1364,7 @@ foreach($CATEGORIES as $cat){
 
         <div id="timer">
 
-            <a href="#" data-title="Quick Timer" data-content="Minutes: <a href='https://www.google.com/#q=5+minute+timer' target='_blank'>5</a> | <a href='https://www.google.com/#q=10+minute+timer' target='_blank'>10</a> | <a href=https://www.google.com/#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
 
         </div>   
 
@@ -2257,6 +2321,20 @@ foreach($CATEGORIES as $cat){
     <script>
 
         $('#email a').webuiPopover({    
+
+        trigger:'hover',
+
+        style:'inverse',
+
+        animation:'pop',
+
+        });
+
+    </script>
+    
+    <script>
+
+        $('#customlinks a').webuiPopover({    
 
         trigger:'hover',
 

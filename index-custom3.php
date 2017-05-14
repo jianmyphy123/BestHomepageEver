@@ -441,6 +441,27 @@ shuffle($NUMBERS);
         <div class="btn-group" role="group">
         
         <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            MyLinks <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">My Custom Links</li>
+            <li><a href="#">Standard Link 1</a></li>
+            <li><a href="#">Standard Link 2</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header"><span class="text-success strong">ProLinks+</span></li>
+            <li><a href="#">Additional Link 1</a></li>
+            <li><a href="#">Additional Link 2</a></li>
+            <li><a href="#">Additional Link 3</a></li>
+            <li><a href="#">Additional Link 4</a></li>
+            <li><a href="#">Additional Link 5</a></li>
+            <li><a href="#">Additional Link 6</a></li>
+            <li><a href="#">Additional Link 7</a></li>
+            <li><a href="#">Additional Link 8</a></li>
+          </ul>
+        </div>        
+        
+        <div class="btn-group">
 
           <div class="dropdown">
 
@@ -1300,7 +1321,7 @@ foreach($CATEGORIES as $cat){
 
         <div id="timer">
 
-            <a href="#" data-title="Quick Timer" data-content="Minutes: <a href='https://www.google.com/#q=5+minute+timer' target='_blank'>5</a> | <a href='https://www.google.com/#q=10+minute+timer' target='_blank'>10</a> | <a href=https://www.google.com/#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
 
         </div>   
 
