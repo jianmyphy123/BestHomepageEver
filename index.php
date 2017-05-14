@@ -2008,50 +2008,143 @@ foreach($CATEGORIES as $cat){
                             
                             <!-- tabpanel 4 -->
                             <div role="tabpanel" class="tab-pane" id="custom_links">
-                     <!--       
-                             <ul>
 
+                            <form class="form-horizontal">
+                             <ul>
                                 <h3>Custom Links:</h3>
-                                    <div class="row margin-top">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left"> 
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                        
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
                                         </div>
-                                    </div>                                    
-                                    <div class="row margin-top">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
-                                        </div>>
-                                    </div>                                 
-                                
+                                    </div>
+                                </div>                             
                               </ul> 
-               -->
+                              <ul>
+                                <h3>Pro Links:</h3>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left"> 
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">title</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                            <label class="col-sm-2 control-label">url</label>
+                                            <div class="col-sm-4">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                             
+                              </ul> 
+                            </form>
                             </div>
 
 

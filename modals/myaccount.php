@@ -79,8 +79,8 @@ require_once('settings.php');
                                             <!--
                             					<p><span class="text-success"><strong>Standard</strong></span> | <span class="text-muted"><strong>LINKS+</strong></span></p>
                                             -->
-											<label for="primary" class="btn btn-primary">Standard <input type="checkbox" id="primary" class="badgebox" checked="checked"><span class="badge">&check;</span></label>
-        									<label for="info" class="btn btn-success">ProLINKS+ <input type="checkbox" id="info" class="badgebox" disabled="disabled"><span class="badge">&check;</span></label>                                                    <!-- early announcement 
+											<label for="primary" class="btn btn-primary">Standard <input type="radio" id="primary" class="badgebox" checked="checked" name="account_type"><span class="badge">&check;</span></label>
+        									<label for="info" class="btn btn-success">ProLINKS+ <input type="radio" id="info" class="badgebox" name="account_type"><span class="badge">&check;</span></label>                                                    <!-- early announcement 
                                                     I will soon be offering an expanded homepage, which comes with custom links, for 'premium' homepage users.<br>This will only cost about $2.99 per month. But, this is to offer more customization features for those loyal users.<br>This is to also help pay for the work done in adding these features.</p><p><strong>Note:</strong> This will be optional, and the homepage will continue to be offered free if you do not want custom links.</p><p>This will be rolling out soon, so keep an eye out on the <a href='../news/index.php'>homepage news</a> section for updates and for the opportunity to join.</span> -->
                                                     
                                             
@@ -190,6 +190,15 @@ require_once('settings.php');
     $('#btnDelete').click(function() {
         $('#myModalDanger').modal('show');
     });
+
+    $('#primary').click(function(e) {
+        console.log(e);
+    });
+
+    $('#info').click(function(e) {
+        console.log(e);
+    });
+
 
     function goToHome() {
         window.location = 'index.php';
