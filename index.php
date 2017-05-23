@@ -667,7 +667,7 @@ shuffle($NUMBERS);
 
     
 
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
+    <!--<div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
 
            
        
@@ -683,15 +683,54 @@ shuffle($NUMBERS);
 
         
 
+    </div>   -->
+
+    <?php if(array_key_exists('login_user',$_SESSION) && isset($_SESSION['login_user'])) { ?>
+
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
+
+           
+       
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-link"></span> MyLinks <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li class="dropdown-header">My Custom Links</li>
+            <li><a href="#">Standard Link 1</a></li>
+            <li><a href="#">Standard Link 2</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header"><span class="text-success strong">ProLinks+</span></li>
+            <li><a href="#">Additional Link 1</a></li>
+            <li><a href="#">Additional Link 2</a></li>
+            <li><a href="#">Additional Link 3</a></li>
+            <li><a href="#">Additional Link 4</a></li>
+            <li><a href="#">Additional Link 5</a></li>
+            <li><a href="#">Additional Link 6</a></li>
+            <li><a href="#">Additional Link 7</a></li>
+            <li><a href="#">Additional Link 8</a></li>
+          </ul>
+        </div>        
+
+
+
+        
+
         <!-- Images/Text Toggle 
 
         <input type="checkbox" checked data-toggle="toggle" data-size="small" data-on="<i class='fa fa-play'></i> Classic"  data-offstyle="success" data-off="<i class='fa fa-pause'></i> Images">  -->
 
     </div>   
 
+    <?php } ?>
+
     
 
 </div>
+
+</div>
+
+        
 
 <!-- /Search -->
 
@@ -1384,7 +1423,7 @@ foreach($CATEGORIES as $cat){
 
                     <div class="modal-body">
 
-                        <ul class="nav nav-tabs" role="tablist">                        
+                        <ul class="nav nav-tabs" role="tablist" id="settings_tab_list">                        
 
                             <li role="presentation" class="active"><a href="#bgtab" aria-controls="home" role="tab" data-toggle="tab" class="text-success">Backgrounds</a></li>
 
@@ -2009,7 +2048,7 @@ foreach($CATEGORIES as $cat){
                             <!-- tabpanel 4 -->
                             <div role="tabpanel" class="tab-pane" id="custom_links">
 
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" id="form_save_user_urls" action="saveuserurls.php" method="post">
                              <ul>
                                 <h3>Custom Links:</h3>
                                 <div class="row margin-top">
@@ -2017,26 +2056,29 @@ foreach($CATEGORIES as $cat){
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="standard_title_0">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="standard_url_0">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="standard_title_1">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="standard_url_1">
                                             </div>
                                         </div>
                                     </div>
                                 </div>                             
                               </ul> 
+                              <?php
+                                if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') {
+                              ?>
                               <ul>
                                 <h3>Pro Links:</h3>
                                 <div class="row margin-top">
@@ -2044,106 +2086,111 @@ foreach($CATEGORIES as $cat){
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_0">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_0">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_1">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_1">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_2">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_2">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_3">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_3">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_4">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_4">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_5">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_5">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_6">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_6">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_7">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_7">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_8">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_8">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">title</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_title_9">
                                             </div>
                                             <label class="col-sm-2 control-label">url</label>
                                             <div class="col-sm-4">
-                                              <input type="text" class="form-control">
+                                              <input type="text" class="form-control" name="pro_url_9">
                                             </div>
                                         </div>
                                     </div>
                                 </div>                             
                               </ul> 
+
+
+                              <?php
+                                }
+                              ?>
                             </form>
                             </div>
 
@@ -2309,7 +2356,12 @@ foreach($CATEGORIES as $cat){
             var ti = $('#toggle-button-imagesaslink').prop('checked') == false ? 'image' : 'text';
         //    alert(ti);
 
-            window.location='index.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
+
+            if(cur_settings_tab_index < 3)
+                window.location='index.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
+            else {
+                $('#form_save_user_urls').submit();
+            }
 
             
 
@@ -2333,6 +2385,13 @@ foreach($CATEGORIES as $cat){
 
         }
 
+        var cur_settings_tab_index = 0;
+        $(function() {
+            $('.nav-tabs a').click(function (e) {
+                 e.preventDefault();
+                 cur_settings_tab_index = $($(this).attr('href')).index();
+            });
+        });
     </script>
 
     <!-- /Background Selection -->

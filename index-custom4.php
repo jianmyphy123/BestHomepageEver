@@ -334,6 +334,8 @@ array('name'=>'StockCharts','icon'=>'stock_charts.png', 'link'=>'http://stockcha
     <!-- reCAPTCHA -->
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
+    <script type="text/javascript" src="js/jquery.validation-1.5.3.js"></script>
+
     <!-- Heatmap.me 
 
     <script>
@@ -667,6 +669,30 @@ shuffle($NUMBERS);
 
     
 
+    <!--<div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
+
+           
+       
+       <input type="checkbox" id="toggle-button" checked data-toggle="toggle" data-on="Classic" data-off="Images" data-onstyle="info" data-offstyle="info" data-size="mini">
+
+        <span id="savelinkhelp" class="padding-left-3px">
+
+           <a href="#" data-title="Logos vs Classic" data-content="<p>Save your settings by clicking 'Homepage Settings'<br>under top-right dropdown menu <button class='btn btn-sm btn-primary dropdown-toggle' type='button'><span class='glyphicon glyphicon-user'></span> My Name</button></p><span class='small text-muted center'>Account required. Don't have one? <a href='login.php'>Click here</a></span>." data-placement="left"><span class="glyphicon glyphicon-question-sign"></span></a>
+
+        </span>
+
+
+
+        
+
+    </div>   -->
+
+    <?php 
+    if(array_key_exists('login_user',$_SESSION) && isset($_SESSION['login_user'])) { 
+        $mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
+        $userid = $_SESSION['user_id']; 
+    ?>
+
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs text-right" style="position: relative; top: 9px"> 
 
            
@@ -677,18 +703,28 @@ shuffle($NUMBERS);
           </button>
           <ul class="dropdown-menu dropdown-menu-right">
             <li class="dropdown-header">My Custom Links</li>
-            <li><a href="#">Standard Link 1</a></li>
-            <li><a href="#">Standard Link 2</a></li>
+
+            <?php
+                
+                $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='standard' order by url_order");
+                
+                while($row = $results->fetch_object()) {
+                    echo "<li><a href='".$row->url."'>".$row->title."</a></li>";
+                }  
+
+            ?>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header"><span class="text-success strong">ProLinks+</span></li>
-            <li><a href="#">Additional Link 1</a></li>
-            <li><a href="#">Additional Link 2</a></li>
-            <li><a href="#">Additional Link 3</a></li>
-            <li><a href="#">Additional Link 4</a></li>
-            <li><a href="#">Additional Link 5</a></li>
-            <li><a href="#">Additional Link 6</a></li>
-            <li><a href="#">Additional Link 7</a></li>
-            <li><a href="#">Additional Link 8</a></li>
+
+            <?php
+                
+                $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
+                
+                while($row = $results->fetch_object()) {
+                    echo "<li><a href='".$row->url."'>".$row->title."</a></li>";
+                }  
+
+            ?>
           </ul>
         </div>        
 
@@ -702,9 +738,15 @@ shuffle($NUMBERS);
 
     </div>   
 
+    <?php } ?>
+
     
 
 </div>
+
+</div>
+
+        
 
 <!-- /Search -->
 
@@ -1313,7 +1355,7 @@ foreach($CATEGORIES as $cat){
 
         <div id="timer">
 
-            <a href="#" data-title="Timer" data-content="Minutes: <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl' target='_blank'>5</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=10+minute+timer' target='_blank'>10</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/search?as_q=5+minute+timer&gws_rd=ssl#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
+            <a href="#" data-title="Quick Timer" data-content="Minutes: <a href='https://www.google.com/#q=5+minute+timer' target='_blank'>5</a> | <a href='https://www.google.com/#q=10+minute+timer' target='_blank'>10</a> | <a href=https://www.google.com/#q=15+minute+timer' target='_blank'>15</a> | <a href='https://www.google.com/#q=30+minute+timer' target='_blank'>30</a> | <a href='https://www.google.com/#q=60+minute+timer' target='_blank'>60</a>" data-placement="left">Quick Timer</a> <span style="font-size:1.5em;" class="glyphicon glyphicon-time padding-left-3px"></span> 
 
         </div>   
 
@@ -1388,6 +1430,7 @@ foreach($CATEGORIES as $cat){
             <div class="modal-dialog">
 
                 <div class="modal-content">
+                <form class="form-horizontal" id="form_save_user_urls" action="saveuserurls.php" method="post">
 
                     <div class="modal-header">
 
@@ -1397,7 +1440,7 @@ foreach($CATEGORIES as $cat){
 
                     <div class="modal-body">
 
-                        <ul class="nav nav-tabs" role="tablist">                        
+                        <ul class="nav nav-tabs" role="tablist" id="settings_tab_list">                        
 
                             <li role="presentation" class="active"><a href="#bgtab" aria-controls="home" role="tab" data-toggle="tab" class="text-success">Backgrounds</a></li>
 
@@ -2017,57 +2060,168 @@ foreach($CATEGORIES as $cat){
                                      </div>
                              
                           </div><!-- /tab panel -->
+
+
+
+<?php 
+
+$url_arr = array();
+
+
+$mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
+    $userid = $_SESSION['user_id']; 
+
+    $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='standard' order by url_order");
+
+    $rows = $results->num_rows; 
+            
+    while($row = $results->fetch_object()) {
+        $url_arr[$row->account_type.'_title_'.$row->url_order] = $row->title;
+        $url_arr[$row->account_type.'_url_'.$row->url_order] = $row->url;
+    }  
+
+?>
+
+
                             
                             
                             <!-- tabpanel 4 -->
                             <div role="tabpanel" class="tab-pane" id="custom_links">
-                     <!--       
+
+                            
                              <ul>
-
                                 <h3>Custom Links:</h3>
-                                    <div class="row margin-top">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left"> 
+                                       
+
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="standard_title_0" value="<?php if(array_key_exists('standard_title_0',$url_arr) && isset($url_arr['standard_title_0'])) { echo $url_arr['standard_title_0']; } ?>" placeholder="title">
+                                            </div>
+                                            <div class="input-group col-sm-6">
+                                                <input type="url" class="form-control" name="standard_url_0" value="<?php if(array_key_exists('standard_url_0',$url_arr) && isset($url_arr['standard_url_0'])) { echo $url_arr['standard_url_0']; } ?>" placeholder="url">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
                                         </div>
-                                        
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="standard_title_1" value="<?php if(array_key_exists('standard_title_1',$url_arr) && isset($url_arr['standard_title_1'])) { echo $url_arr['standard_title_1']; } ?>" placeholder="title">
+                                            </div>
+                                            <div class="input-group col-sm-6">
+                                                <input type="url" class="form-control" name="standard_url_1" value="<?php if(array_key_exists('standard_url_1',$url_arr) && isset($url_arr['standard_url_1'])) { echo $url_arr['standard_url_1']; } ?>" placeholder="url">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>                                    
-                                    <div class="row margin-top">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"> 
-                                            <ol>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ol>
-                                        </div>>
-                                    </div>                                 
-                                
+
+
+                                    </div>
+                                </div>                             
                               </ul> 
-               -->
+                              <?php
+                                if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') {
+                              ?>
+                              <ul>
+                                <h3>Pro Links:</h3>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left controls"> 
+                                        
+
+                                        <?php
+                                        $mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
+                                        $userid = $_SESSION['user_id']; 
+
+                                        $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
+
+                                        $rows = $results->num_rows; 
+
+                                        $i = 0;
+
+                                        if($rows > 0) {
+                                            while($row = $results->fetch_object()) {
+                                                
+                                                if($i == $rows-1) {
+                                                    echo '<div class="entry form-group">
+                                                            <div class="col-sm-6">
+                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                            </div>
+                                                            <div class="input-group col-sm-6">
+                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-success btn-add" type="button">
+                                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>';
+                                                } else {
+                                                    echo '<div class="entry form-group">
+                                                            <div class="col-sm-6">
+                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                            </div>
+                                                            <div class="input-group col-sm-6">
+                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-danger btn-remove" type="button">
+                                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>';
+                                                }
+
+                                                $i++;
+
+                                            }  
+                                        } else {
+                                            echo '<div class="entry form-group">
+                                                        <div class="col-sm-6">
+                                                            <input class="form-control" name="pro_title_0" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                        </div>
+                                                        <div class="input-group col-sm-6">
+                                                            <input class="form-control" name="pro_url_0" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-success btn-add" type="button">
+                                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>';
+                                        }
+                                                
+                                            
+
+                                        ?>
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>   
+
+
+
+                              </ul> 
+
+
+                              <?php
+                                }
+                              ?>
+                            
                             </div>
-
-
 
                         </div><!-- /tab-content -->
 
@@ -2079,10 +2233,10 @@ foreach($CATEGORIES as $cat){
 
                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-                         <button type="button" class="btn btn-primary" onClick="javascript:saveBg();">Save changes</button>         
+                         <button type="submit" class="btn btn-primary" onClick="javascript:saveBg();">Save changes</button>         
 
                     </div><!-- /modal-footer -->
-                     
+                </form>     
 
                 </div><!-- /modal-content -->
 
@@ -2229,7 +2383,13 @@ foreach($CATEGORIES as $cat){
             var ti = $('#toggle-button-imagesaslink').prop('checked') == false ? 'image' : 'text';
         //    alert(ti);
 
-            window.location='index.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
+
+            if(cur_settings_tab_index < 3)
+                window.location='index.php?num='+num+'&letter='+letter+'&fontStyle='+fontStyle+'&tab='+tab+'&ti='+ti;
+            else {
+                
+
+            }
 
             
 
@@ -2253,6 +2413,13 @@ foreach($CATEGORIES as $cat){
 
         }
 
+        var cur_settings_tab_index = 0;
+        $(function() {
+            $('.nav-tabs a').click(function (e) {
+                 e.preventDefault();
+                 cur_settings_tab_index = $($(this).attr('href')).index();
+            });
+        });
     </script>
 
     <!-- /Background Selection -->
@@ -2548,7 +2715,56 @@ foreach($CATEGORIES as $cat){
     </script>
 
 
+    <script type="text/javascript">
+        $(function()
+        {
+            $(document).on('click', '.btn-add', function(e)
+            {
+                e.preventDefault();
 
+                var controlForm = $('.controls'),
+                    currentEntry = $(this).parents('.entry:first');
+
+                if($(controlForm).children().length >= 10)
+                    return;
+
+                var newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+                var index = $(newEntry).index();
+
+                console.log(index);
+
+                newEntry.find('input:first').attr('name', 'pro_title_'+index);
+                newEntry.find('input:last').attr('name', 'pro_url_'+index);
+                
+                newEntry.find('input').val('');
+                newEntry.attr('db_id' , '-1');
+                controlForm.find('.entry:not(:last) .btn-add')
+                    .removeClass('btn-add').addClass('btn-remove')
+                    .removeClass('btn-success').addClass('btn-danger')
+                    .html('<span class="glyphicon glyphicon-minus"></span>');
+            }).on('click', '.btn-remove', function(e)
+            {
+                $(this).parents('.entry:first').remove();
+
+                e.preventDefault();
+
+                var controlList = $('.controls .entry');
+                var i;
+
+
+                for(i=0; i<controlList.length; i++) {
+                    var entry = controlList[i];
+                    
+                    $(entry).find('input:first').attr('name', 'pro_title_'+i);
+                    $(entry).find('input:last').attr('name', 'pro_url_'+i);
+                }
+
+
+                return false;
+            });
+        });
+    </script>
 
 
 

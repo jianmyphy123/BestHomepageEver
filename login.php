@@ -76,6 +76,7 @@ if(isset($_POST['register'])) {
 			$_SESSION['user_id'] = $mysqli->insert_id;
 			$_SESSION['BG'] = $bg;
 			$_SESSION['BG_LETTER'] = $bg_letter;
+			$_SESSION['account_type'] = 'standard';
 			
 			echo "<script>window.location='index.php'</script>";
 			die();
@@ -136,6 +137,7 @@ else if(isset($_POST['login'])) {
 			$_SESSION['ti'] = $row->ti;
 			$_SESSION['BG'] = $row->bg;
 			$_SESSION['BG_LETTER'] = $row->bg_letter;
+			$_SESSION['account_type'] = $row->account_type;
 
 			if(isset($_POST['rememberme-checkbox']) && $_POST['rememberme-checkbox'] == 'on') {
 				setcookie ($cookie_name, 'username='.$username.'&password='.$password, time() + $cookie_time);

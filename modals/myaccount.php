@@ -79,10 +79,11 @@ require_once('settings.php');
                                             <!--
                             					<p><span class="text-success"><strong>Standard</strong></span> | <span class="text-muted"><strong>LINKS+</strong></span></p>
                                             -->
-											<label for="primary" class="btn btn-primary">Standard <input type="radio" id="primary" class="badgebox" checked="checked" name="account_type"><span class="badge">&check;</span></label>
-        									<label for="info" class="btn btn-success">ProLINKS+ <input type="radio" id="info" class="badgebox" name="account_type"><span class="badge">&check;</span></label>                                                    <!-- early announcement 
-                                                    I will soon be offering an expanded homepage, which comes with custom links, for 'premium' homepage users.<br>This will only cost about $2.99 per month. But, this is to offer more customization features for those loyal users.<br>This is to also help pay for the work done in adding these features.</p><p><strong>Note:</strong> This will be optional, and the homepage will continue to be offered free if you do not want custom links.</p><p>This will be rolling out soon, so keep an eye out on the <a href='../news/index.php'>homepage news</a> section for updates and for the opportunity to join.</span> -->
-                                                    
+                                            <form id="form_account_type">
+                                                <label for="primary" class="btn btn-primary">Standard <input type="radio" id="primary" class="badgebox" name="account_type" value="standard" <?php if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'standard') { echo "checked" ; } ?>><span class="badge">&check;</span></label>
+                                                <label for="info" class="btn btn-success">ProLINKS+ <input type="radio" id="info" class="badgebox" name="account_type" value="pro" <?php if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') { echo "checked" ; } ?>><span class="badge">&check;</span></label>                                                    <!-- early announcement 
+                                                        I will soon be offering an expanded homepage, which comes with custom links, for 'premium' homepage users.<br>This will only cost about $2.99 per month. But, this is to offer more customization features for those loyal users.<br>This is to also help pay for the work done in adding these features.</p><p><strong>Note:</strong> This will be optional, and the homepage will continue to be offered free if you do not want custom links.</p><p>This will be rolling out soon, so keep an eye out on the <a href='../news/index.php'>homepage news</a> section for updates and for the opportunity to join.</span> -->
+                                            </form>       
                                             
 
                                         </div>
@@ -157,6 +158,24 @@ require_once('settings.php');
         </div>
     </div>
 </div>
+<div class="modal fade bs-warning-modal" tabindex="100" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModalSelectAccount">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p style="color: black"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal" id="selectAccountOK">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="selectAccountClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $("#editAccount").click(function(){
         $("#editAccountArea").slideToggle();
@@ -191,12 +210,63 @@ require_once('settings.php');
         $('#myModalDanger').modal('show');
     });
 
-    $('#primary').click(function(e) {
-        console.log(e);
-    });
+    $('input[type=radio][name=account_type]').change(function() {
+        if (this.value == 'standard') {
+            $('#myModalSelectAccount p').html('Are you want Standard Account?');
+            $('#myModalSelectAccount').modal('show');
+            $('#selectAccountOK').click(function() {
+                $.post(
+                    "updateaccount2.php",
+                    $('#form_account_type').serialize(),
+                    function(data, status){
+                        console.log(data);
+                        var data = $.parseJSON(data);
+                        if(data.title == 'ok') {
 
-    $('#info').click(function(e) {
-        console.log(e);
+                            $('#myModalOK p').html(data.data);
+                            $('#myModalOK').modal('show');
+                        }
+                        else {
+                            $('#myModalWarning p').html(data.data);
+                            $('#myModalWarning').modal('show');
+                        }
+
+                    }
+                );
+            });
+            $('#selectAccountClose').click(function() {
+                $('#info').prop('checked',true);
+            });
+        }
+        
+        else if (this.value == 'pro') {
+            $('#myModalSelectAccount p').html('Are you want Pro Account?');
+            $('#myModalSelectAccount').modal('show');
+
+            $('#selectAccountOK').click(function() {
+                $.post(
+                    "updateaccount2.php",
+                    $('#form_account_type').serialize(),
+                    function(data, status){
+                        console.log(data);
+                        var data = $.parseJSON(data);
+                        if(data.title == 'ok') {
+
+                            $('#myModalOK p').html(data.data);
+                            $('#myModalOK').modal('show');
+                        }
+                        else {
+                            $('#myModalWarning p').html(data.data);
+                            $('#myModalWarning').modal('show');
+                        }
+
+                    }
+                );
+            });
+            $('#selectAccountClose').click(function() {
+                $('#primary').prop('checked',true);
+            });
+        }
     });
 
 
