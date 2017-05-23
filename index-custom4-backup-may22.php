@@ -1419,10 +1419,12 @@ foreach($CATEGORIES as $cat){
 
     
 
-     <?php require("modals/sethomepage.php"); ?>   
-     <?php require("modals/myaccount.php"); ?>
-     
+     <?php require("modals/sethomepage.php"); ?>        
 
+<!-- Background Selection -->
+
+    <?php require("modals/myaccount.php"); ?>
+    
 <div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="bgselect" aria-hidden="true" id="bgselect">
 
             <div class="modal-dialog">
@@ -1438,172 +1440,20 @@ foreach($CATEGORIES as $cat){
 
                     <div class="modal-body">
 
-                        <ul class="nav nav-tabs" role="tablist" id="settings_tab_list"> 
-                        
-                            <li role="presentation" class="active"><a href="#custom_links" aria-controls="custom_links" role="tab" data-toggle="tab" class="text-success">Custom Links</a></li>                         
+                        <ul class="nav nav-tabs" role="tablist" id="settings_tab_list">                        
 
-                            <li role="presentation"><a href="#bgtab" aria-controls="home" role="tab" data-toggle="tab" class="text-success">Backgrounds</a></li>
+                            <li role="presentation" class="active"><a href="#bgtab" aria-controls="home" role="tab" data-toggle="tab" class="text-success">Backgrounds</a></li>
 
                             <li role="presentation"><a href="#fonts" aria-controls="fonts" role="tab" data-toggle="tab" class="text-success">Fonts</a></li> 
 
                             <li role="presentation"><a href="#links" aria-controls="links" role="tab" data-toggle="tab" class="text-success">Links</a></li>                         
 
+                            <li role="presentation"><a href="#custom_links" aria-controls="custom_links" role="tab" data-toggle="tab" class="text-success">Custom Links <span class="newlink">(coming soon)</span></a></li>                         
                         </ul>
 
                         <div class="tab-content text-info">
-                        
-                            
-                            
-                            <!-- tabpanel 1 -->
-                            <div role="tabpanel" class="tab-pane active" id="custom_links">
 
-                            
-                             <ul>
-                                <h3>Custom Links: <span id="custom-help" class="padding-left-10px"><a href="#" data-content="<span class='text-info'><p><h3>Site Name</h3>Name of site which will appear in dropdown menu on <button type='button' class='btn btn-sm btn-info'><span class='glyphicon glyphicon-link'></span> MyLinks</span></button> button.<br>(i.e. <strong>My Credit Union</strong>)</p><p><h3>Site URL</h3>Enter full web address of the site.<br>(i.e. <strong>https://www.mycreditunion.com</strong>).</p><p>Need help? See <a href='/faq/'>Homepage FAQ</a></p></span>" data-placement="bottom" data-delay-show="1"><span class="glyphicon glyphicon-question-sign"></span></a></span></h3>
-                                <div class="row margin-top">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left"> 
-                                       
-
-                                        <div class="form-group">
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="standard_title_0" value="<?php if(array_key_exists('standard_title_0',$url_arr) && isset($url_arr['standard_title_0'])) { echo $url_arr['standard_title_0']; } ?>" placeholder="Site Name">
-                                            </div>
-                                            <div class="input-group col-sm-8">
-                                                <input type="url" class="form-control" name="standard_url_0" value="<?php if(array_key_exists('standard_url_0',$url_arr) && isset($url_arr['standard_url_0'])) { echo $url_arr['standard_url_0']; } ?>" placeholder="https://www.sitename.com">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
-                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="standard_title_1" value="<?php if(array_key_exists('standard_title_1',$url_arr) && isset($url_arr['standard_title_1'])) { echo $url_arr['standard_title_1']; } ?>" placeholder="Site Name">
-                                            </div>
-                                            <div class="input-group col-sm-8">
-                                                <input type="url" class="form-control" name="standard_url_1" value="<?php if(array_key_exists('standard_url_1',$url_arr) && isset($url_arr['standard_url_1'])) { echo $url_arr['standard_url_1']; } ?>" placeholder="https://www.sitename.com">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
-                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                                              
-                              </ul> 
-                              <?php
-                                if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') {							
-									
-									
-                              ?>
-                              <ul>
-                              	Need ideas?
-                              
-                              
-                              
-                                <h3>ProLinks+:</h3>
-                                <div class="row margin-top">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left controls"> 
-                                        
-
-                                        <?php
-                                        $mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
-                                        $userid = $_SESSION['user_id']; 
-
-                                        $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
-
-                                        $rows = $results->num_rows; 
-
-                                        $i = 0;
-
-                                        if($rows > 0) {
-                                            while($row = $results->fetch_object()) {
-                                                
-                                                if($i == $rows-1) {
-                                                    echo '<div class="entry form-group">
-                                                            <div class="col-sm-4">
-                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="Site Name" value="'.$row->title.'"/>
-                                                            </div>
-                                                            <div class="input-group col-sm-8">
-                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="https://www.sitename.com" value="'.$row->url.'"/>
-                                                                <span class="input-group-btn">
-                                                                    <button class="btn btn-success btn-add" type="button">
-                                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>';
-                                                } else {
-                                                    echo '<div class="entry form-group">
-                                                            <div class="col-sm-4">
-                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="Site Name" value="'.$row->title.'"/>
-                                                            </div>
-                                                            <div class="input-group col-sm-8">
-                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="https://www.sitename.com" value="'.$row->url.'"/>
-                                                                <span class="input-group-btn">
-                                                                    <button class="btn btn-danger btn-remove" type="button">
-                                                                        <span class="glyphicon glyphicon-minus"></span>
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>';
-                                                }
-
-                                                $i++;
-
-                                            }  
-                                        } else {
-                                            echo '<div class="entry form-group">
-                                                        <div class="col-sm-4">
-                                                            <input class="form-control" name="pro_title_0" type="text" placeholder="Site Name" value="'.$row->title.'"/>
-                                                        </div>
-                                                        <div class="input-group col-sm-8">
-                                                            <input class="form-control" name="pro_url_0" type="url" placeholder="https://www.sitename.com" value="'.$row->url.'"/>
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-success btn-add" type="button">
-                                                                    <span class="glyphicon glyphicon-plus"></span>
-                                                                </button>
-                                                            </span>
-                                                        </div>
-                                                    </div>';
-                                        }
-                                                
-                                            
-
-                                        ?>
-
-
-
-
-
-
-
-
-
-                                    </div>
-                                </div>   
-
-
-
-                              </ul> 
-
-
-                              <?php
-                                }
-                              ?>
-                            
-                            </div>                        
-
-                            
-                            
-                            
-                            
-                            <div role="tabpanel" class="tab-pane" id="bgtab">
+                            <div role="tabpanel" class="tab-pane active" id="bgtab">
 
                             
 
@@ -2233,7 +2083,145 @@ $mysqli = new mysqli($server, $db_user_name, $db_password, $database);
 ?>
 
 
+                            
+                            
+                            <!-- tabpanel 4 -->
+                            <div role="tabpanel" class="tab-pane" id="custom_links">
 
+                            
+                             <ul>
+                                <h3>Custom Links:</h3>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left"> 
+                                       
+
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="standard_title_0" value="<?php if(array_key_exists('standard_title_0',$url_arr) && isset($url_arr['standard_title_0'])) { echo $url_arr['standard_title_0']; } ?>" placeholder="title">
+                                            </div>
+                                            <div class="input-group col-sm-6">
+                                                <input type="url" class="form-control" name="standard_url_0" value="<?php if(array_key_exists('standard_url_0',$url_arr) && isset($url_arr['standard_url_0'])) { echo $url_arr['standard_url_0']; } ?>" placeholder="url">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="standard_title_1" value="<?php if(array_key_exists('standard_title_1',$url_arr) && isset($url_arr['standard_title_1'])) { echo $url_arr['standard_title_1']; } ?>" placeholder="title">
+                                            </div>
+                                            <div class="input-group col-sm-6">
+                                                <input type="url" class="form-control" name="standard_url_1" value="<?php if(array_key_exists('standard_url_1',$url_arr) && isset($url_arr['standard_url_1'])) { echo $url_arr['standard_url_1']; } ?>" placeholder="url">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-success btn-add" type="button" style="opacity: 0">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>                             
+                              </ul> 
+                              <?php
+                                if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') {
+                              ?>
+                              <ul>
+                                <h3>Pro Links:</h3>
+                                <div class="row margin-top">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left controls"> 
+                                        
+
+                                        <?php
+                                        $mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
+                                        $userid = $_SESSION['user_id']; 
+
+                                        $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
+
+                                        $rows = $results->num_rows; 
+
+                                        $i = 0;
+
+                                        if($rows > 0) {
+                                            while($row = $results->fetch_object()) {
+                                                
+                                                if($i == $rows-1) {
+                                                    echo '<div class="entry form-group">
+                                                            <div class="col-sm-6">
+                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                            </div>
+                                                            <div class="input-group col-sm-6">
+                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-success btn-add" type="button">
+                                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>';
+                                                } else {
+                                                    echo '<div class="entry form-group">
+                                                            <div class="col-sm-6">
+                                                                <input class="form-control" name="pro_title_'.$i.'" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                            </div>
+                                                            <div class="input-group col-sm-6">
+                                                                <input class="form-control" name="pro_url_'.$i.'" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-danger btn-remove" type="button">
+                                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>';
+                                                }
+
+                                                $i++;
+
+                                            }  
+                                        } else {
+                                            echo '<div class="entry form-group">
+                                                        <div class="col-sm-6">
+                                                            <input class="form-control" name="pro_title_0" type="text" placeholder="title" value="'.$row->title.'"/>
+                                                        </div>
+                                                        <div class="input-group col-sm-6">
+                                                            <input class="form-control" name="pro_url_0" type="url" placeholder="url" value="'.$row->url.'"/>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-success btn-add" type="button">
+                                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>';
+                                        }
+                                                
+                                            
+
+                                        ?>
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>   
+
+
+
+                              </ul> 
+
+
+                              <?php
+                                }
+                              ?>
+                            
+                            </div>
 
                         </div><!-- /tab-content -->
 
@@ -2511,20 +2499,6 @@ $mysqli = new mysqli($server, $db_user_name, $db_password, $database);
         trigger:'hover',        
 
         style:'inverse',
-
-        animation:'pop',
-
-        });
-
-    </script>
-    
-    <script>
-
-        $('#custom-help a').webuiPopover({   
-
-        trigger:'hover',        
-
- //     style:'inverse',
 
         animation:'pop',
 

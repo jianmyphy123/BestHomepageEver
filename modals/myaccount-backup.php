@@ -24,8 +24,8 @@ require_once('settings.php');
 
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
 
-                            				<p><span class="glyphicon glyphicon-tag"></span> Name: <strong><?php echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; ?></strong></p>
-                            				<p><span class="glyphicon glyphicon-user"></span> User ID / E-Mail: <strong><?php echo $_SESSION['login_user'] ; ?></strong></p>                     <p><p><small><span class="glyphicon glyphicon-pencil"></span> <a href="#" id="editAccount">Edit</a></small>
+                            				<p><span class="glyphicon glyphicon-tag"></span> Name: <strong><?php if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) {  echo $_SESSION['fname']. ' ' . $_SESSION['lname'] ; } ?></strong></p>
+                            				<p><span class="glyphicon glyphicon-user"></span> User ID / E-Mail: <strong><?php if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) { echo $_SESSION['login_user'] ; } ?></strong></p>                     <p><p><small><span class="glyphicon glyphicon-pencil"></span> <a href="#" id="editAccount">Edit</a></small>
 
                                             
                                         </div>
@@ -39,19 +39,19 @@ require_once('settings.php');
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">First Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" value="<?php echo $_SESSION['fname'] ; ?>" name="firstname" id="firstname" required>
+                                                    <input type="text" class="form-control" value="<?php if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) { echo $_SESSION['fname'] ; } ?>" name="firstname" id="firstname" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Last Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" value="<?php echo $_SESSION['lname'] ; ?>" name="lastname" required>
+                                                    <input type="text" class="form-control" value="<?php if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) { echo $_SESSION['lname'] ; } ?>" name="lastname" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">E-Mail:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" value="<?php echo $_SESSION['login_user'] ; ?>" name="username" required>
+                                                    <input type="email" class="form-control" value="<?php if(array_key_exists('login_user',$_SESSION) && !empty($_SESSION['login_user'])) { echo $_SESSION['login_user'] ; } ?>" name="username" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -68,7 +68,7 @@ require_once('settings.php');
                                     
                                         <span id="account_type">
                                         <small>                               
-                                            <a href="#" data-title="Account Type" data-content="<p class='text-primary'>Coming Soon!</p><p class='text-primary'>LINKS+ should be a pleasant surprise for many of you loyal users.<br>I will finally be offering custom links, so you can customize BHE more than ever.<p class='text-primary'>This will be an <strong>optional</strong> upgrade, so keep an eye on the <a href='../news/index.php' target='_blank'>homepage news</a><br>or check back here, for updates and for the opportunity to join.</p>" data-placement="auto"><span style="font-size:1.5em;" class="glyphicon glyphicon-question-sign"></span></a>
+                                            <a href="#" data-title="Account Type" data-content="<p class='text-primary'>Coming Soon!</p><p class='text-primary'>ProLINKS+ should be a pleasant surprise for many of you loyal users.<br>I will finally be offering custom links, so you can customize BHE more than ever.<p class='text-primary'>This will be an <strong>optional</strong> upgrade, so keep an eye on the <a href='../news/index.php' target='_blank'>homepage news</a><br>or check back here, for updates and for the opportunity to join.</p>" data-placement="auto"><span style="font-size:1.5em;" class="glyphicon glyphicon-question-sign"></span></a>
                                         </small>
                                         </span>   
                                     </h3>
@@ -79,10 +79,11 @@ require_once('settings.php');
                                             <!--
                             					<p><span class="text-success"><strong>Standard</strong></span> | <span class="text-muted"><strong>LINKS+</strong></span></p>
                                             -->
-											<label for="primary" class="btn btn-primary">Standard <input type="checkbox" id="primary" class="badgebox" checked="checked"><span class="badge">&check;</span></label>
-        									<label for="info" class="btn btn-success">LINKS+ <input type="checkbox" id="info" class="badgebox" disabled="disabled"><span class="badge">&check;</span></label>                                                    <!-- early announcement 
-                                                    I will soon be offering an expanded homepage, which comes with custom links, for 'premium' homepage users.<br>This will only cost about $2.99 per month. But, this is to offer more customization features for those loyal users.<br>This is to also help pay for the work done in adding these features.</p><p><strong>Note:</strong> This will be optional, and the homepage will continue to be offered free if you do not want custom links.</p><p>This will be rolling out soon, so keep an eye out on the <a href='../news/index.php'>homepage news</a> section for updates and for the opportunity to join.</span> -->
-                                                    
+                                            <form id="form_account_type">
+                                                <label for="primary" class="btn btn-primary">Standard <input type="radio" id="primary" class="badgebox" name="account_type" value="standard" <?php if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'standard') { echo "checked" ; } ?>><span class="badge">&check;</span></label>
+                                                <label for="info" class="btn btn-success">ProLINKS+ <input type="radio" id="info" class="badgebox" name="account_type" value="pro" <?php if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') { echo "checked" ; } ?>><span class="badge">&check;</span></label>                                                    <!-- early announcement 
+                                                        I will soon be offering an expanded homepage, which comes with custom links, for 'premium' homepage users.<br>This will only cost about $2.99 per month. But, this is to offer more customization features for those loyal users.<br>This is to also help pay for the work done in adding these features.</p><p><strong>Note:</strong> This will be optional, and the homepage will continue to be offered free if you do not want custom links.</p><p>This will be rolling out soon, so keep an eye out on the <a href='../news/index.php'>homepage news</a> section for updates and for the opportunity to join.</span> -->
+                                            </form>       
                                             
 
                                         </div>
@@ -157,6 +158,24 @@ require_once('settings.php');
         </div>
     </div>
 </div>
+<div class="modal fade bs-warning-modal" tabindex="100" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="myModalSelectAccount">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p style="color: black"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal" id="selectAccountOK">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="selectAccountClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $("#editAccount").click(function(){
         $("#editAccountArea").slideToggle();
@@ -190,6 +209,65 @@ require_once('settings.php');
     $('#btnDelete').click(function() {
         $('#myModalDanger').modal('show');
     });
+
+    $('input[type=radio][name=account_type]').change(function() {
+        if (this.value == 'standard') {
+            $('#myModalSelectAccount p').html('Are you want Standard Account?');
+            $('#myModalSelectAccount').modal('show');
+            $('#selectAccountOK').click(function() {
+                $.post(
+                    "updateaccount2.php",
+                    $('#form_account_type').serialize(),
+                    function(data, status){
+                        console.log(data);
+                        var data = $.parseJSON(data);
+                        if(data.title == 'ok') {
+
+                            $('#myModalOK p').html(data.data);
+                            $('#myModalOK').modal('show');
+                        }
+                        else {
+                            $('#myModalWarning p').html(data.data);
+                            $('#myModalWarning').modal('show');
+                        }
+
+                    }
+                );
+            });
+            $('#selectAccountClose').click(function() {
+                $('#info').prop('checked',true);
+            });
+        }
+        else if (this.value == 'pro') {
+            $('#myModalSelectAccount p').html('Are you want Pro Account?');
+            $('#myModalSelectAccount').modal('show');
+
+            $('#selectAccountOK').click(function() {
+                $.post(
+                    "updateaccount2.php",
+                    $('#form_account_type').serialize(),
+                    function(data, status){
+                        console.log(data);
+                        var data = $.parseJSON(data);
+                        if(data.title == 'ok') {
+
+                            $('#myModalOK p').html(data.data);
+                            $('#myModalOK').modal('show');
+                        }
+                        else {
+                            $('#myModalWarning p').html(data.data);
+                            $('#myModalWarning').modal('show');
+                        }
+
+                    }
+                );
+            });
+            $('#selectAccountClose').click(function() {
+                $('#primary').prop('checked',true);
+            });
+        }
+    });
+
 
     function goToHome() {
         window.location = 'index.php';

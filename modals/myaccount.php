@@ -238,7 +238,6 @@ require_once('settings.php');
                 $('#info').prop('checked',true);
             });
         }
-        
         else if (this.value == 'pro') {
             $('#myModalSelectAccount p').html('Are you want Pro Account?');
             $('#myModalSelectAccount').modal('show');

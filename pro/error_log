@@ -1,0 +1,9 @@
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: stOrderNum in /home/investbc/public_html/pro/index.php on line 192
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: qty in /home/investbc/public_html/pro/index.php on line 195
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: visa_type_name in /home/investbc/public_html/pro/index.php on line 201
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: total_cost in /home/investbc/public_html/pro/index.php on line 204
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: currencySign in /home/investbc/public_html/pro/index.php on line 204
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: currencyCode in /home/investbc/public_html/pro/index.php on line 204
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: urgent_order_req in /home/investbc/public_html/pro/index.php on line 206
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: sats_urgent in /home/investbc/public_html/pro/index.php on line 206
+[23-May-2017 01:25:53 UTC] PHP Notice:  Undefined variable: email in /home/investbc/public_html/pro/index.php on line 297
