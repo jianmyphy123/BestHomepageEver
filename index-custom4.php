@@ -1421,6 +1421,34 @@ foreach($CATEGORIES as $cat){
 
      <?php require("modals/sethomepage.php"); ?>   
      <?php require("modals/myaccount.php"); ?>
+
+
+
+
+
+
+<?php 
+
+$url_arr = array();
+
+
+$mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
+    $userid = $_SESSION['user_id']; 
+
+    $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='standard' order by url_order");
+
+    $rows = $results->num_rows; 
+            
+    while($row = $results->fetch_object()) {
+        $url_arr[$row->account_type.'_title_'.$row->url_order] = $row->title;
+        $url_arr[$row->account_type.'_url_'.$row->url_order] = $row->url;
+    }  
+
+?>
+
+
+
+
      
 
 <div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="bgselect" aria-hidden="true" id="bgselect">
@@ -2210,30 +2238,6 @@ foreach($CATEGORIES as $cat){
                                      </div>
                              
                           </div><!-- /tab panel -->
-
-
-
-<?php 
-
-$url_arr = array();
-
-
-$mysqli = new mysqli($server, $db_user_name, $db_password, $database); 
-    $userid = $_SESSION['user_id']; 
-
-    $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='standard' order by url_order");
-
-    $rows = $results->num_rows; 
-            
-    while($row = $results->fetch_object()) {
-        $url_arr[$row->account_type.'_title_'.$row->url_order] = $row->title;
-        $url_arr[$row->account_type.'_url_'.$row->url_order] = $row->url;
-    }  
-
-?>
-
-
-
 
                         </div><!-- /tab-content -->
 

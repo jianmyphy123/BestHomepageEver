@@ -32,7 +32,7 @@ if(isSet($cookie_name))
 				$_SESSION['ti'] = $row->ti;
 				$_SESSION['BG'] = $row->bg;
 				$_SESSION['BG_LETTER'] = $row->bg_letter;
-
+				$_SESSION['account_type'] = $row->account_type;
 			}
 			$results->free();
 			$mysqli->close(); // Closing Connection
