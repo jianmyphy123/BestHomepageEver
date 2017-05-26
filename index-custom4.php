@@ -712,19 +712,21 @@ shuffle($NUMBERS);
                     echo "<li><a href='".$row->url."'>".$row->title."</a></li>";
                 }  
 
-            ?>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header"><span class="text-success strong">ProLinks+</span></li>
-
-            <?php
                 
-                $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
+
+                if(array_key_exists('account_type',$_SESSION) && !empty($_SESSION['account_type']) && $_SESSION['account_type'] == 'pro') { 
+
+                    echo ' <li role="separator" class="divider"></li>
+                        <li class="dropdown-header"><span class="text-success strong">ProLinks+</span></li>';
+                    $results = $mysqli->query("select * from user_links where user_id='$userid' and account_type='pro' order by url_order");
                 
-                while($row = $results->fetch_object()) {
-                    echo "<li><a href='".$row->url."'>".$row->title."</a></li>";
-                }  
+                    while($row = $results->fetch_object()) {
+                        echo "<li><a href='".$row->url."'>".$row->title."</a></li>";
+                    }  
+                }
 
             ?>
+
           </ul>
         </div>        
 
